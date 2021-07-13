@@ -1,5 +1,6 @@
 package Grafico;
 
+import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Image;
 import javax.swing.ImageIcon;
@@ -8,10 +9,10 @@ import java.util.Date;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
+public class Principal extends javax.swing.JFrame implements Runnable {
 
-public class Principal extends javax.swing.JFrame implements Runnable{
-String hora, minutos, segundos;
-Thread hilo;
+    String hora, minutos, segundos;
+    Thread hilo;
 
     FondoPanel fondo = new FondoPanel();
 
@@ -23,28 +24,26 @@ Thread hilo;
         hilo.start();
         setVisible(true);
     }
-    
+
     public void hora() {
         Calendar calendario = new GregorianCalendar();
         Date horaactual = new Date();
         calendario.setTime(horaactual);
-        hora= calendario.get(Calendar.HOUR_OF_DAY)>9?""+calendario.get(Calendar.HOUR_OF_DAY):"0"+calendario.get(Calendar.HOUR_OF_DAY);
-        minutos=calendario.get(Calendar.MINUTE)>9?""+calendario.get(Calendar.MINUTE):"0"+calendario.get(Calendar.MINUTE);
-        segundos=calendario.get(Calendar.SECOND)>9?""+calendario.get(Calendar.SECOND):"0"+calendario.get(Calendar.SECOND);
-            
+        hora = calendario.get(Calendar.HOUR_OF_DAY) > 9 ? "" + calendario.get(Calendar.HOUR_OF_DAY) : "0" + calendario.get(Calendar.HOUR_OF_DAY);
+        minutos = calendario.get(Calendar.MINUTE) > 9 ? "" + calendario.get(Calendar.MINUTE) : "0" + calendario.get(Calendar.MINUTE);
+        segundos = calendario.get(Calendar.SECOND) > 9 ? "" + calendario.get(Calendar.SECOND) : "0" + calendario.get(Calendar.SECOND);
+
     }
-    
-    public void run() {      
-        
+
+    public void run() {
+
         Thread current = Thread.currentThread();
-        
-        while (current==hilo) {
+
+        while (current == hilo) {
             hora();
-            LabelHora.setText(hora+":"+minutos+":"+segundos);
+            LabelHora.setText(hora + ":" + minutos + ":" + segundos);
         }
     }
-    
-    
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -86,36 +85,30 @@ Thread hilo;
         LabelFecha = new javax.swing.JLabel();
         LabelHora = new javax.swing.JLabel();
         jListar1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
-        jButton10 = new javax.swing.JButton();
-        jButton9 = new javax.swing.JButton();
-        jButton24 = new javax.swing.JButton();
-        jButton36 = new javax.swing.JButton();
-        jButton25 = new javax.swing.JButton();
-        jButton37 = new javax.swing.JButton();
-        jButton13 = new javax.swing.JButton();
-        jButton8 = new javax.swing.JButton();
-        jButton31 = new javax.swing.JButton();
-        jButton16 = new javax.swing.JButton();
-        jButton21 = new javax.swing.JButton();
-        jButton17 = new javax.swing.JButton();
-        jButton15 = new javax.swing.JButton();
-        jButton26 = new javax.swing.JButton();
-        jButton20 = new javax.swing.JButton();
-        jButton27 = new javax.swing.JButton();
-        jButton23 = new javax.swing.JButton();
-        jButton22 = new javax.swing.JButton();
-        jButton14 = new javax.swing.JButton();
-        jButton41 = new javax.swing.JButton();
-        jButton32 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
-        jButton12 = new javax.swing.JButton();
-        jButton18 = new javax.swing.JButton();
-        jButton42 = new javax.swing.JButton();
+        Espacio1 = new javax.swing.JToggleButton();
+        Espacio2 = new javax.swing.JToggleButton();
+        Espacio3 = new javax.swing.JToggleButton();
+        Espacio4 = new javax.swing.JToggleButton();
+        Espacio5 = new javax.swing.JToggleButton();
+        Espacio6 = new javax.swing.JToggleButton();
+        Espacio7 = new javax.swing.JToggleButton();
+        Espacio8 = new javax.swing.JToggleButton();
+        Espacio9 = new javax.swing.JToggleButton();
+        Espacio10 = new javax.swing.JToggleButton();
+        Espacio11 = new javax.swing.JToggleButton();
+        Espacio12 = new javax.swing.JToggleButton();
+        Espacio13 = new javax.swing.JToggleButton();
+        Espacio14 = new javax.swing.JToggleButton();
+        Espacio15 = new javax.swing.JToggleButton();
+        Espacio16 = new javax.swing.JToggleButton();
+        Espacio17 = new javax.swing.JToggleButton();
+        Espacio18 = new javax.swing.JToggleButton();
+        EspacioMoto1 = new javax.swing.JToggleButton();
+        EspacioMoto2 = new javax.swing.JToggleButton();
+        EspacioMoto3 = new javax.swing.JToggleButton();
+        EspacioMoto4 = new javax.swing.JToggleButton();
+        EspacioMoto5 = new javax.swing.JToggleButton();
+        EspacioMoto6 = new javax.swing.JToggleButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -134,7 +127,7 @@ Thread hilo;
                 jBRetirarActionPerformed(evt);
             }
         });
-        jPMenu.add(jBRetirar, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 270, 120, 41));
+        jPMenu.add(jBRetirar, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 270, 120, 41));
 
         jBIngresarV.setBackground(new java.awt.Color(79, 119, 238));
         jBIngresarV.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
@@ -145,7 +138,7 @@ Thread hilo;
                 jBIngresarVActionPerformed(evt);
             }
         });
-        jPMenu.add(jBIngresarV, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 270, 130, 41));
+        jPMenu.add(jBIngresarV, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 270, 130, 41));
 
         jConfig.setBackground(new java.awt.Color(79, 119, 238));
         jConfig.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
@@ -156,7 +149,7 @@ Thread hilo;
                 jConfigActionPerformed(evt);
             }
         });
-        jPMenu.add(jConfig, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 320, 130, 37));
+        jPMenu.add(jConfig, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 320, 130, 37));
 
         jBSalir.setBackground(new java.awt.Color(79, 119, 238));
         jBSalir.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
@@ -167,13 +160,10 @@ Thread hilo;
                 jBSalirActionPerformed(evt);
             }
         });
-        jPMenu.add(jBSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 320, 120, 37));
+        jPMenu.add(jBSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 320, 120, 37));
 
         BackGround.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/F1.png"))); // NOI18N
-        BackGround.setMaximumSize(new java.awt.Dimension(300, 400));
-        BackGround.setMinimumSize(new java.awt.Dimension(300, 400));
-        BackGround.setPreferredSize(new java.awt.Dimension(300, 400));
-        jPMenu.add(BackGround, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 280, 400));
+        jPMenu.add(BackGround, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 300, 400));
 
         jPCuerpo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPCuerpo.setMinimumSize(new java.awt.Dimension(1219, 498));
@@ -189,8 +179,8 @@ Thread hilo;
 
         jLabel12.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel12.setText("Placa:");
-        jPRetirarVehiculo.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 160, -1, 28));
-        jPRetirarVehiculo.add(jTxtPlaca1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 160, 178, 28));
+        jPRetirarVehiculo.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 160, -1, 28));
+        jPRetirarVehiculo.add(jTxtPlaca1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 160, 178, 28));
 
         jBSalirRetiro.setBackground(new java.awt.Color(79, 119, 238));
         jBSalirRetiro.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
@@ -207,7 +197,7 @@ Thread hilo;
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 22)); // NOI18N
         jLabel2.setText("Retiro de Vehículos");
-        jPRetirarVehiculo.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(73, 10, -1, 60));
+        jPRetirarVehiculo.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(73, 9, -1, 60));
 
         jBIngresar2.setBackground(new java.awt.Color(79, 119, 238));
         jBIngresar2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
@@ -223,7 +213,7 @@ Thread hilo;
 
         jPRetirarVehiculo.setVisible(false);
 
-        jPCuerpo.add(jPRetirarVehiculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 340, 390));
+        jPCuerpo.add(jPRetirarVehiculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 320, 400));
 
         jPIngresoVehiculo.setEnabled(false);
         jPIngresoVehiculo.setPreferredSize(new java.awt.Dimension(300, 400));
@@ -314,7 +304,7 @@ Thread hilo;
 
         jPIngresoVehiculo.setVisible(false);
 
-        jPCuerpo.add(jPIngresoVehiculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 300, 400));
+        jPCuerpo.add(jPIngresoVehiculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 320, 400));
 
         jMapa.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -351,153 +341,230 @@ Thread hilo;
         });
         jMapa.add(jListar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 320, 190, 40));
 
-        jButton2.setBackground(new java.awt.Color(0, 204, 0));
-        jButton2.setText("1");
-        jMapa.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 80, 40, 60));
-
-        jButton3.setBackground(new java.awt.Color(0, 204, 0));
-        jButton3.setText("2");
-        jMapa.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 80, 40, 60));
-
-        jButton4.setBackground(new java.awt.Color(0, 204, 0));
-        jButton4.setText("3");
-        jMapa.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 80, 40, 60));
-
-        jButton5.setBackground(new java.awt.Color(0, 204, 0));
-        jButton5.setText("4");
-        jMapa.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 80, 40, 60));
-
-        jButton7.setBackground(new java.awt.Color(0, 204, 0));
-        jButton7.setText("6");
-        jMapa.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 80, 40, 60));
-
-        jButton10.setBackground(new java.awt.Color(0, 204, 0));
-        jButton10.setText("9");
-        jMapa.add(jButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 150, 40, 60));
-
-        jButton9.setBackground(new java.awt.Color(0, 204, 0));
-        jButton9.setText("8");
-        jMapa.add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 150, 40, 60));
-
-        jButton24.setBackground(new java.awt.Color(0, 204, 0));
-        jButton24.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
-        jButton24.setText("M4");
-        jMapa.add(jButton24, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 250, 50, 30));
-
-        jButton36.setBackground(new java.awt.Color(0, 204, 0));
-        jButton36.setText("8");
-        jMapa.add(jButton36, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 150, 40, 60));
-
-        jButton25.setBackground(new java.awt.Color(0, 204, 0));
-        jButton25.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
-        jButton25.setText("M5");
-        jMapa.add(jButton25, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 250, 50, 30));
-
-        jButton37.setBackground(new java.awt.Color(0, 204, 0));
-        jButton37.setFont(new java.awt.Font("Tahoma", 0, 8)); // NOI18N
-        jButton37.setText("15");
-        jMapa.add(jButton37, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 220, 40, 60));
-
-        jButton13.setBackground(new java.awt.Color(0, 204, 0));
-        jButton13.setFont(new java.awt.Font("Tahoma", 0, 8)); // NOI18N
-        jButton13.setText("12");
-        jMapa.add(jButton13, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 150, 40, 60));
-
-        jButton8.setBackground(new java.awt.Color(0, 204, 0));
-        jButton8.setText("7");
-        jMapa.add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 80, 40, 60));
-
-        jButton31.setBackground(new java.awt.Color(0, 204, 0));
-        jButton31.setText("7");
-        jMapa.add(jButton31, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 80, 40, 60));
-
-        jButton16.setBackground(new java.awt.Color(0, 204, 0));
-        jButton16.setFont(new java.awt.Font("Tahoma", 0, 8)); // NOI18N
-        jButton16.setText("15");
-        jMapa.add(jButton16, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 220, 40, 60));
-
-        jButton21.setBackground(new java.awt.Color(0, 204, 0));
-        jButton21.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
-        jButton21.setText("M1");
-        jMapa.add(jButton21, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 220, 50, 30));
-
-        jButton17.setBackground(new java.awt.Color(0, 204, 0));
-        jButton17.setFont(new java.awt.Font("Tahoma", 0, 8)); // NOI18N
-        jButton17.setText("16");
-        jMapa.add(jButton17, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 220, 40, 60));
-
-        jButton15.setBackground(new java.awt.Color(0, 204, 0));
-        jButton15.setFont(new java.awt.Font("Tahoma", 0, 8)); // NOI18N
-        jButton15.setText("14");
-        jMapa.add(jButton15, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 150, 40, 60));
-
-        jButton26.setBackground(new java.awt.Color(0, 204, 0));
-        jButton26.setFont(new java.awt.Font("Tahoma", 0, 8)); // NOI18N
-        jButton26.setText("13");
-        jMapa.add(jButton26, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 150, 40, 60));
-
-        jButton20.setBackground(new java.awt.Color(0, 204, 0));
-        jButton20.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
-        jButton20.setText("M6");
-        jMapa.add(jButton20, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 250, 50, 30));
-
-        jButton27.setBackground(new java.awt.Color(0, 204, 0));
-        jButton27.setFont(new java.awt.Font("Tahoma", 0, 8)); // NOI18N
-        jButton27.setText("14");
-        jMapa.add(jButton27, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 150, 40, 60));
-
-        jButton23.setBackground(new java.awt.Color(0, 204, 0));
-        jButton23.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
-        jButton23.setText("M3");
-        jMapa.add(jButton23, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 220, 50, 30));
-
-        jButton22.setBackground(new java.awt.Color(0, 204, 0));
-        jButton22.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
-        jButton22.setText("M2");
-        jMapa.add(jButton22, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 220, 50, 30));
-
-        jButton14.setBackground(new java.awt.Color(0, 204, 0));
-        jButton14.setFont(new java.awt.Font("Tahoma", 0, 8)); // NOI18N
-        jButton14.setText("13");
-        jMapa.add(jButton14, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 150, 40, 60));
-
-        jButton41.setBackground(new java.awt.Color(0, 204, 0));
-        jButton41.setFont(new java.awt.Font("Tahoma", 0, 8)); // NOI18N
-        jButton41.setText("18");
-        jButton41.addActionListener(new java.awt.event.ActionListener() {
+        Espacio1.setBackground(new java.awt.Color(51, 204, 0));
+        Espacio1.setText("1");
+        Espacio1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton41ActionPerformed(evt);
+                Espacio1ActionPerformed(evt);
             }
         });
-        jMapa.add(jButton41, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 220, 40, 60));
+        jMapa.add(Espacio1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 80, 40, 60));
 
-        jButton32.setBackground(new java.awt.Color(0, 204, 0));
-        jButton32.setText("9");
-        jMapa.add(jButton32, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 150, 40, 60));
-
-        jButton6.setBackground(new java.awt.Color(0, 204, 0));
-        jButton6.setText("5");
-        jMapa.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 80, 40, 60));
-
-        jButton12.setBackground(new java.awt.Color(0, 204, 0));
-        jButton12.setFont(new java.awt.Font("Tahoma", 0, 8)); // NOI18N
-        jButton12.setText("11");
-        jButton12.addActionListener(new java.awt.event.ActionListener() {
+        Espacio2.setBackground(new java.awt.Color(51, 204, 0));
+        Espacio2.setText("2");
+        Espacio2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton12ActionPerformed(evt);
+                Espacio2ActionPerformed(evt);
             }
         });
-        jMapa.add(jButton12, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 150, 40, 60));
+        jMapa.add(Espacio2, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 80, 40, 60));
 
-        jButton18.setBackground(new java.awt.Color(0, 204, 0));
-        jButton18.setFont(new java.awt.Font("Tahoma", 0, 8)); // NOI18N
-        jButton18.setText("10");
-        jMapa.add(jButton18, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 150, 40, 60));
+        Espacio3.setBackground(new java.awt.Color(51, 204, 0));
+        Espacio3.setText("3");
+        Espacio3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Espacio3ActionPerformed(evt);
+            }
+        });
+        jMapa.add(Espacio3, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 80, 40, 60));
 
-        jButton42.setBackground(new java.awt.Color(0, 204, 0));
-        jButton42.setFont(new java.awt.Font("Tahoma", 0, 8)); // NOI18N
-        jButton42.setText("17");
-        jMapa.add(jButton42, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 220, 40, 60));
+        Espacio4.setBackground(new java.awt.Color(51, 204, 0));
+        Espacio4.setText("4");
+        Espacio4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Espacio4ActionPerformed(evt);
+            }
+        });
+        jMapa.add(Espacio4, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 80, 40, 60));
+
+        Espacio5.setBackground(new java.awt.Color(51, 204, 0));
+        Espacio5.setText("5");
+        Espacio5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Espacio5ActionPerformed(evt);
+            }
+        });
+        jMapa.add(Espacio5, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 80, 40, 60));
+
+        Espacio6.setBackground(new java.awt.Color(51, 204, 0));
+        Espacio6.setText("6");
+        Espacio6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Espacio6ActionPerformed(evt);
+            }
+        });
+        jMapa.add(Espacio6, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 80, 40, 60));
+
+        Espacio7.setBackground(new java.awt.Color(51, 204, 0));
+        Espacio7.setText("7");
+        Espacio7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Espacio7ActionPerformed(evt);
+            }
+        });
+        jMapa.add(Espacio7, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 80, 40, 60));
+
+        Espacio8.setBackground(new java.awt.Color(51, 204, 0));
+        Espacio8.setText("8");
+        Espacio8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Espacio8ActionPerformed(evt);
+            }
+        });
+        jMapa.add(Espacio8, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 150, 40, 60));
+
+        Espacio9.setBackground(new java.awt.Color(51, 204, 0));
+        Espacio9.setText("9");
+        Espacio9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Espacio9ActionPerformed(evt);
+            }
+        });
+        jMapa.add(Espacio9, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 150, 40, 60));
+
+        Espacio10.setBackground(new java.awt.Color(51, 204, 0));
+        Espacio10.setFont(new java.awt.Font("Tahoma", 0, 8)); // NOI18N
+        Espacio10.setText("10");
+        Espacio10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Espacio10ActionPerformed(evt);
+            }
+        });
+        jMapa.add(Espacio10, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 150, 40, 60));
+
+        Espacio11.setBackground(new java.awt.Color(51, 204, 0));
+        Espacio11.setFont(new java.awt.Font("Tahoma", 0, 8)); // NOI18N
+        Espacio11.setText("11");
+        Espacio11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Espacio11ActionPerformed(evt);
+            }
+        });
+        jMapa.add(Espacio11, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 150, 40, 60));
+
+        Espacio12.setBackground(new java.awt.Color(51, 204, 0));
+        Espacio12.setFont(new java.awt.Font("Tahoma", 0, 8)); // NOI18N
+        Espacio12.setText("12");
+        Espacio12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Espacio12ActionPerformed(evt);
+            }
+        });
+        jMapa.add(Espacio12, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 150, 40, 60));
+
+        Espacio13.setBackground(new java.awt.Color(51, 204, 0));
+        Espacio13.setFont(new java.awt.Font("Tahoma", 0, 8)); // NOI18N
+        Espacio13.setText("13");
+        Espacio13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Espacio13ActionPerformed(evt);
+            }
+        });
+        jMapa.add(Espacio13, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 150, 40, 60));
+
+        Espacio14.setBackground(new java.awt.Color(51, 204, 0));
+        Espacio14.setFont(new java.awt.Font("Tahoma", 0, 8)); // NOI18N
+        Espacio14.setText("14");
+        Espacio14.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Espacio14ActionPerformed(evt);
+            }
+        });
+        jMapa.add(Espacio14, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 150, 40, 60));
+
+        Espacio15.setBackground(new java.awt.Color(51, 204, 0));
+        Espacio15.setFont(new java.awt.Font("Tahoma", 0, 8)); // NOI18N
+        Espacio15.setText("15");
+        Espacio15.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Espacio15ActionPerformed(evt);
+            }
+        });
+        jMapa.add(Espacio15, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 220, 40, 60));
+
+        Espacio16.setBackground(new java.awt.Color(51, 204, 0));
+        Espacio16.setFont(new java.awt.Font("Tahoma", 0, 8)); // NOI18N
+        Espacio16.setText("16");
+        Espacio16.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Espacio16ActionPerformed(evt);
+            }
+        });
+        jMapa.add(Espacio16, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 220, 40, 60));
+
+        Espacio17.setBackground(new java.awt.Color(51, 204, 0));
+        Espacio17.setFont(new java.awt.Font("Tahoma", 0, 8)); // NOI18N
+        Espacio17.setText("17");
+        Espacio17.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Espacio17ActionPerformed(evt);
+            }
+        });
+        jMapa.add(Espacio17, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 220, 40, 60));
+
+        Espacio18.setBackground(new java.awt.Color(51, 204, 0));
+        Espacio18.setFont(new java.awt.Font("Tahoma", 0, 8)); // NOI18N
+        Espacio18.setText("18");
+        Espacio18.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Espacio18ActionPerformed(evt);
+            }
+        });
+        jMapa.add(Espacio18, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 220, 40, 60));
+
+        EspacioMoto1.setBackground(new java.awt.Color(51, 204, 0));
+        EspacioMoto1.setText("M1");
+        EspacioMoto1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EspacioMoto1ActionPerformed(evt);
+            }
+        });
+        jMapa.add(EspacioMoto1, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 220, 50, 30));
+
+        EspacioMoto2.setBackground(new java.awt.Color(51, 204, 0));
+        EspacioMoto2.setText("M2");
+        EspacioMoto2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EspacioMoto2ActionPerformed(evt);
+            }
+        });
+        jMapa.add(EspacioMoto2, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 220, 50, 30));
+
+        EspacioMoto3.setBackground(new java.awt.Color(51, 204, 0));
+        EspacioMoto3.setText("M3");
+        EspacioMoto3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EspacioMoto3ActionPerformed(evt);
+            }
+        });
+        jMapa.add(EspacioMoto3, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 220, 50, 30));
+
+        EspacioMoto4.setBackground(new java.awt.Color(51, 204, 0));
+        EspacioMoto4.setText("M4");
+        EspacioMoto4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EspacioMoto4ActionPerformed(evt);
+            }
+        });
+        jMapa.add(EspacioMoto4, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 250, 50, 30));
+
+        EspacioMoto5.setBackground(new java.awt.Color(51, 204, 0));
+        EspacioMoto5.setText("M5");
+        EspacioMoto5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EspacioMoto5ActionPerformed(evt);
+            }
+        });
+        jMapa.add(EspacioMoto5, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 250, 50, 30));
+
+        EspacioMoto6.setBackground(new java.awt.Color(51, 204, 0));
+        EspacioMoto6.setText("M6");
+        EspacioMoto6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EspacioMoto6ActionPerformed(evt);
+            }
+        });
+        jMapa.add(EspacioMoto6, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 250, 50, 30));
 
         jPCuerpo.add(jMapa, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 800, 400));
 
@@ -528,11 +595,6 @@ Thread hilo;
     private void jConfigActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jConfigActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jConfigActionPerformed
-
-    private void jBIngresarVActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBIngresarVActionPerformed
-        jPIngresoVehiculo.setVisible(true);
-        jPRetirarVehiculo.setVisible(false);
-    }//GEN-LAST:event_jBIngresarVActionPerformed
 
     private void jListar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jListar1ActionPerformed
         // TODO add your handling code here:
@@ -579,24 +641,212 @@ Thread hilo;
         jPRetirarVehiculo.setVisible(false);
     }//GEN-LAST:event_jBSalirRetiroActionPerformed
 
-    private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton12ActionPerformed
+    private void Espacio1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Espacio1ActionPerformed
+        if (Espacio1.isSelected()) {
+            Espacio1.setBackground(Color.red);
+        }else{
+            Espacio1.setBackground(new Color(51,204,0));
+        }
+    }//GEN-LAST:event_Espacio1ActionPerformed
 
-    private void jButton41ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton41ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton41ActionPerformed
+    private void EspacioMoto5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EspacioMoto5ActionPerformed
+        if (EspacioMoto5.isSelected()) {
+            EspacioMoto5.setBackground(Color.red);
+        }else{
+            EspacioMoto5.setBackground(new Color(51,204,0));
+        }
+    }//GEN-LAST:event_EspacioMoto5ActionPerformed
+
+    private void Espacio2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Espacio2ActionPerformed
+        if (Espacio2.isSelected()) {
+            Espacio2.setBackground(Color.red);
+        }else{
+            Espacio2.setBackground(new Color(51,204,0));
+        }
+    }//GEN-LAST:event_Espacio2ActionPerformed
+
+    private void Espacio3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Espacio3ActionPerformed
+        if (Espacio3.isSelected()) {
+            Espacio3.setBackground(Color.red);
+        }else{
+            Espacio3.setBackground(new Color(51,204,0));
+        }
+    }//GEN-LAST:event_Espacio3ActionPerformed
+
+    private void Espacio4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Espacio4ActionPerformed
+        if (Espacio4.isSelected()) {
+            Espacio4.setBackground(Color.red);
+        }else{
+            Espacio4.setBackground(new Color(51,204,0));
+        }
+    }//GEN-LAST:event_Espacio4ActionPerformed
+
+    private void Espacio5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Espacio5ActionPerformed
+        if (Espacio5.isSelected()) {
+            Espacio5.setBackground(Color.red);
+        }else{
+            Espacio5.setBackground(new Color(51,204,0));
+        }
+    }//GEN-LAST:event_Espacio5ActionPerformed
+
+    private void Espacio6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Espacio6ActionPerformed
+        if (Espacio6.isSelected()) {
+            Espacio6.setBackground(Color.red);
+        }else{
+            Espacio6.setBackground(new Color(51,204,0));
+        }
+    }//GEN-LAST:event_Espacio6ActionPerformed
+
+    private void Espacio7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Espacio7ActionPerformed
+        if (Espacio7.isSelected()) {
+            Espacio7.setBackground(Color.red);
+        }else{
+            Espacio7.setBackground(new Color(51,204,0));
+        }
+    }//GEN-LAST:event_Espacio7ActionPerformed
+
+    private void Espacio8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Espacio8ActionPerformed
+        if (Espacio8.isSelected()) {
+            Espacio8.setBackground(Color.red);
+        }else{
+            Espacio8.setBackground(new Color(51,204,0));
+        }
+    }//GEN-LAST:event_Espacio8ActionPerformed
+
+    private void Espacio9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Espacio9ActionPerformed
+        if (Espacio9.isSelected()) {
+            Espacio9.setBackground(Color.red);
+        }else{
+            Espacio9.setBackground(new Color(51,204,0));
+        }
+    }//GEN-LAST:event_Espacio9ActionPerformed
+
+    private void Espacio10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Espacio10ActionPerformed
+        if (Espacio10.isSelected()) {
+            Espacio10.setBackground(Color.red);
+        }else{
+            Espacio10.setBackground(new Color(51,204,0));
+        }
+    }//GEN-LAST:event_Espacio10ActionPerformed
+
+    private void Espacio11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Espacio11ActionPerformed
+        if (Espacio11.isSelected()) {
+            Espacio11.setBackground(Color.red);
+        }else{
+            Espacio11.setBackground(new Color(51,204,0));
+        }
+    }//GEN-LAST:event_Espacio11ActionPerformed
+
+    private void Espacio12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Espacio12ActionPerformed
+        if (Espacio12.isSelected()) {
+            Espacio12.setBackground(Color.red);
+        }else{
+            Espacio12.setBackground(new Color(51,204,0));
+        }
+    }//GEN-LAST:event_Espacio12ActionPerformed
+
+    private void Espacio13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Espacio13ActionPerformed
+        if (Espacio13.isSelected()) {
+            Espacio13.setBackground(Color.red);
+        }else{
+            Espacio13.setBackground(new Color(51,204,0));
+        }
+    }//GEN-LAST:event_Espacio13ActionPerformed
+
+    private void Espacio14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Espacio14ActionPerformed
+        if (Espacio14.isSelected()) {
+            Espacio14.setBackground(Color.red);
+        }else{
+            Espacio14.setBackground(new Color(51,204,0));
+        }
+    }//GEN-LAST:event_Espacio14ActionPerformed
+
+    private void Espacio15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Espacio15ActionPerformed
+        if (Espacio15.isSelected()) {
+            Espacio15.setBackground(Color.red);
+        }else{
+            Espacio15.setBackground(new Color(51,204,0));
+        }
+    }//GEN-LAST:event_Espacio15ActionPerformed
+
+    private void Espacio16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Espacio16ActionPerformed
+        if (Espacio16.isSelected()) {
+            Espacio16.setBackground(Color.red);
+        }else{
+            Espacio16.setBackground(new Color(51,204,0));
+        }
+    }//GEN-LAST:event_Espacio16ActionPerformed
+
+    private void Espacio17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Espacio17ActionPerformed
+        if (Espacio17.isSelected()) {
+            Espacio17.setBackground(Color.red);
+        }else{
+            Espacio17.setBackground(new Color(51,204,0));
+        }
+    }//GEN-LAST:event_Espacio17ActionPerformed
+
+    private void Espacio18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Espacio18ActionPerformed
+        if (Espacio18.isSelected()) {
+            Espacio18.setBackground(Color.red);
+        }else{
+            Espacio18.setBackground(new Color(51,204,0));
+        }
+    }//GEN-LAST:event_Espacio18ActionPerformed
+
+    private void EspacioMoto1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EspacioMoto1ActionPerformed
+        if (EspacioMoto1.isSelected()) {
+            EspacioMoto1.setBackground(Color.red);
+        }else{
+            EspacioMoto1.setBackground(new Color(51,204,0));
+        }
+    }//GEN-LAST:event_EspacioMoto1ActionPerformed
+
+    private void EspacioMoto2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EspacioMoto2ActionPerformed
+        if (EspacioMoto2.isSelected()) {
+            EspacioMoto2.setBackground(Color.red);
+        }else{
+            EspacioMoto2.setBackground(new Color(51,204,0));
+        }
+    }//GEN-LAST:event_EspacioMoto2ActionPerformed
+
+    private void EspacioMoto3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EspacioMoto3ActionPerformed
+        if (EspacioMoto3.isSelected()) {
+            EspacioMoto3.setBackground(Color.red);
+        }else{
+            EspacioMoto3.setBackground(new Color(51,204,0));
+        }
+    }//GEN-LAST:event_EspacioMoto3ActionPerformed
+
+    private void EspacioMoto4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EspacioMoto4ActionPerformed
+        if (EspacioMoto4.isSelected()) {
+            EspacioMoto4.setBackground(Color.red);
+        }else{
+            EspacioMoto4.setBackground(new Color(51,204,0));
+        }
+    }//GEN-LAST:event_EspacioMoto4ActionPerformed
+
+    private void EspacioMoto6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EspacioMoto6ActionPerformed
+        if (EspacioMoto6.isSelected()) {
+            EspacioMoto6.setBackground(Color.red);
+        }else{
+            EspacioMoto6.setBackground(new Color(51,204,0));
+        }
+    }//GEN-LAST:event_EspacioMoto6ActionPerformed
+
+    private void jBIngresarVActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBIngresarVActionPerformed
+        jPIngresoVehiculo.setVisible(true);
+        jPRetirarVehiculo.setVisible(false);
+    }//GEN-LAST:event_jBIngresarVActionPerformed
 
     /**
      * @param args the command line arguments
      */
-    public static String fecha(){
+    public static String fecha() {
         Date fecha = new Date();
         SimpleDateFormat formatofecha = new SimpleDateFormat("dd/MM/YYYY");
         return formatofecha.format(fecha);
     }
-            
-            
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -632,6 +882,30 @@ Thread hilo;
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel BackGround;
+    private javax.swing.JToggleButton Espacio1;
+    private javax.swing.JToggleButton Espacio10;
+    private javax.swing.JToggleButton Espacio11;
+    private javax.swing.JToggleButton Espacio12;
+    private javax.swing.JToggleButton Espacio13;
+    private javax.swing.JToggleButton Espacio14;
+    private javax.swing.JToggleButton Espacio15;
+    private javax.swing.JToggleButton Espacio16;
+    private javax.swing.JToggleButton Espacio17;
+    private javax.swing.JToggleButton Espacio18;
+    private javax.swing.JToggleButton Espacio2;
+    private javax.swing.JToggleButton Espacio3;
+    private javax.swing.JToggleButton Espacio4;
+    private javax.swing.JToggleButton Espacio5;
+    private javax.swing.JToggleButton Espacio6;
+    private javax.swing.JToggleButton Espacio7;
+    private javax.swing.JToggleButton Espacio8;
+    private javax.swing.JToggleButton Espacio9;
+    private javax.swing.JToggleButton EspacioMoto1;
+    private javax.swing.JToggleButton EspacioMoto2;
+    private javax.swing.JToggleButton EspacioMoto3;
+    private javax.swing.JToggleButton EspacioMoto4;
+    private javax.swing.JToggleButton EspacioMoto5;
+    private javax.swing.JToggleButton EspacioMoto6;
     private javax.swing.JLabel LabelFecha;
     private javax.swing.JLabel LabelHora;
     private javax.swing.JButton jBIngresar1;
@@ -641,36 +915,6 @@ Thread hilo;
     private javax.swing.JButton jBSalir;
     private javax.swing.JButton jBSalirIngreso;
     private javax.swing.JButton jBSalirRetiro;
-    private javax.swing.JButton jButton10;
-    private javax.swing.JButton jButton12;
-    private javax.swing.JButton jButton13;
-    private javax.swing.JButton jButton14;
-    private javax.swing.JButton jButton15;
-    private javax.swing.JButton jButton16;
-    private javax.swing.JButton jButton17;
-    private javax.swing.JButton jButton18;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton20;
-    private javax.swing.JButton jButton21;
-    private javax.swing.JButton jButton22;
-    private javax.swing.JButton jButton23;
-    private javax.swing.JButton jButton24;
-    private javax.swing.JButton jButton25;
-    private javax.swing.JButton jButton26;
-    private javax.swing.JButton jButton27;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton31;
-    private javax.swing.JButton jButton32;
-    private javax.swing.JButton jButton36;
-    private javax.swing.JButton jButton37;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton41;
-    private javax.swing.JButton jButton42;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
-    private javax.swing.JButton jButton9;
     private javax.swing.JButton jConfig;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel12;
@@ -710,6 +954,6 @@ Thread hilo;
             setOpaque(false);
             super.paint(g);
         }
-            
+
     }
 }
