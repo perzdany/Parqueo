@@ -23,6 +23,8 @@ public class Principal extends javax.swing.JFrame implements Runnable {
         hilo = new Thread(this);
         hilo.start();
         setVisible(true);
+        
+        jUsuario.grabFocus();
     }
 
     public void hora() {
@@ -139,16 +141,18 @@ public class Principal extends javax.swing.JFrame implements Runnable {
         });
         LogIn.add(jUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 350, 190, -1));
 
+        jRadioInv.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jRadioInv.setText("Invitado");
-        LogIn.add(jRadioInv, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 310, -1, 30));
+        LogIn.add(jRadioInv, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 310, -1, 30));
 
+        jRadioAdm.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jRadioAdm.setText("Administrador");
         jRadioAdm.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jRadioAdmActionPerformed(evt);
             }
         });
-        LogIn.add(jRadioAdm, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 310, -1, 30));
+        LogIn.add(jRadioAdm, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 310, -1, 30));
 
         jLimpiar.setBackground(new java.awt.Color(63, 150, 230));
         jLimpiar.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -161,7 +165,7 @@ public class Principal extends javax.swing.JFrame implements Runnable {
         LogIn.add(jLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 430, 80, 30));
 
         jIniciarSesion.setBackground(new java.awt.Color(63, 150, 230));
-        jIniciarSesion.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jIniciarSesion.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jIniciarSesion.setText("Iniciar sesión");
         jIniciarSesion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -190,49 +194,45 @@ public class Principal extends javax.swing.JFrame implements Runnable {
         jPMenu.setMinimumSize(new java.awt.Dimension(300, 400));
         jPMenu.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jBRetirar.setBackground(new java.awt.Color(79, 119, 238));
-        jBRetirar.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jBRetirar.setForeground(new java.awt.Color(255, 255, 255));
+        jBRetirar.setBackground(new java.awt.Color(63, 150, 230));
+        jBRetirar.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jBRetirar.setText("Retirar vehículo");
         jBRetirar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jBRetirarActionPerformed(evt);
             }
         });
-        jPMenu.add(jBRetirar, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 270, 120, 41));
+        jPMenu.add(jBRetirar, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 270, 140, 41));
 
-        jBIngresarV.setBackground(new java.awt.Color(79, 119, 238));
-        jBIngresarV.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jBIngresarV.setForeground(new java.awt.Color(255, 255, 255));
+        jBIngresarV.setBackground(new java.awt.Color(63, 150, 230));
+        jBIngresarV.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jBIngresarV.setText("Ingresar vehículo");
         jBIngresarV.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jBIngresarVActionPerformed(evt);
             }
         });
-        jPMenu.add(jBIngresarV, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 270, 130, 41));
+        jPMenu.add(jBIngresarV, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 270, 150, 41));
 
-        jConfig.setBackground(new java.awt.Color(79, 119, 238));
-        jConfig.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jConfig.setForeground(new java.awt.Color(255, 255, 255));
+        jConfig.setBackground(new java.awt.Color(63, 150, 230));
+        jConfig.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jConfig.setText("Configuración");
         jConfig.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jConfigActionPerformed(evt);
             }
         });
-        jPMenu.add(jConfig, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 320, 130, 37));
+        jPMenu.add(jConfig, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 320, 150, 37));
 
-        jBSalir.setBackground(new java.awt.Color(79, 119, 238));
-        jBSalir.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jBSalir.setForeground(new java.awt.Color(255, 255, 255));
-        jBSalir.setText("Salir");
+        jBSalir.setBackground(new java.awt.Color(63, 150, 230));
+        jBSalir.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jBSalir.setText("Cerrar Sesión");
         jBSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jBSalirActionPerformed(evt);
             }
         });
-        jPMenu.add(jBSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 320, 120, 37));
+        jPMenu.add(jBSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 320, 140, 37));
 
         BackGround.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/F1.png"))); // NOI18N
         jPMenu.add(BackGround, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 300, 400));
@@ -250,14 +250,13 @@ public class Principal extends javax.swing.JFrame implements Runnable {
         jPRetirarVehiculo.setPreferredSize(new java.awt.Dimension(300, 400));
         jPRetirarVehiculo.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel12.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel12.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel12.setText("Placa:");
         jPRetirarVehiculo.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 160, -1, 28));
         jPRetirarVehiculo.add(jTxtPlaca1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 160, 178, 28));
 
-        jBSalirRetiro.setBackground(new java.awt.Color(79, 119, 238));
-        jBSalirRetiro.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jBSalirRetiro.setForeground(new java.awt.Color(255, 255, 255));
+        jBSalirRetiro.setBackground(new java.awt.Color(63, 150, 230));
+        jBSalirRetiro.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jBSalirRetiro.setText("Salir");
         jBSalirRetiro.setToolTipText("");
         jBSalirRetiro.setActionCommand("");
@@ -272,9 +271,8 @@ public class Principal extends javax.swing.JFrame implements Runnable {
         jLabel2.setText("Retiro de Vehículos");
         jPRetirarVehiculo.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(73, 9, -1, 60));
 
-        jBIngresar2.setBackground(new java.awt.Color(79, 119, 238));
-        jBIngresar2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jBIngresar2.setForeground(new java.awt.Color(255, 255, 255));
+        jBIngresar2.setBackground(new java.awt.Color(63, 150, 230));
+        jBIngresar2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jBIngresar2.setText("Retirar");
         jBIngresar2.setToolTipText("");
         jBIngresar2.addActionListener(new java.awt.event.ActionListener() {
@@ -292,26 +290,27 @@ public class Principal extends javax.swing.JFrame implements Runnable {
         jPIngresoVehiculo.setPreferredSize(new java.awt.Dimension(300, 400));
         jPIngresoVehiculo.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel3.setText("Nombre:");
         jPIngresoVehiculo.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(28, 82, -1, 28));
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel4.setText("Apellido 1:");
         jPIngresoVehiculo.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(28, 116, -1, 28));
 
-        jLabel6.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel6.setText("Apellido 2:");
         jPIngresoVehiculo.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(28, 150, -1, 28));
 
-        jLabel7.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel7.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel7.setText("Cédula:");
         jPIngresoVehiculo.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(28, 184, -1, 28));
 
-        jLabel5.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel5.setText("Placa:");
         jPIngresoVehiculo.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(28, 218, -1, 28));
 
+        jRadioButton2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jRadioButton2.setText("Vehículo");
         jRadioButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -320,6 +319,7 @@ public class Principal extends javax.swing.JFrame implements Runnable {
         });
         jPIngresoVehiculo.add(jRadioButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 260, -1, -1));
 
+        jRadioButton1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jRadioButton1.setText("Motocicleta");
         jPIngresoVehiculo.add(jRadioButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 260, -1, -1));
 
@@ -346,9 +346,8 @@ public class Principal extends javax.swing.JFrame implements Runnable {
         jPIngresoVehiculo.add(jTxtCedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(95, 184, 178, 28));
         jPIngresoVehiculo.add(jTxtPlaca, new org.netbeans.lib.awtextra.AbsoluteConstraints(95, 218, 178, 28));
 
-        jBSalirIngreso.setBackground(new java.awt.Color(79, 119, 238));
-        jBSalirIngreso.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jBSalirIngreso.setForeground(new java.awt.Color(255, 255, 255));
+        jBSalirIngreso.setBackground(new java.awt.Color(63, 150, 230));
+        jBSalirIngreso.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jBSalirIngreso.setText("Salir");
         jBSalirIngreso.setToolTipText("");
         jBSalirIngreso.setActionCommand("");
@@ -363,9 +362,8 @@ public class Principal extends javax.swing.JFrame implements Runnable {
         jLabel1.setText("Ingreso de Vehículos");
         jPIngresoVehiculo.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 10, 220, 60));
 
-        jBIngresar1.setBackground(new java.awt.Color(79, 119, 238));
-        jBIngresar1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jBIngresar1.setForeground(new java.awt.Color(255, 255, 255));
+        jBIngresar1.setBackground(new java.awt.Color(63, 150, 230));
+        jBIngresar1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jBIngresar1.setText("Ingresar");
         jBIngresar1.setToolTipText("");
         jBIngresar1.addActionListener(new java.awt.event.ActionListener() {
@@ -386,7 +384,7 @@ public class Principal extends javax.swing.JFrame implements Runnable {
         jMapa.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 17, -1, 40));
 
         jReloj.setBackground(new java.awt.Color(255, 255, 255));
-        jReloj.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jReloj.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jReloj.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         LabelFecha.setBackground(new java.awt.Color(0, 204, 255));
@@ -403,9 +401,8 @@ public class Principal extends javax.swing.JFrame implements Runnable {
 
         jMapa.add(jReloj, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 300, 190, 80));
 
-        jListar1.setBackground(new java.awt.Color(79, 119, 238));
-        jListar1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jListar1.setForeground(new java.awt.Color(255, 255, 255));
+        jListar1.setBackground(new java.awt.Color(63, 150, 230));
+        jListar1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jListar1.setText("Listar ingresos y salidas");
         jListar1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -684,7 +681,14 @@ public class Principal extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_jListar1ActionPerformed
 
     private void jBSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBSalirActionPerformed
-        System.exit(0);
+        jPMenu.setVisible(false);
+        jPCuerpo.setVisible(false);
+        LogIn.setVisible(true);
+        jPassword.setText(null);
+        jUsuario.setText(null);
+        jRadioAdm.setSelected(false);
+        jRadioInv.setSelected(false);
+        jUsuario.grabFocus();
     }//GEN-LAST:event_jBSalirActionPerformed
 
     private void jBRetirarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBRetirarActionPerformed
@@ -926,7 +930,7 @@ public class Principal extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_jPasswordActionPerformed
 
     private void jUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jUsuarioActionPerformed
-        // TODO add your handling code here:
+        jUsuario.grabFocus();
     }//GEN-LAST:event_jUsuarioActionPerformed
 
     private void jLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jLimpiarActionPerformed
@@ -934,6 +938,7 @@ public class Principal extends javax.swing.JFrame implements Runnable {
         jUsuario.setText(null);
         jRadioAdm.setSelected(false);
         jRadioInv.setSelected(false);
+        jUsuario.grabFocus();
     }//GEN-LAST:event_jLimpiarActionPerformed
 
     private void jSalirLogActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jSalirLogActionPerformed
@@ -941,7 +946,9 @@ public class Principal extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_jSalirLogActionPerformed
 
     private void jIniciarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jIniciarSesionActionPerformed
-        // TODO add your handling code here:
+        jPMenu.setVisible(true);
+        jPCuerpo.setVisible(true);
+        LogIn.setVisible(false);
     }//GEN-LAST:event_jIniciarSesionActionPerformed
 
     private void jRadioAdmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioAdmActionPerformed
