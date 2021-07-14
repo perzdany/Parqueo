@@ -49,6 +49,15 @@ public class Principal extends javax.swing.JFrame implements Runnable {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        LogIn = new javax.swing.JPanel();
+        jPassword = new javax.swing.JPasswordField();
+        jUsuario = new javax.swing.JTextField();
+        jRadioInv = new javax.swing.JRadioButton();
+        jRadioAdm = new javax.swing.JRadioButton();
+        jLimpiar = new javax.swing.JButton();
+        jIniciarSesion = new javax.swing.JButton();
+        jSalirLog = new javax.swing.JButton();
+        jLabel8 = new javax.swing.JLabel();
         jPMenu = new javax.swing.JPanel();
         jBRetirar = new javax.swing.JButton();
         jBIngresarV = new javax.swing.JButton();
@@ -114,6 +123,69 @@ public class Principal extends javax.swing.JFrame implements Runnable {
         setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         setName(""); // NOI18N
 
+        LogIn.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPassword.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jPasswordActionPerformed(evt);
+            }
+        });
+        LogIn.add(jPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 380, 190, 30));
+
+        jUsuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jUsuarioActionPerformed(evt);
+            }
+        });
+        LogIn.add(jUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 350, 190, -1));
+
+        jRadioInv.setText("Invitado");
+        LogIn.add(jRadioInv, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 310, -1, 30));
+
+        jRadioAdm.setText("Administrador");
+        jRadioAdm.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioAdmActionPerformed(evt);
+            }
+        });
+        LogIn.add(jRadioAdm, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 310, -1, 30));
+
+        jLimpiar.setBackground(new java.awt.Color(63, 150, 230));
+        jLimpiar.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLimpiar.setText("Limpiar");
+        jLimpiar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jLimpiarActionPerformed(evt);
+            }
+        });
+        LogIn.add(jLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 430, 80, 30));
+
+        jIniciarSesion.setBackground(new java.awt.Color(63, 150, 230));
+        jIniciarSesion.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jIniciarSesion.setText("Iniciar sesión");
+        jIniciarSesion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jIniciarSesionActionPerformed(evt);
+            }
+        });
+        LogIn.add(jIniciarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 430, 130, 30));
+
+        jSalirLog.setBackground(new java.awt.Color(63, 150, 230));
+        jSalirLog.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jSalirLog.setText("Salir");
+        jSalirLog.setPreferredSize(new java.awt.Dimension(75, 25));
+        jSalirLog.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jSalirLogActionPerformed(evt);
+            }
+        });
+        LogIn.add(jSalirLog, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 430, 80, 30));
+
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Log.png"))); // NOI18N
+        jLabel8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        LogIn.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 500));
+
+        jPMenu.setVisible(false);
         jPMenu.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPMenu.setMinimumSize(new java.awt.Dimension(300, 400));
         jPMenu.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -165,6 +237,7 @@ public class Principal extends javax.swing.JFrame implements Runnable {
         BackGround.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/F1.png"))); // NOI18N
         jPMenu.add(BackGround, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 300, 400));
 
+        jPCuerpo.setVisible(false);
         jPCuerpo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPCuerpo.setMinimumSize(new java.awt.Dimension(1219, 498));
         jPCuerpo.setPreferredSize(new java.awt.Dimension(1219, 498));
@@ -577,7 +650,12 @@ public class Principal extends javax.swing.JFrame implements Runnable {
                 .addComponent(jPMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 316, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPCuerpo, javax.swing.GroupLayout.PREFERRED_SIZE, 813, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(43, Short.MAX_VALUE))
+                .addContainerGap(54, Short.MAX_VALUE))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(412, 412, 412)
+                    .addComponent(LogIn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(423, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -586,7 +664,12 @@ public class Principal extends javax.swing.JFrame implements Runnable {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPMenu, javax.swing.GroupLayout.DEFAULT_SIZE, 415, Short.MAX_VALUE)
                     .addComponent(jPCuerpo, javax.swing.GroupLayout.PREFERRED_SIZE, 415, Short.MAX_VALUE))
-                .addContainerGap(38, Short.MAX_VALUE))
+                .addContainerGap(69, Short.MAX_VALUE))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(LogIn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
 
         pack();
@@ -838,6 +921,33 @@ public class Principal extends javax.swing.JFrame implements Runnable {
         jPRetirarVehiculo.setVisible(false);
     }//GEN-LAST:event_jBIngresarVActionPerformed
 
+    private void jPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordActionPerformed
+        
+    }//GEN-LAST:event_jPasswordActionPerformed
+
+    private void jUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jUsuarioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jUsuarioActionPerformed
+
+    private void jLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jLimpiarActionPerformed
+        jPassword.setText(null);
+        jUsuario.setText(null);
+        jRadioAdm.setSelected(false);
+        jRadioInv.setSelected(false);
+    }//GEN-LAST:event_jLimpiarActionPerformed
+
+    private void jSalirLogActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jSalirLogActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_jSalirLogActionPerformed
+
+    private void jIniciarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jIniciarSesionActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jIniciarSesionActionPerformed
+
+    private void jRadioAdmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioAdmActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jRadioAdmActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -908,6 +1018,7 @@ public class Principal extends javax.swing.JFrame implements Runnable {
     private javax.swing.JToggleButton EspacioMoto6;
     private javax.swing.JLabel LabelFecha;
     private javax.swing.JLabel LabelHora;
+    private javax.swing.JPanel LogIn;
     private javax.swing.JButton jBIngresar1;
     private javax.swing.JButton jBIngresar2;
     private javax.swing.JButton jBIngresarV;
@@ -916,6 +1027,7 @@ public class Principal extends javax.swing.JFrame implements Runnable {
     private javax.swing.JButton jBSalirIngreso;
     private javax.swing.JButton jBSalirRetiro;
     private javax.swing.JButton jConfig;
+    private javax.swing.JButton jIniciarSesion;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
@@ -925,15 +1037,21 @@ public class Principal extends javax.swing.JFrame implements Runnable {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JButton jLimpiar;
     private javax.swing.JButton jListar1;
     private javax.swing.JPanel jMapa;
     private javax.swing.JPanel jPCuerpo;
     private javax.swing.JPanel jPIngresoVehiculo;
     private javax.swing.JPanel jPMenu;
     private javax.swing.JPanel jPRetirarVehiculo;
+    private javax.swing.JPasswordField jPassword;
+    private javax.swing.JRadioButton jRadioAdm;
     private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JRadioButton jRadioButton2;
+    private javax.swing.JRadioButton jRadioInv;
     private javax.swing.JPanel jReloj;
+    private javax.swing.JButton jSalirLog;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTextField jTxtApellido1;
     private javax.swing.JTextField jTxtApellido2;
@@ -941,6 +1059,7 @@ public class Principal extends javax.swing.JFrame implements Runnable {
     private javax.swing.JTextField jTxtNombre;
     private javax.swing.JTextField jTxtPlaca;
     private javax.swing.JTextField jTxtPlaca1;
+    private javax.swing.JTextField jUsuario;
     // End of variables declaration//GEN-END:variables
 
     class FondoPanel extends JPanel {
