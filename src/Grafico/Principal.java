@@ -90,6 +90,8 @@ public class Principal extends javax.swing.JFrame implements Runnable {
         jBSalirIngreso = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jBIngresar1 = new javax.swing.JButton();
+        jComboBox1 = new javax.swing.JComboBox<>();
+        jLabel9 = new javax.swing.JLabel();
         jMapa = new javax.swing.JPanel();
         jLabel34 = new javax.swing.JLabel();
         jReloj = new javax.swing.JPanel();
@@ -307,8 +309,8 @@ public class Principal extends javax.swing.JFrame implements Runnable {
         jPIngresoVehiculo.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(28, 184, -1, 28));
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel5.setText("Placa:");
-        jPIngresoVehiculo.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(28, 218, -1, 28));
+        jLabel5.setText("Seleccione posición:");
+        jPIngresoVehiculo.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 298, 130, 20));
 
         jRadioButton2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jRadioButton2.setText("Vehículo");
@@ -356,7 +358,7 @@ public class Principal extends javax.swing.JFrame implements Runnable {
                 jBSalirIngresoActionPerformed(evt);
             }
         });
-        jPIngresoVehiculo.add(jBSalirIngreso, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 300, 100, 40));
+        jPIngresoVehiculo.add(jBSalirIngreso, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 340, 100, 40));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 22)); // NOI18N
         jLabel1.setText("Ingreso de Vehículos");
@@ -371,7 +373,20 @@ public class Principal extends javax.swing.JFrame implements Runnable {
                 jBIngresar1ActionPerformed(evt);
             }
         });
-        jPIngresoVehiculo.add(jBIngresar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 300, 100, 40));
+        jPIngresoVehiculo.add(jBIngresar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 340, 100, 40));
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBox1.setToolTipText("");
+        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox1ActionPerformed(evt);
+            }
+        });
+        jPIngresoVehiculo.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(177, 290, 70, 30));
+
+        jLabel9.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel9.setText("Placa:");
+        jPIngresoVehiculo.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(28, 218, -1, 28));
 
         jPIngresoVehiculo.setVisible(false);
 
@@ -955,6 +970,10 @@ public class Principal extends javax.swing.JFrame implements Runnable {
         // TODO add your handling code here:
     }//GEN-LAST:event_jRadioAdmActionPerformed
 
+    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1033,6 +1052,7 @@ public class Principal extends javax.swing.JFrame implements Runnable {
     private javax.swing.JButton jBSalir;
     private javax.swing.JButton jBSalirIngreso;
     private javax.swing.JButton jBSalirRetiro;
+    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JButton jConfig;
     private javax.swing.JButton jIniciarSesion;
     private javax.swing.JLabel jLabel1;
@@ -1045,6 +1065,7 @@ public class Principal extends javax.swing.JFrame implements Runnable {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JButton jLimpiar;
     private javax.swing.JButton jListar1;
     private javax.swing.JPanel jMapa;
