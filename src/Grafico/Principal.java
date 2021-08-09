@@ -936,8 +936,10 @@ public class Principal extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_EspacioMoto6ActionPerformed
 
     private void jBIngresarVActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBIngresarVActionPerformed
-        jPIngresoVehiculo.setVisible(true);
-        jPRetirarVehiculo.setVisible(false);
+        /*jPIngresoVehiculo.setVisible(true);
+        jPRetirarVehiculo.setVisible(false);*/
+        tabla_reguistro abrir = new tabla_reguistro();
+        abrir.setVisible(true);
     }//GEN-LAST:event_jBIngresarVActionPerformed
 
     private void jPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordActionPerformed
