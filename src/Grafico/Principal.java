@@ -33,6 +33,9 @@ public class Principal extends javax.swing.JFrame implements Runnable {
         modelo.addColumn("Placa");
         modelo.addColumn("Tipo transporte");
         modelo.addColumn("Posición");
+        modelo.addColumn("Hora Entrada");
+        modelo.addColumn("Hora Salida");
+        modelo.addColumn("Total a Pagar");
         Tabla.setModel(modelo);
 
     }
@@ -110,7 +113,6 @@ public class Principal extends javax.swing.JFrame implements Runnable {
         jReloj = new javax.swing.JPanel();
         LabelFecha = new javax.swing.JLabel();
         LabelHora = new javax.swing.JLabel();
-        jListar1 = new javax.swing.JButton();
         Espacio1 = new javax.swing.JToggleButton();
         Espacio2 = new javax.swing.JToggleButton();
         Espacio3 = new javax.swing.JToggleButton();
@@ -135,9 +137,12 @@ public class Principal extends javax.swing.JFrame implements Runnable {
         EspacioMoto4 = new javax.swing.JToggleButton();
         EspacioMoto5 = new javax.swing.JToggleButton();
         EspacioMoto6 = new javax.swing.JToggleButton();
+        jListar2 = new javax.swing.JButton();
         jTabla = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         Tabla = new javax.swing.JTable();
+        jListar1 = new javax.swing.JButton();
+        jListar3 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -319,7 +324,7 @@ public class Principal extends javax.swing.JFrame implements Runnable {
 
         jPCuerpo.add(JRegistrarse, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 320, 400));
 
-        jPIngresoVehiculo.setEnabled(false);
+        jPIngresoVehiculo.setName(""); // NOI18N
         jPIngresoVehiculo.setPreferredSize(new java.awt.Dimension(300, 400));
         jPIngresoVehiculo.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -401,6 +406,11 @@ public class Principal extends javax.swing.JFrame implements Runnable {
         jBIngresar1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jBIngresar1.setText("Ingresar");
         jBIngresar1.setToolTipText("");
+        jBIngresar1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jBIngresar1MouseEntered(evt);
+            }
+        });
         jBIngresar1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jBIngresar1ActionPerformed(evt);
@@ -459,16 +469,6 @@ public class Principal extends javax.swing.JFrame implements Runnable {
         jReloj.add(LabelHora, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, -1, -1));
 
         jMapa.add(jReloj, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 300, 190, 80));
-
-        jListar1.setBackground(new java.awt.Color(63, 150, 230));
-        jListar1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jListar1.setText("Ver lista de ingresos");
-        jListar1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jListar1ActionPerformed(evt);
-            }
-        });
-        jMapa.add(jListar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 320, 190, 40));
 
         Espacio1.setBackground(new java.awt.Color(51, 204, 0));
         Espacio1.setText("1");
@@ -695,6 +695,16 @@ public class Principal extends javax.swing.JFrame implements Runnable {
         });
         jMapa.add(EspacioMoto6, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 250, 50, 30));
 
+        jListar2.setBackground(new java.awt.Color(63, 150, 230));
+        jListar2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jListar2.setText("Ver lista de ingresos");
+        jListar2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jListar2ActionPerformed(evt);
+            }
+        });
+        jMapa.add(jListar2, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 320, 190, 40));
+
         jPCuerpo.add(jMapa, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 800, 400));
 
         jTabla.setVisible(false);
@@ -713,18 +723,46 @@ public class Principal extends javax.swing.JFrame implements Runnable {
         ));
         jScrollPane1.setViewportView(Tabla);
 
+        jListar1.setBackground(new java.awt.Color(63, 150, 230));
+        jListar1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jListar1.setText("Editar Tabla");
+        jListar1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jListar1ActionPerformed(evt);
+            }
+        });
+
+        jListar3.setBackground(new java.awt.Color(63, 150, 230));
+        jListar3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jListar3.setText("Borrar Tabla");
+        jListar3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jListar3ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jTablaLayout = new javax.swing.GroupLayout(jTabla);
         jTabla.setLayout(jTablaLayout);
         jTablaLayout.setHorizontalGroup(
             jTablaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jScrollPane1)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jTablaLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jListar3, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jListar1, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(20, 20, 20))
         );
         jTablaLayout.setVerticalGroup(
             jTablaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jTablaLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jTablaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jListar1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jListar3, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(18, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -771,7 +809,7 @@ public class Principal extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_jConfigActionPerformed
 
     private void jListar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jListar1ActionPerformed
-        jTabla.setVisible(true);        
+                
     }//GEN-LAST:event_jListar1ActionPerformed
 
     private void jBSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBSalirActionPerformed
@@ -789,6 +827,7 @@ public class Principal extends javax.swing.JFrame implements Runnable {
     private void jBRetirarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBRetirarActionPerformed
         JRegistrarse.setVisible(true);
         jPIngresoVehiculo.setVisible(false);
+        jTxtPlaca1.grabFocus();
     }//GEN-LAST:event_jBRetirarActionPerformed
 
     private void jBIngresar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBIngresar1ActionPerformed
@@ -840,7 +879,7 @@ public class Principal extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_VehiculoActionPerformed
 
     private void jBIngresar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBIngresar2ActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_jBIngresar2ActionPerformed
 
     private void jBSalirRetiroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBSalirRetiroActionPerformed
@@ -1042,6 +1081,7 @@ public class Principal extends javax.swing.JFrame implements Runnable {
     private void jBIngresarVActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBIngresarVActionPerformed
         jPIngresoVehiculo.setVisible(true);
         JRegistrarse.setVisible(false);
+        jTxtNombre.grabFocus();
     }//GEN-LAST:event_jBIngresarVActionPerformed
 
     private void jPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordActionPerformed
@@ -1085,6 +1125,18 @@ public class Principal extends javax.swing.JFrame implements Runnable {
     private void jBIngresar3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBIngresar3ActionPerformed
         limpiar();
     }//GEN-LAST:event_jBIngresar3ActionPerformed
+
+    private void jListar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jListar2ActionPerformed
+        jTabla.setVisible(true);
+    }//GEN-LAST:event_jListar2ActionPerformed
+
+    private void jListar3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jListar3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jListar3ActionPerformed
+
+    private void jBIngresar1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBIngresar1MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jBIngresar1MouseEntered
 
     /**
      * @param args the command line arguments
@@ -1188,6 +1240,8 @@ public class Principal extends javax.swing.JFrame implements Runnable {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JButton jLimpiar;
     private javax.swing.JButton jListar1;
+    private javax.swing.JButton jListar2;
+    private javax.swing.JButton jListar3;
     private javax.swing.JPanel jMapa;
     private javax.swing.JPanel jPCuerpo;
     private javax.swing.JPanel jPIngresoVehiculo;
