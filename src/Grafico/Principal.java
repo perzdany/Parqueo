@@ -771,7 +771,7 @@ public class Principal extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_jConfigActionPerformed
 
     private void jListar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jListar1ActionPerformed
-        jTabla.setVisible(true);        // TODO add your handling code here:
+        jTabla.setVisible(true);        
     }//GEN-LAST:event_jListar1ActionPerformed
 
     private void jBSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBSalirActionPerformed
