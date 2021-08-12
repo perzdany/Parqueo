@@ -8,6 +8,7 @@ import javax.swing.JPanel;
 import java.util.Date;
 import java.text.SimpleDateFormat;
 import java.util.*;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 public class Principal extends javax.swing.JFrame implements Runnable {
@@ -16,7 +17,7 @@ public class Principal extends javax.swing.JFrame implements Runnable {
     Thread hilo;
     FondoPanel fondo = new FondoPanel();
     DefaultTableModel modelo = new DefaultTableModel();
-    
+
     public Principal() {
         this.setContentPane(fondo);
         initComponents();
@@ -24,7 +25,7 @@ public class Principal extends javax.swing.JFrame implements Runnable {
         hilo = new Thread(this);
         hilo.start();
         setVisible(true);
-        jUsuario.grabFocus();
+        txtUsuarioverificar.grabFocus();
 
         modelo.addColumn("Nombre");
         modelo.addColumn("Apellido 1");
@@ -37,6 +38,9 @@ public class Principal extends javax.swing.JFrame implements Runnable {
         modelo.addColumn("Hora Salida");
         modelo.addColumn("Total a Pagar");
         Tabla.setModel(modelo);
+
+        botonesgrupo1.add(opcionAdmin);
+        botonesgrupo1.add(opcionInvitado);
 
     }
 
@@ -64,7 +68,7 @@ public class Principal extends javax.swing.JFrame implements Runnable {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        Botones = new javax.swing.ButtonGroup();
+        botonesgrupo1 = new javax.swing.ButtonGroup();
         jPMenu = new javax.swing.JPanel();
         jBRetirar = new javax.swing.JButton();
         jBIngresarV = new javax.swing.JButton();
@@ -72,15 +76,16 @@ public class Principal extends javax.swing.JFrame implements Runnable {
         jBSalir = new javax.swing.JButton();
         BackGround = new javax.swing.JLabel();
         LogIn = new javax.swing.JPanel();
-        jPassword = new javax.swing.JPasswordField();
-        jUsuario = new javax.swing.JTextField();
-        jRadioInv = new javax.swing.JRadioButton();
-        jRadioAdm = new javax.swing.JRadioButton();
+        txtPassVerificar = new javax.swing.JTextField();
+        txtUsuarioverificar = new javax.swing.JTextField();
+        opcionInvitado = new javax.swing.JRadioButton();
+        opcionAdmin = new javax.swing.JRadioButton();
         jLimpiar = new javax.swing.JButton();
         jIniciarSesion = new javax.swing.JButton();
         jSalirLog = new javax.swing.JButton();
         jIniciarSesion1 = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
         jPCuerpo = new javax.swing.JPanel();
         jSeparator1 = new javax.swing.JSeparator();
         JRegistrarse = new javax.swing.JPanel();
@@ -168,6 +173,7 @@ public class Principal extends javax.swing.JFrame implements Runnable {
 
         jBIngresarV.setBackground(new java.awt.Color(63, 150, 230));
         jBIngresarV.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jBIngresarV.setForeground(new java.awt.Color(255, 255, 255));
         jBIngresarV.setText("Ingresar vehículo");
         jBIngresarV.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -200,33 +206,27 @@ public class Principal extends javax.swing.JFrame implements Runnable {
         jPMenu.add(BackGround, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 300, 400));
 
         LogIn.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        LogIn.add(txtPassVerificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 380, 190, 30));
 
-        jPassword.addActionListener(new java.awt.event.ActionListener() {
+        txtUsuarioverificar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jPasswordActionPerformed(evt);
+                txtUsuarioverificarActionPerformed(evt);
             }
         });
-        LogIn.add(jPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 380, 190, 30));
+        LogIn.add(txtUsuarioverificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 350, 190, -1));
 
-        jUsuario.addActionListener(new java.awt.event.ActionListener() {
+        opcionInvitado.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        opcionInvitado.setText("Invitado");
+        LogIn.add(opcionInvitado, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 310, -1, 30));
+
+        opcionAdmin.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        opcionAdmin.setText("Administrador");
+        opcionAdmin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jUsuarioActionPerformed(evt);
+                opcionAdminActionPerformed(evt);
             }
         });
-        LogIn.add(jUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 350, 190, -1));
-
-        jRadioInv.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jRadioInv.setText("Invitado");
-        LogIn.add(jRadioInv, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 310, -1, 30));
-
-        jRadioAdm.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jRadioAdm.setText("Administrador");
-        jRadioAdm.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioAdmActionPerformed(evt);
-            }
-        });
-        LogIn.add(jRadioAdm, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 310, -1, 30));
+        LogIn.add(opcionAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 310, -1, 30));
 
         jLimpiar.setBackground(new java.awt.Color(63, 150, 230));
         jLimpiar.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -275,6 +275,9 @@ public class Principal extends javax.swing.JFrame implements Runnable {
         jLabel8.setAlignmentY(0.0F);
         jLabel8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         LogIn.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 500));
+
+        jTextField1.setText("jTextField1");
+        LogIn.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 380, 190, 30));
 
         jPCuerpo.setVisible(false);
         jPCuerpo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -349,7 +352,7 @@ public class Principal extends javax.swing.JFrame implements Runnable {
         jLabel5.setText("Seleccione posición:");
         jPIngresoVehiculo.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 298, 130, 20));
 
-        Botones.add(Vehiculo);
+        botonesgrupo1.add(Vehiculo);
         Vehiculo.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         Vehiculo.setText("Carro");
         Vehiculo.addActionListener(new java.awt.event.ActionListener() {
@@ -359,7 +362,7 @@ public class Principal extends javax.swing.JFrame implements Runnable {
         });
         jPIngresoVehiculo.add(Vehiculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 260, -1, -1));
 
-        Botones.add(Moto);
+        botonesgrupo1.add(Moto);
         Moto.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         Moto.setText("Motocicleta");
         jPIngresoVehiculo.add(Moto, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 260, -1, -1));
@@ -793,7 +796,7 @@ public class Principal extends javax.swing.JFrame implements Runnable {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(119, 119, 119)
+                .addGap(116, 116, 116)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jTabla, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
@@ -832,19 +835,19 @@ public class Principal extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_jConfigActionPerformed
 
     private void jListar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jListar1ActionPerformed
-                
+
     }//GEN-LAST:event_jListar1ActionPerformed
 
     private void jBSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBSalirActionPerformed
         jPMenu.setVisible(false);
         jPCuerpo.setVisible(false);
         LogIn.setVisible(true);
-        jPassword.setText(null);
-        jUsuario.setText(null);
-        jRadioAdm.setSelected(false);
-        jRadioInv.setSelected(false);
+        jTextField1.setText(null);
+        txtUsuarioverificar.setText(null);
+        opcionAdmin.setSelected(false);
+        opcionInvitado.setSelected(false);
         jTabla.setVisible(false);
-        jUsuario.grabFocus();
+        txtUsuarioverificar.grabFocus();
     }//GEN-LAST:event_jBSalirActionPerformed
 
     private void jBRetirarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBRetirarActionPerformed
@@ -871,16 +874,16 @@ public class Principal extends javax.swing.JFrame implements Runnable {
         modelo.addRow(Dato);
     }//GEN-LAST:event_jBIngresar1ActionPerformed
 
-        public void limpiar() {
+    public void limpiar() {
         jTxtNombre.setText("");
         jTxtApellido1.setText("");
         jTxtApellido2.setText("");
         jTxtCedula.setText("");
         jTxtPlaca.setText("");
-        Botones.clearSelection();
+        botonesgrupo1.clearSelection();
         jTxtNombre.requestFocus();
     }
-        
+
     private void jBSalirIngresoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBSalirIngresoActionPerformed
         jPIngresoVehiculo.setVisible(false);
     }//GEN-LAST:event_jBSalirIngresoActionPerformed
@@ -902,7 +905,7 @@ public class Principal extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_VehiculoActionPerformed
 
     private void jBIngresar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBIngresar2ActionPerformed
-        
+
     }//GEN-LAST:event_jBIngresar2ActionPerformed
 
     private void jBSalirRetiroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBSalirRetiroActionPerformed
@@ -1107,20 +1110,16 @@ public class Principal extends javax.swing.JFrame implements Runnable {
         jTxtNombre.grabFocus();
     }//GEN-LAST:event_jBIngresarVActionPerformed
 
-    private void jPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordActionPerformed
-
-    }//GEN-LAST:event_jPasswordActionPerformed
-
-    private void jUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jUsuarioActionPerformed
-        jUsuario.grabFocus();
-    }//GEN-LAST:event_jUsuarioActionPerformed
+    private void txtUsuarioverificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsuarioverificarActionPerformed
+        txtUsuarioverificar.grabFocus();
+    }//GEN-LAST:event_txtUsuarioverificarActionPerformed
 
     private void jLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jLimpiarActionPerformed
-        jPassword.setText(null);
-        jUsuario.setText(null);
-        jRadioAdm.setSelected(false);
-        jRadioInv.setSelected(false);
-        jUsuario.grabFocus();
+        jTextField1.setText(null);
+        txtUsuarioverificar.setText(null);
+        opcionAdmin.setSelected(false);
+        opcionInvitado.setSelected(false);
+        txtUsuarioverificar.grabFocus();
     }//GEN-LAST:event_jLimpiarActionPerformed
 
     private void jSalirLogActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jSalirLogActionPerformed
@@ -1128,20 +1127,70 @@ public class Principal extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_jSalirLogActionPerformed
 
     private void jIniciarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jIniciarSesionActionPerformed
-        jPMenu.setVisible(true);
-        jPCuerpo.setVisible(true);
-        LogIn.setVisible(false);
+
+        String mensaje = "";
+        String Nombredijit;
+        String passdijit;
+
+        Nombredijit = txtUsuarioverificar.getText();
+        passdijit = txtPassVerificar.getText();
+
+        if (opcionAdmin.isSelected()) {
+
+            mensaje = "Ingresando a Sistema de Administrador";
+            for (DatosRegistro d : Logica.usuarios) {
+                if (!Nombredijit.equals(d.getNombre())) {
+                    break;
+                } else if (passdijit.equals(d.getPass())) {
+
+                    JOptionPane.showMessageDialog(this, mensaje);
+
+                    jPMenu.setVisible(true);
+                    LogIn.setVisible(false);
+                    jPCuerpo.setVisible(true);
+                    
+
+                } else {
+                    JOptionPane.showMessageDialog(rootPane, "Datos incorrectos");
+                }
+            }
+        } else if (opcionInvitado.isSelected()) {
+
+            mensaje = "Ingresando a Sistema de Invitado";
+            for (DatosRegistro d : Logica.usuarios) {
+                if (!Nombredijit.equals(d.getNombre())) {
+                    break;
+                } else if (passdijit.equals(d.getPass())) {
+
+                    JOptionPane.showMessageDialog(this, mensaje);
+                    jPMenu.setVisible(true);
+                    LogIn.setVisible(false);
+                    jPCuerpo.setVisible(true);
+                    jListar2.setVisible(false);
+
+                } else {
+                    JOptionPane.showMessageDialog(rootPane, "Datos incorrectos");
+                }
+            }
+        } else {
+            JOptionPane.showMessageDialog(rootPane, "Dijite si es Administrador o Vendedor");
+        }
     }//GEN-LAST:event_jIniciarSesionActionPerformed
 
-    private void jRadioAdmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioAdmActionPerformed
+    private void opcionAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opcionAdminActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioAdmActionPerformed
+    }//GEN-LAST:event_opcionAdminActionPerformed
 
     private void ComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComboBoxActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_ComboBoxActionPerformed
 
     private void jIniciarSesion1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jIniciarSesion1ActionPerformed
+
+        registro r = new registro();
+        r.setVisible(true);
+
+        LogIn.setVisible(false);
 
     }//GEN-LAST:event_jIniciarSesion1ActionPerformed
 
@@ -1222,7 +1271,6 @@ public class Principal extends javax.swing.JFrame implements Runnable {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel BackGround;
-    private javax.swing.ButtonGroup Botones;
     private javax.swing.JComboBox<String> ComboBox;
     private javax.swing.JToggleButton Espacio1;
     private javax.swing.JToggleButton Espacio10;
@@ -1255,9 +1303,13 @@ public class Principal extends javax.swing.JFrame implements Runnable {
     private javax.swing.JRadioButton Moto;
     private javax.swing.JTable Tabla;
     private javax.swing.JRadioButton Vehiculo;
+<<<<<<< Updated upstream
     private javax.swing.JButton btnBorrar;
     private javax.swing.JButton btnBorrar_uno;
     private javax.swing.JButton btnSalir;
+=======
+    private javax.swing.ButtonGroup botonesgrupo1;
+>>>>>>> Stashed changes
     private javax.swing.JButton jBIngresar1;
     private javax.swing.JButton jBIngresar2;
     private javax.swing.JButton jBIngresar3;
@@ -1287,21 +1339,22 @@ public class Principal extends javax.swing.JFrame implements Runnable {
     private javax.swing.JPanel jPCuerpo;
     private javax.swing.JPanel jPIngresoVehiculo;
     private javax.swing.JPanel jPMenu;
-    private javax.swing.JPasswordField jPassword;
-    private javax.swing.JRadioButton jRadioAdm;
-    private javax.swing.JRadioButton jRadioInv;
     private javax.swing.JPanel jReloj;
     private javax.swing.JButton jSalirLog;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JPanel jTabla;
+    private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTxtApellido1;
     private javax.swing.JTextField jTxtApellido2;
     private javax.swing.JTextField jTxtCedula;
     private javax.swing.JTextField jTxtNombre;
     private javax.swing.JTextField jTxtPlaca;
     private javax.swing.JTextField jTxtPlaca1;
-    private javax.swing.JTextField jUsuario;
+    private javax.swing.JRadioButton opcionAdmin;
+    private javax.swing.JRadioButton opcionInvitado;
+    private javax.swing.JTextField txtPassVerificar;
+    private javax.swing.JTextField txtUsuarioverificar;
     // End of variables declaration//GEN-END:variables
 
     class FondoPanel extends JPanel {
