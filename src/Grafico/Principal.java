@@ -142,7 +142,7 @@ public class Principal extends javax.swing.JFrame implements Runnable {
         jScrollPane1 = new javax.swing.JScrollPane();
         Tabla = new javax.swing.JTable();
         jListar1 = new javax.swing.JButton();
-        jListar3 = new javax.swing.JButton();
+        btnBorrar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -732,12 +732,12 @@ public class Principal extends javax.swing.JFrame implements Runnable {
             }
         });
 
-        jListar3.setBackground(new java.awt.Color(63, 150, 230));
-        jListar3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jListar3.setText("Borrar Tabla");
-        jListar3.addActionListener(new java.awt.event.ActionListener() {
+        btnBorrar.setBackground(new java.awt.Color(63, 150, 230));
+        btnBorrar.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btnBorrar.setText("Borrar Tabla");
+        btnBorrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jListar3ActionPerformed(evt);
+                btnBorrarActionPerformed(evt);
             }
         });
 
@@ -748,7 +748,7 @@ public class Principal extends javax.swing.JFrame implements Runnable {
             .addComponent(jScrollPane1)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jTablaLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jListar3, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnBorrar, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jListar1, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(20, 20, 20))
@@ -761,7 +761,7 @@ public class Principal extends javax.swing.JFrame implements Runnable {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jTablaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jListar1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jListar3, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnBorrar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(18, Short.MAX_VALUE))
         );
 
@@ -1130,9 +1130,13 @@ public class Principal extends javax.swing.JFrame implements Runnable {
         jTabla.setVisible(true);
     }//GEN-LAST:event_jListar2ActionPerformed
 
-    private void jListar3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jListar3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jListar3ActionPerformed
+    private void btnBorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBorrarActionPerformed
+        int fila=Tabla.getRowCount();
+        for (int i =fila-1; i >=0; i--) {
+            modelo.removeRow(i);
+            
+        }
+    }//GEN-LAST:event_btnBorrarActionPerformed
 
     private void jBIngresar1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBIngresar1MouseEntered
         // TODO add your handling code here:
@@ -1216,6 +1220,7 @@ public class Principal extends javax.swing.JFrame implements Runnable {
     private javax.swing.JRadioButton Moto;
     private javax.swing.JTable Tabla;
     private javax.swing.JRadioButton Vehiculo;
+    private javax.swing.JButton btnBorrar;
     private javax.swing.JButton jBIngresar1;
     private javax.swing.JButton jBIngresar2;
     private javax.swing.JButton jBIngresar3;
@@ -1241,7 +1246,6 @@ public class Principal extends javax.swing.JFrame implements Runnable {
     private javax.swing.JButton jLimpiar;
     private javax.swing.JButton jListar1;
     private javax.swing.JButton jListar2;
-    private javax.swing.JButton jListar3;
     private javax.swing.JPanel jMapa;
     private javax.swing.JPanel jPCuerpo;
     private javax.swing.JPanel jPIngresoVehiculo;

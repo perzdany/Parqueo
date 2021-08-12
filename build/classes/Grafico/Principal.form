@@ -12,6 +12,9 @@
     </Property>
     <Property name="extendedState" type="int" value="6"/>
     <Property name="name" type="java.lang.String" value="" noResource="true"/>
+    <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+      <Dimension value="[0, 0]"/>
+    </Property>
   </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
@@ -1295,7 +1298,7 @@
               <Component id="jScrollPane1" alignment="0" max="32767" attributes="0"/>
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace max="32767" attributes="0"/>
-                  <Component id="jListar3" min="-2" pref="126" max="-2" attributes="0"/>
+                  <Component id="btnBorrar" min="-2" pref="126" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="jListar1" min="-2" pref="126" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
@@ -1310,7 +1313,7 @@
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jListar1" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
-                      <Component id="jListar3" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
+                      <Component id="btnBorrar" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace pref="18" max="32767" attributes="0"/>
               </Group>
@@ -1353,7 +1356,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jListar1ActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="jListar3">
+        <Component class="javax.swing.JButton" name="btnBorrar">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="e6" green="96" red="3f" type="rgb"/>
@@ -1364,7 +1367,7 @@
             <Property name="text" type="java.lang.String" value="Borrar Tabla"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jListar3ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnBorrarActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>
