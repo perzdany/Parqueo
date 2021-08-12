@@ -143,12 +143,13 @@ public class Principal extends javax.swing.JFrame implements Runnable {
         Tabla = new javax.swing.JTable();
         jListar1 = new javax.swing.JButton();
         btnBorrar = new javax.swing.JButton();
+        btnSalir = new javax.swing.JButton();
+        btnBorrar_uno = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         setExtendedState(6);
         setName(""); // NOI18N
-        setPreferredSize(new java.awt.Dimension(0, 0));
 
         jPMenu.setVisible(false);
         jPMenu.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -710,6 +711,8 @@ public class Principal extends javax.swing.JFrame implements Runnable {
         jTabla.setVisible(false);
         jTabla.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
+        Tabla.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        Tabla.setForeground(new java.awt.Color(102, 0, 102));
         Tabla.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -721,6 +724,7 @@ public class Principal extends javax.swing.JFrame implements Runnable {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        Tabla.setGridColor(new java.awt.Color(255, 255, 255));
         jScrollPane1.setViewportView(Tabla);
 
         jListar1.setBackground(new java.awt.Color(63, 150, 230));
@@ -741,13 +745,30 @@ public class Principal extends javax.swing.JFrame implements Runnable {
             }
         });
 
+        btnSalir.setBackground(new java.awt.Color(63, 150, 230));
+        btnSalir.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btnSalir.setText("Salir");
+        btnSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSalirActionPerformed(evt);
+            }
+        });
+
+        btnBorrar_uno.setBackground(new java.awt.Color(63, 150, 230));
+        btnBorrar_uno.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btnBorrar_uno.setText("Borrar");
+
         javax.swing.GroupLayout jTablaLayout = new javax.swing.GroupLayout(jTabla);
         jTabla.setLayout(jTablaLayout);
         jTablaLayout.setHorizontalGroup(
             jTablaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1133, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jTablaLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap()
+                .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(54, 54, 54)
+                .addComponent(btnBorrar_uno, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnBorrar, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jListar1, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -761,7 +782,9 @@ public class Principal extends javax.swing.JFrame implements Runnable {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jTablaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jListar1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnBorrar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnBorrar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnBorrar_uno, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(18, Short.MAX_VALUE))
         );
 
@@ -1142,6 +1165,18 @@ public class Principal extends javax.swing.JFrame implements Runnable {
         // TODO add your handling code here:
     }//GEN-LAST:event_jBIngresar1MouseEntered
 
+    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
+        jPMenu.setVisible(true);
+        jPCuerpo.setVisible(true);
+        LogIn.setVisible(false);
+        jPassword.setText(null);
+        jUsuario.setText(null);
+        jRadioAdm.setSelected(false);
+        jRadioInv.setSelected(false);
+        jTabla.setVisible(false);
+        jUsuario.grabFocus();
+    }//GEN-LAST:event_btnSalirActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1221,6 +1256,8 @@ public class Principal extends javax.swing.JFrame implements Runnable {
     private javax.swing.JTable Tabla;
     private javax.swing.JRadioButton Vehiculo;
     private javax.swing.JButton btnBorrar;
+    private javax.swing.JButton btnBorrar_uno;
+    private javax.swing.JButton btnSalir;
     private javax.swing.JButton jBIngresar1;
     private javax.swing.JButton jBIngresar2;
     private javax.swing.JButton jBIngresar3;
