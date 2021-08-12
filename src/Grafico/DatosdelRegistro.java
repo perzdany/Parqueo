@@ -9,7 +9,7 @@ package Grafico;
  *
  * @author 50684
  */
-public class DatosRegistro {
+public class DatosdelRegistro {
     
    
     String nombre;

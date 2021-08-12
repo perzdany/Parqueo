@@ -13,5 +13,5 @@ import java.util.ArrayList;
  */
 public class Logica {
     
-     public static ArrayList<DatosRegistro> usuarios = new ArrayList<DatosRegistro>();
+     public static ArrayList<DatosdelRegistro> usuariosLista = new ArrayList<DatosdelRegistro>();
 }

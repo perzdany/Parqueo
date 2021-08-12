@@ -1125,7 +1125,7 @@ public class Principal extends javax.swing.JFrame implements Runnable {
         if (opcionAdmin.isSelected()) {
 
             mensaje = "Ingresando a Sistema de Administrador";
-            for (DatosRegistro d : Logica.usuarios) {
+            for (DatosdelRegistro d : Logica.usuariosLista) {
                 if (!Nombredijit.equals(d.getNombre())) {
                     break;
                 } else if (passdijit.equals(d.getPass())) {
@@ -1143,7 +1143,7 @@ public class Principal extends javax.swing.JFrame implements Runnable {
         } else if (opcionInvitado.isSelected()) {
 
             mensaje = "Ingresando a Sistema de Invitado";
-            for (DatosRegistro d : Logica.usuarios) {
+            for (DatosdelRegistro d : Logica.usuariosLista) {
                 if (!Nombredijit.equals(d.getNombre())) {
                     break;
                 } else if (passdijit.equals(d.getPass())) {
