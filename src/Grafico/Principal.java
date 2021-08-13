@@ -154,6 +154,7 @@ public class Principal extends javax.swing.JFrame implements Runnable {
         setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         setExtendedState(6);
         setName(""); // NOI18N
+        setPreferredSize(new java.awt.Dimension(0, 0));
 
         jPMenu.setVisible(false);
         jPMenu.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -172,7 +173,6 @@ public class Principal extends javax.swing.JFrame implements Runnable {
 
         jBIngresarV.setBackground(new java.awt.Color(63, 150, 230));
         jBIngresarV.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jBIngresarV.setForeground(new java.awt.Color(255, 255, 255));
         jBIngresarV.setText("Ingresar vehículo");
         jBIngresarV.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -809,9 +809,9 @@ public class Principal extends javax.swing.JFrame implements Runnable {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 110, Short.MAX_VALUE)
+                    .addGap(0, 101, Short.MAX_VALUE)
                     .addComponent(LogIn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 109, Short.MAX_VALUE)))
+                    .addGap(0, 100, Short.MAX_VALUE)))
         );
 
         pack();
@@ -1159,7 +1159,7 @@ public class Principal extends javax.swing.JFrame implements Runnable {
                 }
             }
         } else {
-            JOptionPane.showMessageDialog(rootPane, "Dijite si es Administrador o Vendedor");
+            JOptionPane.showMessageDialog(rootPane, "Dijite si es Administrador o Invitado");
         }
     }//GEN-LAST:event_jIniciarSesionActionPerformed
 
