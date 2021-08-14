@@ -76,8 +76,8 @@ public class Principal extends javax.swing.JFrame implements Runnable {
         jBSalir = new javax.swing.JButton();
         BackGround = new javax.swing.JLabel();
         LogIn = new javax.swing.JPanel();
-        txtPassVerificar = new javax.swing.JTextField();
         txtUsuarioverificar = new javax.swing.JTextField();
+        txtPassVerificar = new javax.swing.JPasswordField();
         opcionInvitado = new javax.swing.JRadioButton();
         opcionAdmin = new javax.swing.JRadioButton();
         jLimpiar = new javax.swing.JButton();
@@ -85,7 +85,6 @@ public class Principal extends javax.swing.JFrame implements Runnable {
         jSalirLog = new javax.swing.JButton();
         jIniciarSesion1 = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
         jPCuerpo = new javax.swing.JPanel();
         jSeparator1 = new javax.swing.JSeparator();
         JRegistrarse = new javax.swing.JPanel();
@@ -205,7 +204,6 @@ public class Principal extends javax.swing.JFrame implements Runnable {
         jPMenu.add(BackGround, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 300, 400));
 
         LogIn.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        LogIn.add(txtPassVerificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 380, 190, 30));
 
         txtUsuarioverificar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -213,6 +211,13 @@ public class Principal extends javax.swing.JFrame implements Runnable {
             }
         });
         LogIn.add(txtUsuarioverificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 350, 190, -1));
+
+        txtPassVerificar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtPassVerificarActionPerformed(evt);
+            }
+        });
+        LogIn.add(txtPassVerificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 380, 190, -1));
 
         opcionInvitado.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         opcionInvitado.setText("Invitado");
@@ -273,10 +278,7 @@ public class Principal extends javax.swing.JFrame implements Runnable {
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Log.png"))); // NOI18N
         jLabel8.setAlignmentY(0.0F);
         jLabel8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        LogIn.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 500));
-
-        jTextField1.setText("jTextField1");
-        LogIn.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 380, 190, 30));
+        LogIn.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 490));
 
         jPCuerpo.setVisible(false);
         jPCuerpo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -809,9 +811,9 @@ public class Principal extends javax.swing.JFrame implements Runnable {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 101, Short.MAX_VALUE)
+                    .addGap(0, 116, Short.MAX_VALUE)
                     .addComponent(LogIn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 100, Short.MAX_VALUE)))
+                    .addGap(0, 115, Short.MAX_VALUE)))
         );
 
         pack();
@@ -829,7 +831,7 @@ public class Principal extends javax.swing.JFrame implements Runnable {
         jPMenu.setVisible(false);
         jPCuerpo.setVisible(false);
         LogIn.setVisible(true);
-        jTextField1.setText(null);
+        txtPassVerificar.setText(null);
         txtUsuarioverificar.setText(null);
         opcionAdmin.setSelected(false);
         opcionInvitado.setSelected(false);
@@ -1102,10 +1104,9 @@ public class Principal extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_txtUsuarioverificarActionPerformed
 
     private void jLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jLimpiarActionPerformed
-        jTextField1.setText(null);
         txtUsuarioverificar.setText(null);
-        opcionAdmin.setSelected(false);
-        opcionInvitado.setSelected(false);
+        txtPassVerificar.setText(null);
+        botonesgrupo1.clearSelection();
         txtUsuarioverificar.grabFocus();
     }//GEN-LAST:event_jLimpiarActionPerformed
 
@@ -1173,11 +1174,8 @@ public class Principal extends javax.swing.JFrame implements Runnable {
 
     private void jIniciarSesion1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jIniciarSesion1ActionPerformed
 
-        registro r = new registro();
+        Registro r = new Registro();
         r.setVisible(true);
-
-        LogIn.setVisible(false);
-
     }//GEN-LAST:event_jIniciarSesion1ActionPerformed
 
     private void jBIngresar3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBIngresar3ActionPerformed
@@ -1200,6 +1198,10 @@ public class Principal extends javax.swing.JFrame implements Runnable {
     private void jBIngresar1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBIngresar1MouseEntered
         // TODO add your handling code here:
     }//GEN-LAST:event_jBIngresar1MouseEntered
+
+    private void txtPassVerificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPassVerificarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtPassVerificarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1315,7 +1317,6 @@ public class Principal extends javax.swing.JFrame implements Runnable {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JPanel jTabla;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTxtApellido1;
     private javax.swing.JTextField jTxtApellido2;
     private javax.swing.JTextField jTxtCedula;
@@ -1324,7 +1325,7 @@ public class Principal extends javax.swing.JFrame implements Runnable {
     private javax.swing.JTextField jTxtPlaca1;
     private javax.swing.JRadioButton opcionAdmin;
     private javax.swing.JRadioButton opcionInvitado;
-    private javax.swing.JTextField txtPassVerificar;
+    private javax.swing.JPasswordField txtPassVerificar;
     private javax.swing.JTextField txtUsuarioverificar;
     // End of variables declaration//GEN-END:variables
 
