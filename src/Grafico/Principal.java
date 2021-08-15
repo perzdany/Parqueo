@@ -1,8 +1,17 @@
 package Grafico;
 
+import com.itextpdf.text.Chunk;
+import com.itextpdf.text.Document;
+import com.itextpdf.text.DocumentException;
+import com.itextpdf.text.Paragraph;
+import com.itextpdf.text.pdf.PdfWriter;
 import java.awt.Color;
+import java.awt.Desktop;
 import java.awt.Graphics;
 import java.awt.Image;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 import java.util.Date;
@@ -17,6 +26,51 @@ public class Principal extends javax.swing.JFrame implements Runnable {
     Thread hilo;
     FondoPanel fondo = new FondoPanel();
     DefaultTableModel modelo = new DefaultTableModel();
+
+    public void Abrir(String nombre) {
+        try {
+            File path = new File(nombre + ".pdf");
+            Desktop.getDesktop().open(path);
+
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(null, ex, "Atencion", 2);
+        }
+
+    }
+
+    public void generar(String nombre) throws FileNotFoundException, DocumentException {
+        if (!jTxtNombre.getText().isEmpty() || (!jTxtApellido1.getText().isEmpty() || !jTxtPlaca.getText().isEmpty())) {
+
+            FileOutputStream archivo = new FileOutputStream(nombre + ".Pdf");
+            Document Documento = new Document();
+            PdfWriter.getInstance(Documento, archivo);
+            Documento.open();
+
+            Paragraph parrafo = new Paragraph("Factura de Salida");
+            parrafo.setAlignment(1);
+            Documento.add(parrafo);
+
+            Documento.add(new Paragraph("Nombre:" + jTxtNombre.getText()));
+            Documento.add(new Paragraph("Apellidos:" + jTxtApellido1.getText() + "" + jTxtApellido2.getText()));
+            Documento.add(new Paragraph("Placa del vehiculo:" + jTxtPlaca.getText()));
+
+            Documento.add(Chunk.NEWLINE);
+
+            Documento.add(new Paragraph("Esta es la factrura por usar los servicios de parking click"));
+
+            Documento.add(Chunk.NEWLINE);
+
+            Documento.add(new Paragraph("Muchas gracias por utilizar parking Click"));
+            Documento.add(new Paragraph("Fecha:" + LabelFecha.getText()));
+
+            Documento.close();
+            JOptionPane.showMessageDialog(null, "Factura creada correctamente ");
+
+        } else {
+            JOptionPane.showMessageDialog(null, "Debe llenar como minimo los campos de Nombre/Apellidos/Placa");
+        }
+
+    }
 
     public Principal() {
         this.setContentPane(fondo);
@@ -77,7 +131,7 @@ public class Principal extends javax.swing.JFrame implements Runnable {
         BackGround = new javax.swing.JLabel();
         LogIn = new javax.swing.JPanel();
         txtUsuarioverificar = new javax.swing.JTextField();
-        c = new javax.swing.JPasswordField();
+        contra = new javax.swing.JTextField();
         opcionInvitado = new javax.swing.JRadioButton();
         opcionAdmin = new javax.swing.JRadioButton();
         jLimpiar = new javax.swing.JButton();
@@ -93,6 +147,8 @@ public class Principal extends javax.swing.JFrame implements Runnable {
         jBSalirRetiro = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jBIngresar2 = new javax.swing.JButton();
+        jBIngresar4 = new javax.swing.JButton();
+        jBIngresar5 = new javax.swing.JButton();
         jPIngresoVehiculo = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -152,7 +208,6 @@ public class Principal extends javax.swing.JFrame implements Runnable {
         setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         setExtendedState(6);
         setName(""); // NOI18N
-        setPreferredSize(new java.awt.Dimension(0, 0));
         setSize(new java.awt.Dimension(0, 0));
 
         jPMenu.setVisible(false);
@@ -212,12 +267,12 @@ public class Principal extends javax.swing.JFrame implements Runnable {
         });
         LogIn.add(txtUsuarioverificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 350, 190, -1));
 
-        c.addActionListener(new java.awt.event.ActionListener() {
+        contra.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cActionPerformed(evt);
+                contraActionPerformed(evt);
             }
         });
-        LogIn.add(c, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 380, 190, -1));
+        LogIn.add(contra, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 380, 190, -1));
 
         opcionInvitado.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         opcionInvitado.setText("Invitado");
@@ -308,7 +363,7 @@ public class Principal extends javax.swing.JFrame implements Runnable {
                 jBSalirRetiroActionPerformed(evt);
             }
         });
-        JRegistrarse.add(jBSalirRetiro, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 300, 100, 40));
+        JRegistrarse.add(jBSalirRetiro, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 280, 100, 40));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 22)); // NOI18N
         jLabel2.setText("Retiro de Vehículos");
@@ -316,14 +371,36 @@ public class Principal extends javax.swing.JFrame implements Runnable {
 
         jBIngresar2.setBackground(new java.awt.Color(63, 150, 230));
         jBIngresar2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jBIngresar2.setText("Retirar");
+        jBIngresar2.setText("Abrir Factura");
         jBIngresar2.setToolTipText("");
         jBIngresar2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jBIngresar2ActionPerformed(evt);
             }
         });
-        JRegistrarse.add(jBIngresar2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 300, 100, 40));
+        JRegistrarse.add(jBIngresar2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 360, 120, 30));
+
+        jBIngresar4.setBackground(new java.awt.Color(63, 150, 230));
+        jBIngresar4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jBIngresar4.setText("Retirar");
+        jBIngresar4.setToolTipText("");
+        jBIngresar4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBIngresar4ActionPerformed(evt);
+            }
+        });
+        JRegistrarse.add(jBIngresar4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 280, 100, 40));
+
+        jBIngresar5.setBackground(new java.awt.Color(63, 150, 230));
+        jBIngresar5.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jBIngresar5.setText("Crear Factura");
+        jBIngresar5.setToolTipText("");
+        jBIngresar5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBIngresar5ActionPerformed(evt);
+            }
+        });
+        JRegistrarse.add(jBIngresar5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 360, 130, 30));
 
         JRegistrarse.setVisible(false);
 
@@ -824,7 +901,7 @@ public class Principal extends javax.swing.JFrame implements Runnable {
         jPMenu.setVisible(false);
         jPCuerpo.setVisible(false);
         LogIn.setVisible(true);
-        c.setText(null);
+        contra.setText(null);
         txtUsuarioverificar.setText(null);
         opcionAdmin.setSelected(false);
         opcionInvitado.setSelected(false);
@@ -845,114 +922,113 @@ public class Principal extends javax.swing.JFrame implements Runnable {
         } else if (Moto.isSelected()) {
             boton = "Moto";
         }
-        
-        
+
         String combo = ComboBox.getSelectedItem().toString();
         if (combo.equals("Posición 1")) {
             Espacio1.setBackground(Color.red);
         } else {
             Espacio1.setBackground(new Color(51, 204, 0));
-        }    
+        }
         if (combo.equals("Posición 2")) {
             Espacio2.setBackground(Color.red);
         } else {
             Espacio2.setBackground(new Color(51, 204, 0));
-        }    
+        }
         if (combo.equals("Posición 3")) {
             Espacio3.setBackground(Color.red);
         } else {
             Espacio3.setBackground(new Color(51, 204, 0));
-        }    
+        }
         if (combo.equals("Posición 4")) {
             Espacio4.setBackground(Color.red);
         } else {
             Espacio4.setBackground(new Color(51, 204, 0));
-        }    
+        }
         if (combo.equals("Posición 5")) {
             Espacio5.setBackground(Color.red);
         } else {
             Espacio5.setBackground(new Color(51, 204, 0));
-        }    
+        }
         if (combo.equals("Posición 6")) {
             Espacio6.setBackground(Color.red);
         } else {
             Espacio6.setBackground(new Color(51, 204, 0));
-        }    
+        }
         if (combo.equals("Posición 7")) {
             Espacio7.setBackground(Color.red);
         } else {
             Espacio7.setBackground(new Color(51, 204, 0));
-        }    
+        }
         if (combo.equals("Posición 8")) {
             Espacio8.setBackground(Color.red);
         } else {
             Espacio8.setBackground(new Color(51, 204, 0));
-        }    
+        }
         if (combo.equals("Posición 9")) {
             Espacio9.setBackground(Color.red);
         } else {
             Espacio9.setBackground(new Color(51, 204, 0));
-        }    
+        }
         if (combo.equals("Posición 10")) {
             Espacio10.setBackground(Color.red);
         } else {
             Espacio10.setBackground(new Color(51, 204, 0));
-        }    
+        }
         if (combo.equals("Posición 11")) {
             Espacio11.setBackground(Color.red);
         } else {
             Espacio11.setBackground(new Color(51, 204, 0));
-        }    
+        }
         if (combo.equals("Posición 12")) {
             Espacio12.setBackground(Color.red);
         } else {
             Espacio12.setBackground(new Color(51, 204, 0));
-        }    
+        }
         if (combo.equals("Posición 13")) {
             Espacio13.setBackground(Color.red);
         } else {
             Espacio13.setBackground(new Color(51, 204, 0));
-        }    
+        }
         if (combo.equals("Posición 14")) {
             Espacio14.setBackground(Color.red);
         } else {
             Espacio14.setBackground(new Color(51, 204, 0));
-        }    
+        }
         if (combo.equals("Posición 15")) {
             Espacio15.setBackground(Color.red);
         } else {
             Espacio15.setBackground(new Color(51, 204, 0));
-        }    
+        }
         if (combo.equals("Posición 16")) {
             Espacio16.setBackground(Color.red);
         } else {
             Espacio16.setBackground(new Color(51, 204, 0));
-        }    
+        }
         if (combo.equals("Posición 17")) {
             Espacio17.setBackground(Color.red);
         } else {
             Espacio17.setBackground(new Color(51, 204, 0));
-        }    
+        }
         if (combo.equals("Posición 18")) {
             Espacio18.setBackground(Color.red);
         } else {
             Espacio18.setBackground(new Color(51, 204, 0));
-        }    
+        }
         if (combo.equals("Posición M1")) {
             EspacioMoto1.setBackground(Color.red);
         } else {
             EspacioMoto1.setBackground(new Color(51, 204, 0));
-        }    
+        }
         if (combo.equals("Posición M2")) {
             EspacioMoto2.setBackground(Color.red);
         } else {
             EspacioMoto2.setBackground(new Color(51, 204, 0));
-        }    
+        }
         if (combo.equals("Posición M3")) {
             EspacioMoto3.setBackground(Color.red);
         } else {
             EspacioMoto3.setBackground(new Color(51, 204, 0));
-        } 
+        }
         if (combo.equals("Posición M4")) {
             EspacioMoto4.setBackground(Color.red);
         } else {
@@ -968,7 +1044,7 @@ public class Principal extends javax.swing.JFrame implements Runnable {
         } else {
             EspacioMoto6.setBackground(new Color(51, 204, 0));
         }
-        
+
         String Dato[] = new String[7];
         Dato[0] = jTxtNombre.getText();
         Dato[1] = jTxtApellido1.getText();
@@ -1011,7 +1087,12 @@ public class Principal extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_VehiculoActionPerformed
 
     private void jBIngresar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBIngresar2ActionPerformed
+        if (!jTxtNombre.getText().isEmpty()) {
+            Abrir(jTxtNombre.getText());
 
+        } else {
+            JOptionPane.showMessageDialog(null, "Campo de nombre vacio");
+        }
     }//GEN-LAST:event_jBIngresar2ActionPerformed
 
     private void jBSalirRetiroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBSalirRetiroActionPerformed
@@ -1019,11 +1100,11 @@ public class Principal extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_jBSalirRetiroActionPerformed
 
     private void Espacio1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Espacio1ActionPerformed
-       
+
     }//GEN-LAST:event_Espacio1ActionPerformed
 
     private void EspacioMoto5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EspacioMoto5ActionPerformed
-        
+
     }//GEN-LAST:event_EspacioMoto5ActionPerformed
 
     private void Espacio2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Espacio2ActionPerformed
@@ -1043,15 +1124,15 @@ public class Principal extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_Espacio5ActionPerformed
 
     private void Espacio6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Espacio6ActionPerformed
- 
+
     }//GEN-LAST:event_Espacio6ActionPerformed
 
     private void Espacio7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Espacio7ActionPerformed
-  
+
     }//GEN-LAST:event_Espacio7ActionPerformed
 
     private void Espacio8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Espacio8ActionPerformed
- 
+
     }//GEN-LAST:event_Espacio8ActionPerformed
 
     private void Espacio9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Espacio9ActionPerformed
@@ -1059,7 +1140,7 @@ public class Principal extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_Espacio9ActionPerformed
 
     private void Espacio10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Espacio10ActionPerformed
- 
+
     }//GEN-LAST:event_Espacio10ActionPerformed
 
     private void Espacio11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Espacio11ActionPerformed
@@ -1067,11 +1148,11 @@ public class Principal extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_Espacio11ActionPerformed
 
     private void Espacio12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Espacio12ActionPerformed
- 
+
     }//GEN-LAST:event_Espacio12ActionPerformed
 
     private void Espacio13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Espacio13ActionPerformed
-   
+
     }//GEN-LAST:event_Espacio13ActionPerformed
 
     private void Espacio14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Espacio14ActionPerformed
@@ -1079,19 +1160,19 @@ public class Principal extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_Espacio14ActionPerformed
 
     private void Espacio15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Espacio15ActionPerformed
- 
+
     }//GEN-LAST:event_Espacio15ActionPerformed
 
     private void Espacio16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Espacio16ActionPerformed
-   
+
     }//GEN-LAST:event_Espacio16ActionPerformed
 
     private void Espacio17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Espacio17ActionPerformed
-  
+
     }//GEN-LAST:event_Espacio17ActionPerformed
 
     private void Espacio18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Espacio18ActionPerformed
- 
+
     }//GEN-LAST:event_Espacio18ActionPerformed
 
     private void EspacioMoto1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EspacioMoto1ActionPerformed
@@ -1099,19 +1180,19 @@ public class Principal extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_EspacioMoto1ActionPerformed
 
     private void EspacioMoto2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EspacioMoto2ActionPerformed
-   
+
     }//GEN-LAST:event_EspacioMoto2ActionPerformed
 
     private void EspacioMoto3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EspacioMoto3ActionPerformed
-  
+
     }//GEN-LAST:event_EspacioMoto3ActionPerformed
 
     private void EspacioMoto4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EspacioMoto4ActionPerformed
-  
+
     }//GEN-LAST:event_EspacioMoto4ActionPerformed
 
     private void EspacioMoto6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EspacioMoto6ActionPerformed
-  
+
     }//GEN-LAST:event_EspacioMoto6ActionPerformed
 
     private void jBIngresarVActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBIngresarVActionPerformed
@@ -1126,7 +1207,7 @@ public class Principal extends javax.swing.JFrame implements Runnable {
 
     private void jLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jLimpiarActionPerformed
         txtUsuarioverificar.setText(null);
-        c.setText(null);
+        contra.setText(null);
         botonesgrupo1.clearSelection();
         txtUsuarioverificar.grabFocus();
     }//GEN-LAST:event_jLimpiarActionPerformed
@@ -1142,7 +1223,7 @@ public class Principal extends javax.swing.JFrame implements Runnable {
         String passdijit;
 
         Nombredijit = txtUsuarioverificar.getText();
-        passdijit = c.getText();
+        passdijit = contra.getText();
 
         if (opcionAdmin.isSelected()) {
 
@@ -1158,13 +1239,11 @@ public class Principal extends javax.swing.JFrame implements Runnable {
                     LogIn.setVisible(false);
                     jPCuerpo.setVisible(true);
 
-                    
-
-                    }else {
+                } else {
                     JOptionPane.showMessageDialog(rootPane, "Datos incorrectos");
                 }
-                }
-            }else if (opcionInvitado.isSelected()) {
+            }
+        } else if (opcionInvitado.isSelected()) {
 
             mensaje = "Ingresando a Sistema de Invitado";
             for (DatosdelRegistro d : Logica.usuariosLista) {
@@ -1192,7 +1271,7 @@ public class Principal extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_opcionAdminActionPerformed
 
     private void ComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComboBoxActionPerformed
-       
+
     }//GEN-LAST:event_ComboBoxActionPerformed
 
     private void jIniciarSesion1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jIniciarSesion1ActionPerformed
@@ -1222,9 +1301,27 @@ public class Principal extends javax.swing.JFrame implements Runnable {
         // TODO add your handling code here:
     }//GEN-LAST:event_jBIngresar1MouseEntered
 
-    private void cActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cActionPerformed
+    private void contraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_contraActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_cActionPerformed
+    }//GEN-LAST:event_contraActionPerformed
+
+    private void jBIngresar4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBIngresar4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jBIngresar4ActionPerformed
+
+    private void jBIngresar5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBIngresar5ActionPerformed
+
+        try {
+            generar(jTxtNombre.getText());
+        } catch (FileNotFoundException e) {
+            System.err.println(e.getMessage());
+        } catch (DocumentException e) {
+            System.err.println(e.getMessage());
+
+        }
+
+
+    }//GEN-LAST:event_jBIngresar5ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1305,10 +1402,12 @@ public class Principal extends javax.swing.JFrame implements Runnable {
     private javax.swing.JRadioButton Vehiculo;
     private javax.swing.ButtonGroup botonesgrupo1;
     private javax.swing.JButton btnBorrar;
-    private javax.swing.JPasswordField c;
+    private javax.swing.JTextField contra;
     private javax.swing.JButton jBIngresar1;
     private javax.swing.JButton jBIngresar2;
     private javax.swing.JButton jBIngresar3;
+    private javax.swing.JButton jBIngresar4;
+    private javax.swing.JButton jBIngresar5;
     private javax.swing.JButton jBIngresarV;
     private javax.swing.JButton jBRetirar;
     private javax.swing.JButton jBSalir;
