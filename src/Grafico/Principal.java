@@ -39,32 +39,46 @@ public class Principal extends javax.swing.JFrame implements Runnable {
     }
 
     public void generar(String nombre) throws FileNotFoundException, DocumentException {
-        if (!jTxtNombre.getText().isEmpty() || (!jTxtApellido1.getText().isEmpty() || !jTxtPlaca.getText().isEmpty())) {
+        if (!jTxtNombre.getText().isEmpty()) {
 
-            FileOutputStream archivo = new FileOutputStream(nombre + ".Pdf");
-            Document Documento = new Document();
-            PdfWriter.getInstance(Documento, archivo);
-            Documento.open();
+            if (!jTxtApellido1.getText().isEmpty()) {
 
-            Paragraph parrafo = new Paragraph("Factura de Salida");
-            parrafo.setAlignment(1);
-            Documento.add(parrafo);
+                if (!jTxtPlaca.getText().isEmpty()) {
 
-            Documento.add(new Paragraph("Nombre:" + jTxtNombre.getText()));
-            Documento.add(new Paragraph("Apellidos:" + jTxtApellido1.getText() + "" + jTxtApellido2.getText()));
-            Documento.add(new Paragraph("Placa del vehiculo:" + jTxtPlaca.getText()));
+                    FileOutputStream archivo = new FileOutputStream(nombre + ".Pdf");
+                    Document Documento = new Document();
+                    PdfWriter.getInstance(Documento, archivo);
+                    Documento.open();
 
-            Documento.add(Chunk.NEWLINE);
+                    Paragraph parrafo = new Paragraph("Factura de Salida");
+                    parrafo.setAlignment(1);
+                    Documento.add(parrafo);
 
-            Documento.add(new Paragraph("Esta es la factrura por usar los servicios de parking click"));
+                    Documento.add(new Paragraph("Nombre:" + jTxtNombre.getText()));
+                    Documento.add(new Paragraph("Apellidos:" + jTxtApellido1.getText() + "" + jTxtApellido2.getText()));
+                    Documento.add(new Paragraph("Placa del vehiculo:" + jTxtPlaca.getText()));
 
-            Documento.add(Chunk.NEWLINE);
+                    Documento.add(Chunk.NEWLINE);
 
-            Documento.add(new Paragraph("Muchas gracias por utilizar parking Click"));
-            Documento.add(new Paragraph("Fecha:" + LabelFecha.getText()));
+                    Documento.add(new Paragraph("Esta es la factrura por usar los servicios de parking click"));
 
-            Documento.close();
-            JOptionPane.showMessageDialog(null, "Factura creada correctamente ");
+                    Documento.add(Chunk.NEWLINE);
+
+                    Documento.add(new Paragraph("Muchas gracias por utilizar parking Click"));
+                    Documento.add(Chunk.NEWLINE);
+                    Documento.add(new Paragraph("Fecha:" + LabelFecha.getText()));
+
+                    Documento.close();
+                    JOptionPane.showMessageDialog(null, "Factura creada correctamente ");
+
+                } else {
+                    JOptionPane.showMessageDialog(null, "Debe llenar como minimo los campos de Nombre/Apellidos/Placa ");
+                }
+            } else {
+
+                JOptionPane.showMessageDialog(null, "Debe llenar como minimo los campos de Nombre/Apellidos/Placa ");
+
+            }
 
         } else {
             JOptionPane.showMessageDialog(null, "Debe llenar como minimo los campos de Nombre/Apellidos/Placa");
@@ -1225,44 +1239,54 @@ public class Principal extends javax.swing.JFrame implements Runnable {
         Nombredijit = txtUsuarioverificar.getText();
         passdijit = contra.getText();
 
-        if (opcionAdmin.isSelected()) {
+        if (!txtUsuarioverificar.getText().isEmpty()) {
 
-            mensaje = "Ingresando a Sistema de Administrador";
-            for (DatosdelRegistro d : Logica.usuariosLista) {
-                if (!Nombredijit.equals(d.getNombre())) {
-                    break;
-                } else if (passdijit.equals(d.getPass())) {
+            if (!contra.getText().isEmpty()) {
 
-                    JOptionPane.showMessageDialog(this, mensaje);
+                if (opcionAdmin.isSelected()) {
 
-                    jPMenu.setVisible(true);
-                    LogIn.setVisible(false);
-                    jPCuerpo.setVisible(true);
+                    mensaje = "Ingresando a Sistema de Administrador";
+                    for (DatosdelRegistro d : Logica.usuariosLista) {
+                        if (!Nombredijit.equals(d.getNombre())) {
+                            break;
+                        } else if (passdijit.equals(d.getPass())) {
 
+                            JOptionPane.showMessageDialog(this, mensaje);
+
+                            jPMenu.setVisible(true);
+                            LogIn.setVisible(false);
+                            jPCuerpo.setVisible(true);
+
+                        } else {
+                            JOptionPane.showMessageDialog(rootPane, "Datos incorrectos");
+                        }
+                    }
+                } else if (opcionInvitado.isSelected()) {
+
+                    mensaje = "Ingresando a Sistema de Invitado";
+                    for (DatosdelRegistro d : Logica.usuariosLista) {
+                        if (!Nombredijit.equals(d.getNombre())) {
+                            break;
+                        } else if (passdijit.equals(d.getPass())) {
+
+                            JOptionPane.showMessageDialog(this, mensaje);
+                            jPMenu.setVisible(true);
+                            LogIn.setVisible(false);
+                            jPCuerpo.setVisible(true);
+                            jListar2.setVisible(false);
+
+                        } else {
+                            JOptionPane.showMessageDialog(rootPane, "Datos incorrectos");
+                        }
+                    }
                 } else {
-                    JOptionPane.showMessageDialog(rootPane, "Datos incorrectos");
-                }
-            }
-        } else if (opcionInvitado.isSelected()) {
-
-            mensaje = "Ingresando a Sistema de Invitado";
-            for (DatosdelRegistro d : Logica.usuariosLista) {
-                if (!Nombredijit.equals(d.getNombre())) {
-                    break;
-                } else if (passdijit.equals(d.getPass())) {
-
-                    JOptionPane.showMessageDialog(this, mensaje);
-                    jPMenu.setVisible(true);
-                    LogIn.setVisible(false);
-                    jPCuerpo.setVisible(true);
-                    jListar2.setVisible(false);
-
-                } else {
-                    JOptionPane.showMessageDialog(rootPane, "Datos incorrectos");
-                }
+                    JOptionPane.showMessageDialog(rootPane, "Debe seleccionar el tipo de perfil");}
+                
+            } else {
+                JOptionPane.showMessageDialog(rootPane, "Debe de llenar los campos en blanco");
             }
         } else {
-            JOptionPane.showMessageDialog(rootPane, "Debe seleccionar el tipo de perfil");
+            JOptionPane.showMessageDialog(rootPane, "Debe de llenar los campos en blanco");
         }
     }//GEN-LAST:event_jIniciarSesionActionPerformed
 
