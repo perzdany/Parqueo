@@ -113,6 +113,7 @@ public class Principal extends javax.swing.JFrame implements Runnable {
     }
 
     public void hora() {
+        
         Calendar calendario = new GregorianCalendar();
         Date horaactual = new Date();
         calendario.setTime(horaactual);

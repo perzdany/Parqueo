@@ -7,8 +7,8 @@ public class Registro extends javax.swing.JFrame {
     public Registro() {
         initComponents();
         this.setLocationRelativeTo(null);
-        
-       GrupoBotones2.add(opcionAdminR);
+
+        GrupoBotones2.add(opcionAdminR);
         GrupoBotones2.add(opcionInvitadoR);
     }
 
@@ -98,6 +98,11 @@ public class Registro extends javax.swing.JFrame {
 
         opcionInvitadoR.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         opcionInvitadoR.setText("Invitado");
+        opcionInvitadoR.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                opcionInvitadoRActionPerformed(evt);
+            }
+        });
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel6.setText("Seleccione el perfil:");
@@ -188,28 +193,50 @@ public class Registro extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnListoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListoActionPerformed
-        if (!txtusuario.getText().isEmpty() || !RegistroCedula.getText().isEmpty()) {
+        int OpcionJbutton;
+
+        if (!txtusuario.getText().isEmpty()) {
 
             if (!txtcontra.getText().isEmpty()) {
 
                 if (!RegistroNombre.getText().isEmpty()) {
 
                     if (!RegistroCedula.getText().isEmpty()) {
-                        
-                        String Usuario = txtusuario.getText();
-                        String passw = txtcontra.getText();
 
-                        DatosdelRegistro dr = new DatosdelRegistro();
-                        dr.setNombre(Usuario);
-                        dr.setPass(passw);
-                        Logica.usuariosLista.add(dr);
+                        if (opcionAdminR.isSelected()) {
 
-                        JOptionPane.showMessageDialog(rootPane, "Usuario creado");
-                        this.dispose();
+                            String Usuario = txtusuario.getText();
+                            String passw = txtcontra.getText();
+
+                            DatosdelRegistro dr = new DatosdelRegistro();
+                            dr.setNombre(Usuario);
+                            dr.setPass(passw);
+                            Logica.usuariosLista.add(dr);
+
+                            JOptionPane.showMessageDialog(rootPane, "Usuario de Administrador creado");
+
+                            this.dispose();
+
+                        } else if (opcionInvitadoR.isSelected()) {
+
+                            String Usuario = txtusuario.getText();
+                            String passw = txtcontra.getText();
+
+                            DatosdelRegistro dr = new DatosdelRegistro();
+                            dr.setNombre(Usuario);
+                            dr.setPass(passw);
+                            Logica.usuariosLista.add(dr);
+
+                            JOptionPane.showMessageDialog(rootPane, "Usuario de Invitado creado");
+                            this.dispose();
+
+                        } else {
+                            JOptionPane.showMessageDialog(rootPane, "Debe de ingresar un tipo de perfil Admistrador/Invitado");
+                        }
                     } else {
-                        
+
                         JOptionPane.showMessageDialog(rootPane, "Debe llenar todos los espacios");
-                        
+
                     }
                 } else {
 
@@ -226,6 +253,8 @@ public class Registro extends javax.swing.JFrame {
 
             JOptionPane.showMessageDialog(rootPane, "Debe llenar todos los espacios");
         }
+
+
     }//GEN-LAST:event_btnListoActionPerformed
 
     private void btnListo1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListo1ActionPerformed
@@ -237,8 +266,12 @@ public class Registro extends javax.swing.JFrame {
     }//GEN-LAST:event_txtcontraActionPerformed
 
     private void opcionAdminRActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opcionAdminRActionPerformed
-        
+
     }//GEN-LAST:event_opcionAdminRActionPerformed
+
+    private void opcionInvitadoRActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opcionInvitadoRActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_opcionInvitadoRActionPerformed
 
     public static void main(String args[]) {
 
