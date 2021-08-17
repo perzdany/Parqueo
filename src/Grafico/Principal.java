@@ -1247,15 +1247,25 @@ public class Principal extends javax.swing.JFrame implements Runnable {
 
                 if (opcionAdmin.isSelected()) {
 
-                    String SelecPerfil = "a";
+                    
+                  
 
                     mensaje = "Ingresando a Sistema de Administrador";
                     for (DatosdelRegistro d : Logica.usuariosLista) {
                         if (!Nombredijit.equals(d.getNombre())) {
+                            JOptionPane.showMessageDialog(rootPane, "Nombre incorrecto, mi pana");
                             break;
-                        } else if (passdijit.equals(d.getPass())) {
+                        } else if (!passdijit.equals(d.getPass())) {
+                            JOptionPane.showMessageDialog(rootPane, "Password incorrecto incorrecto, mi pana");
+                            break;
 
-                            JOptionPane.showMessageDialog(this, mensaje);
+                        } else if (!d.getPerfil().equalsIgnoreCase("a")) {
+
+                            JOptionPane.showMessageDialog(rootPane, "Usted esta intentando ingresar como Admin \n"
+                                    + "y esta registrado como Invitado");
+
+                        } else if (d.getPerfil().equalsIgnoreCase("a")) {
+                            JOptionPane.showMessageDialog(this, mensaje + " \nBienvenido, " + d.getNombre());
 
                             jPMenu.setVisible(true);
                             LogIn.setVisible(false);
@@ -1266,25 +1276,34 @@ public class Principal extends javax.swing.JFrame implements Runnable {
                         }
 
                     }
-
+                   
                 } else if (opcionInvitado.isSelected()) {
-                    
-                    String SelecPerfil = "i";
+
+                   
 
                     mensaje = "Ingresando a Sistema de Invitado";
 
                     for (DatosdelRegistro d : Logica.usuariosLista) {
                         if (!Nombredijit.equals(d.getNombre())) {
+                            JOptionPane.showMessageDialog(rootPane, "Nombre incorrecto");
                             break;
-                        } else if (passdijit.equals(d.getPass())) {
+                        } else if (!passdijit.equals(d.getPass())) {
+                            JOptionPane.showMessageDialog(rootPane, "Password incorrecto incorrecto");
+                            break;
 
-                            JOptionPane.showMessageDialog(this, mensaje);
+                        } else if (!d.getPerfil().equalsIgnoreCase("i")) {
+
+                            JOptionPane.showMessageDialog(rootPane, "Usted esta intentando ingresar como Invitado \n"
+                                    + "y esta registrado como Administrador");
+
+                        } else if (d.getPerfil().equalsIgnoreCase("i")) {
+                            JOptionPane.showMessageDialog(this, mensaje + " \nBienvenido, " + d.getNombre());
+
                             jPMenu.setVisible(true);
                             LogIn.setVisible(false);
                             jPCuerpo.setVisible(true);
-                            jListar2.setVisible(false);
 
-                        } else {
+                        }  else {
                             JOptionPane.showMessageDialog(rootPane, "Datos incorrectos");
                         }
                     }

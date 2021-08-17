@@ -10,19 +10,18 @@ package Grafico;
  * @author 50684
  */
 public class DatosdelRegistro {
-    
+
     String Perfil;
     String nombre;
     String Pass;
 
-    public  String  getPerfil() {
+    public String getPerfil() {
         return Perfil;
     }
 
-    public void setPerfil( String  Perfil) {
+    public void setPerfil(String Perfil) {
         this.Perfil = Perfil;
     }
-    
 
     public String getNombre() {
         return nombre;
@@ -36,7 +35,13 @@ public class DatosdelRegistro {
         return Pass;
     }
 
-    public void setPass( String Pass) {
+    public void setPass(String Pass) {
         this.Pass = Pass;
     }
+
+    @Override
+    public String toString() {
+        return "DatosdelRegistro{" + "Perfil=" + Perfil + ", nombre=" + nombre + ", Pass=" + Pass + '}';
+    }
+
 }

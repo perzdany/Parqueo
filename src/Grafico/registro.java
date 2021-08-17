@@ -214,6 +214,9 @@ public class Registro extends javax.swing.JFrame {
                             dr.setPerfil(opcion);
                             dr.setNombre(Usuario);
                             dr.setPass(passw);
+                            
+                            System.out.println("DATOS DEL REGISTRO " + dr.toString());
+                            
                             Logica.usuariosLista.add(dr);
 
                             JOptionPane.showMessageDialog(rootPane, "Usuario de Administrador creado");
