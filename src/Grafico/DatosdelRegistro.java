@@ -11,9 +11,18 @@ package Grafico;
  */
 public class DatosdelRegistro {
     
-   
+    String Perfil;
     String nombre;
     String Pass;
+
+    public  String  getPerfil() {
+        return Perfil;
+    }
+
+    public void setPerfil( String  Perfil) {
+        this.Perfil = Perfil;
+    }
+    
 
     public String getNombre() {
         return nombre;

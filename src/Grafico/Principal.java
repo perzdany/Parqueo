@@ -113,7 +113,7 @@ public class Principal extends javax.swing.JFrame implements Runnable {
     }
 
     public void hora() {
-        
+
         Calendar calendario = new GregorianCalendar();
         Date horaactual = new Date();
         calendario.setTime(horaactual);
@@ -1233,6 +1233,7 @@ public class Principal extends javax.swing.JFrame implements Runnable {
 
     private void jIniciarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jIniciarSesionActionPerformed
 
+        DatosdelRegistro r = new DatosdelRegistro();
         String mensaje = "";
         String Nombredijit;
         String passdijit;
@@ -1245,6 +1246,8 @@ public class Principal extends javax.swing.JFrame implements Runnable {
             if (!contra.getText().isEmpty()) {
 
                 if (opcionAdmin.isSelected()) {
+
+                    String SelecPerfil = "a";
 
                     mensaje = "Ingresando a Sistema de Administrador";
                     for (DatosdelRegistro d : Logica.usuariosLista) {
@@ -1261,10 +1264,15 @@ public class Principal extends javax.swing.JFrame implements Runnable {
                         } else {
                             JOptionPane.showMessageDialog(rootPane, "Datos incorrectos");
                         }
+
                     }
+
                 } else if (opcionInvitado.isSelected()) {
+                    
+                    String SelecPerfil = "i";
 
                     mensaje = "Ingresando a Sistema de Invitado";
+
                     for (DatosdelRegistro d : Logica.usuariosLista) {
                         if (!Nombredijit.equals(d.getNombre())) {
                             break;
@@ -1280,9 +1288,11 @@ public class Principal extends javax.swing.JFrame implements Runnable {
                             JOptionPane.showMessageDialog(rootPane, "Datos incorrectos");
                         }
                     }
+
                 } else {
-                    JOptionPane.showMessageDialog(rootPane, "Debe seleccionar el tipo de perfil");}
-                
+                    JOptionPane.showMessageDialog(rootPane, "Debe seleccionar el tipo de perfil");
+                }
+
             } else {
                 JOptionPane.showMessageDialog(rootPane, "Debe de llenar los campos en blanco");
             }

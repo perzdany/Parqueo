@@ -193,7 +193,7 @@ public class Registro extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnListoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListoActionPerformed
-        int OpcionJbutton;
+        
 
         if (!txtusuario.getText().isEmpty()) {
 
@@ -204,11 +204,14 @@ public class Registro extends javax.swing.JFrame {
                     if (!RegistroCedula.getText().isEmpty()) {
 
                         if (opcionAdminR.isSelected()) {
-
+                            
+                            String opcion = "a" ;
                             String Usuario = txtusuario.getText();
                             String passw = txtcontra.getText();
+                            
 
                             DatosdelRegistro dr = new DatosdelRegistro();
+                            dr.setPerfil(opcion);
                             dr.setNombre(Usuario);
                             dr.setPass(passw);
                             Logica.usuariosLista.add(dr);
@@ -218,12 +221,14 @@ public class Registro extends javax.swing.JFrame {
                             this.dispose();
 
                         } else if (opcionInvitadoR.isSelected()) {
-
+                            
+                            String opcion = "i" ;
                             String Usuario = txtusuario.getText();
                             String passw = txtcontra.getText();
 
                             DatosdelRegistro dr = new DatosdelRegistro();
                             dr.setNombre(Usuario);
+                            dr.setPerfil(opcion);
                             dr.setPass(passw);
                             Logica.usuariosLista.add(dr);
 
@@ -247,7 +252,6 @@ public class Registro extends javax.swing.JFrame {
             } else {
 
                 JOptionPane.showMessageDialog(rootPane, "Debe llenar todos los espacios");
-
             }
         } else {
 
