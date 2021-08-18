@@ -243,22 +243,22 @@ public class Registro extends javax.swing.JFrame {
                         }
                     } else {
 
-                        JOptionPane.showMessageDialog(rootPane, "Debe llenar todos los espacios");
+                        JOptionPane.showMessageDialog(rootPane, "Debe llenar los espacios en blanco");
 
                     }
                 } else {
 
-                    JOptionPane.showMessageDialog(rootPane, "Debe llenar todos los espacios");
+                    JOptionPane.showMessageDialog(rootPane, "Debe llenar los espacios en blanco");
 
                 }
 
             } else {
 
-                JOptionPane.showMessageDialog(rootPane, "Debe llenar todos los espacios");
+                JOptionPane.showMessageDialog(rootPane, "Debe llenar los espacios en blanco");
             }
         } else {
 
-            JOptionPane.showMessageDialog(rootPane, "Debe llenar todos los espacios");
+            JOptionPane.showMessageDialog(rootPane, "Debe llenar los espacios en blanco");
         }
 
 

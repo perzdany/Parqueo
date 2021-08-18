@@ -60,7 +60,7 @@ public class Principal extends javax.swing.JFrame implements Runnable {
 
                     Documento.add(Chunk.NEWLINE);
 
-                    Documento.add(new Paragraph("Esta es la factrura por usar los servicios de parking click"));
+                    Documento.add(new Paragraph("Esta es la factura por usar los servicios de parking click"));
 
                     Documento.add(Chunk.NEWLINE);
 
@@ -223,6 +223,7 @@ public class Principal extends javax.swing.JFrame implements Runnable {
         setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         setExtendedState(6);
         setName(""); // NOI18N
+        setPreferredSize(new java.awt.Dimension(0, 0));
         setSize(new java.awt.Dimension(0, 0));
 
         jPMenu.setVisible(false);
@@ -516,7 +517,7 @@ public class Principal extends javax.swing.JFrame implements Runnable {
         jPIngresoVehiculo.add(jBIngresar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 340, 90, 40));
 
         ComboBox.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        ComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Posición 1", "Posición 2", "Posición 3", "Posición 4", "Posición 5", "Posición 6", "Posición 7", "Posición 8", "Posición 9", "Posición 10", "Posición 11", "Posición 12", "Posición 13", "Posición 14", "Posición 15", "Posición 16           ", "Posición 17", "Posición 18", "Posición M1", "Posición M2", "Posición M3", "Posición M4", "Posición M5", "Posición M6", "            " }));
+        ComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Posición 1", "Posición 2", "Posición 3", "Posición 4", "Posición 5", "Posición 6", "Posición 7", "Posición 8", "Posición 9", "Posición 10", "Posición 11", "Posición 12", "Posición 13", "Posición 14", "Posición 15", "Posición 16", "Posición 17", "Posición 18", "Posición M1", "Posición M2", "Posición M3", "Posición M4", "Posición M5", "Posición M6", " " }));
         ComboBox.setToolTipText("");
         ComboBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -808,7 +809,7 @@ public class Principal extends javax.swing.JFrame implements Runnable {
         jTabla.setVisible(false);
         jTabla.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        Tabla.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        Tabla.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         Tabla.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {},
@@ -1253,15 +1254,15 @@ public class Principal extends javax.swing.JFrame implements Runnable {
                     mensaje = "Ingresando a Sistema de Administrador";
                     for (DatosdelRegistro d : Logica.usuariosLista) {
                         if (!Nombredijit.equals(d.getNombre())) {
-                            JOptionPane.showMessageDialog(rootPane, "Nombre incorrecto, mi pana");
+                            JOptionPane.showMessageDialog(rootPane, "Nombre incorrecto");
                             break;
                         } else if (!passdijit.equals(d.getPass())) {
-                            JOptionPane.showMessageDialog(rootPane, "Password incorrecto incorrecto, mi pana");
+                            JOptionPane.showMessageDialog(rootPane, "Password incorrecto");
                             break;
 
                         } else if (!d.getPerfil().equalsIgnoreCase("a")) {
 
-                            JOptionPane.showMessageDialog(rootPane, "Usted esta intentando ingresar como Admin \n"
+                            JOptionPane.showMessageDialog(rootPane, "Usted está intentando ingresar como Administrador \n"
                                     + "y esta registrado como Invitado");
 
                         } else if (d.getPerfil().equalsIgnoreCase("a")) {
@@ -1288,7 +1289,7 @@ public class Principal extends javax.swing.JFrame implements Runnable {
                             JOptionPane.showMessageDialog(rootPane, "Nombre incorrecto");
                             break;
                         } else if (!passdijit.equals(d.getPass())) {
-                            JOptionPane.showMessageDialog(rootPane, "Password incorrecto incorrecto");
+                            JOptionPane.showMessageDialog(rootPane, "Password incorrecto");
                             break;
 
                         } else if (!d.getPerfil().equalsIgnoreCase("i")) {
@@ -1313,10 +1314,10 @@ public class Principal extends javax.swing.JFrame implements Runnable {
                 }
 
             } else {
-                JOptionPane.showMessageDialog(rootPane, "Debe de llenar los campos en blanco");
+                JOptionPane.showMessageDialog(rootPane, "Debe llenar los espacios en blanco");
             }
         } else {
-            JOptionPane.showMessageDialog(rootPane, "Debe de llenar los campos en blanco");
+            JOptionPane.showMessageDialog(rootPane, "Debe llenar los espacios en blanco");
         }
     }//GEN-LAST:event_jIniciarSesionActionPerformed
 
