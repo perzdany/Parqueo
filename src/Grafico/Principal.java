@@ -939,10 +939,14 @@ public class Principal extends javax.swing.JFrame implements Runnable {
         }
 
         String combo = ComboBox.getSelectedItem().toString();
+        
+        
         if (combo.equals("Posición 1")) {
             Espacio1.setBackground(Color.red);
+            
         } else {
             Espacio1.setBackground(new Color(51, 204, 0));
+            
         }
         if (combo.equals("Posición 2")) {
             Espacio2.setBackground(Color.red);
@@ -1271,6 +1275,14 @@ public class Principal extends javax.swing.JFrame implements Runnable {
                             LogIn.setVisible(false);
                             jPCuerpo.setVisible(true);
 
+                        } else if(!txtUsuarioverificar.getText().isEmpty()){
+                            
+                            JOptionPane.showMessageDialog(rootPane, "Usuario en blanco");
+                    
+                        }else if(!contra.getText().isEmpty()){
+                            
+                            JOptionPane.showMessageDialog(rootPane, "Contraseña en blanco");
+                    
                         } else {
                             JOptionPane.showMessageDialog(rootPane, "Datos incorrectos");
                         }
