@@ -94,6 +94,7 @@ public class Principal extends javax.swing.JFrame implements Runnable {
         hilo.start();
         setVisible(true);
         txtUsuarioverificar.grabFocus();
+        jConfiguracion.setVisible(false);
 
         modelo.addColumn("Nombre");
         modelo.addColumn("Apellido 1");
@@ -164,6 +165,7 @@ public class Principal extends javax.swing.JFrame implements Runnable {
         jBIngresar2 = new javax.swing.JButton();
         jBIngresar4 = new javax.swing.JButton();
         jBIngresar5 = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
         jPIngresoVehiculo = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -183,6 +185,14 @@ public class Principal extends javax.swing.JFrame implements Runnable {
         ComboBox = new javax.swing.JComboBox<>();
         jLabel9 = new javax.swing.JLabel();
         jBIngresar3 = new javax.swing.JButton();
+        jConfiguracion = new javax.swing.JPanel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jLabel13 = new javax.swing.JLabel();
+        jTextField2 = new javax.swing.JTextField();
         jMapa = new javax.swing.JPanel();
         jLabel34 = new javax.swing.JLabel();
         jReloj = new javax.swing.JPanel();
@@ -223,6 +233,7 @@ public class Principal extends javax.swing.JFrame implements Runnable {
         setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         setExtendedState(6);
         setName(""); // NOI18N
+        setPreferredSize(new java.awt.Dimension(0, 0));
         setSize(new java.awt.Dimension(0, 0));
 
         jPMenu.setVisible(false);
@@ -417,6 +428,19 @@ public class Principal extends javax.swing.JFrame implements Runnable {
         });
         JRegistrarse.add(jBIngresar5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 360, 130, 30));
 
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 356, Short.MAX_VALUE)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 425, Short.MAX_VALUE)
+        );
+
+        JRegistrarse.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -10, -1, -1));
+
         JRegistrarse.setVisible(false);
 
         jPCuerpo.add(JRegistrarse, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 320, 400));
@@ -543,6 +567,40 @@ public class Principal extends javax.swing.JFrame implements Runnable {
         jPIngresoVehiculo.setVisible(false);
 
         jPCuerpo.add(jPIngresoVehiculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 320, 400));
+
+        jConfiguracion.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jConfiguracion.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel10.setFont(new java.awt.Font("Tahoma", 0, 22)); // NOI18N
+        jLabel10.setText("Configuración de Costos");
+        jConfiguracion.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 50, -1, -1));
+
+        jLabel11.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel11.setText("Nombre de factura:");
+        jConfiguracion.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 240, -1, -1));
+        jConfiguracion.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 260, 150, -1));
+
+        jButton1.setBackground(new java.awt.Color(63, 150, 230));
+        jButton1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jButton1.setText("Cambiar precio");
+        jConfiguracion.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 160, 150, 30));
+
+        jButton2.setBackground(new java.awt.Color(63, 150, 230));
+        jButton2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jButton2.setText("Buscar Factura");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        jConfiguracion.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 290, 150, 30));
+
+        jLabel13.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel13.setText("Costo por hora:");
+        jConfiguracion.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 110, -1, -1));
+        jConfiguracion.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 130, 150, -1));
+
+        jPCuerpo.add(jConfiguracion, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 340, 410));
 
         jMapa.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -905,7 +963,10 @@ public class Principal extends javax.swing.JFrame implements Runnable {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jConfigActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jConfigActionPerformed
-        // TODO add your handling code here:
+        JRegistrarse.setVisible(false);
+        jPIngresoVehiculo.setVisible(false);
+        jConfiguracion.setVisible(true);
+        
     }//GEN-LAST:event_jConfigActionPerformed
 
     private void jListar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jListar1ActionPerformed
@@ -921,6 +982,7 @@ public class Principal extends javax.swing.JFrame implements Runnable {
         opcionAdmin.setSelected(false);
         opcionInvitado.setSelected(false);
         jTabla.setVisible(false);
+        jConfiguracion.setVisible(false);
         txtUsuarioverificar.grabFocus();
     }//GEN-LAST:event_jBSalirActionPerformed
 
@@ -943,126 +1005,76 @@ public class Principal extends javax.swing.JFrame implements Runnable {
         
         if (combo.equals("Posición 1")) {
             Espacio1.setBackground(Color.red);
-            
-        } else {
-            Espacio1.setBackground(new Color(51, 204, 0));
-            
         }
         if (combo.equals("Posición 2")) {
             Espacio2.setBackground(Color.red);
-        } else {
-            Espacio2.setBackground(new Color(51, 204, 0));
         }
         if (combo.equals("Posición 3")) {
             Espacio3.setBackground(Color.red);
-        } else {
-            Espacio3.setBackground(new Color(51, 204, 0));
         }
         if (combo.equals("Posición 4")) {
-            Espacio4.setBackground(Color.red);
-        } else {
-            Espacio4.setBackground(new Color(51, 204, 0));
-        }
+            Espacio4.setBackground(Color.red); 
+        }    
         if (combo.equals("Posición 5")) {
             Espacio5.setBackground(Color.red);
-        } else {
-            Espacio5.setBackground(new Color(51, 204, 0));
-        }
+        }    
         if (combo.equals("Posición 6")) {
             Espacio6.setBackground(Color.red);
-        } else {
-            Espacio6.setBackground(new Color(51, 204, 0));
-        }
+        }    
         if (combo.equals("Posición 7")) {
             Espacio7.setBackground(Color.red);
-        } else {
-            Espacio7.setBackground(new Color(51, 204, 0));
-        }
+        }    
         if (combo.equals("Posición 8")) {
             Espacio8.setBackground(Color.red);
-        } else {
-            Espacio8.setBackground(new Color(51, 204, 0));
-        }
+        }    
         if (combo.equals("Posición 9")) {
             Espacio9.setBackground(Color.red);
-        } else {
-            Espacio9.setBackground(new Color(51, 204, 0));
-        }
+        }    
         if (combo.equals("Posición 10")) {
             Espacio10.setBackground(Color.red);
-        } else {
-            Espacio10.setBackground(new Color(51, 204, 0));
-        }
+        }    
         if (combo.equals("Posición 11")) {
             Espacio11.setBackground(Color.red);
-        } else {
-            Espacio11.setBackground(new Color(51, 204, 0));
-        }
+        }    
         if (combo.equals("Posición 12")) {
             Espacio12.setBackground(Color.red);
-        } else {
-            Espacio12.setBackground(new Color(51, 204, 0));
-        }
+        }    
         if (combo.equals("Posición 13")) {
             Espacio13.setBackground(Color.red);
-        } else {
-            Espacio13.setBackground(new Color(51, 204, 0));
-        }
+        }  
         if (combo.equals("Posición 14")) {
             Espacio14.setBackground(Color.red);
-        } else {
-            Espacio14.setBackground(new Color(51, 204, 0));
-        }
+        }  
         if (combo.equals("Posición 15")) {
             Espacio15.setBackground(Color.red);
-        } else {
-            Espacio15.setBackground(new Color(51, 204, 0));
-        }
+        }  
         if (combo.equals("Posición 16")) {
             Espacio16.setBackground(Color.red);
-        } else {
-            Espacio16.setBackground(new Color(51, 204, 0));
-        }
+        }  
         if (combo.equals("Posición 17")) {
             Espacio17.setBackground(Color.red);
-        } else {
-            Espacio17.setBackground(new Color(51, 204, 0));
-        }
+        }  
         if (combo.equals("Posición 18")) {
             Espacio18.setBackground(Color.red);
-        } else {
-            Espacio18.setBackground(new Color(51, 204, 0));
-        }
+        }  
         if (combo.equals("Posición M1")) {
             EspacioMoto1.setBackground(Color.red);
-        } else {
-            EspacioMoto1.setBackground(new Color(51, 204, 0));
-        }
+        }  
         if (combo.equals("Posición M2")) {
             EspacioMoto2.setBackground(Color.red);
-        } else {
-            EspacioMoto2.setBackground(new Color(51, 204, 0));
-        }
+        }  
         if (combo.equals("Posición M3")) {
             EspacioMoto3.setBackground(Color.red);
-        } else {
-            EspacioMoto3.setBackground(new Color(51, 204, 0));
-        }
+        }  
         if (combo.equals("Posición M4")) {
             EspacioMoto4.setBackground(Color.red);
-        } else {
-            EspacioMoto4.setBackground(new Color(51, 204, 0));
-        }
+        }  
         if (combo.equals("Posición M5")) {
             EspacioMoto5.setBackground(Color.red);
-        } else {
-            EspacioMoto5.setBackground(new Color(51, 204, 0));
-        }
+        }  
         if (combo.equals("Posición M6")) {
             EspacioMoto6.setBackground(Color.red);
-        } else {
-            EspacioMoto6.setBackground(new Color(51, 204, 0));
-        }
+        }  
 
         String Dato[] = new String[7];
         Dato[0] = jTxtNombre.getText();
@@ -1290,6 +1302,7 @@ public class Principal extends javax.swing.JFrame implements Runnable {
                     }
                    
                 } else if (opcionInvitado.isSelected()) {
+                    
 
                    
 
@@ -1314,6 +1327,8 @@ public class Principal extends javax.swing.JFrame implements Runnable {
                             jPMenu.setVisible(true);
                             LogIn.setVisible(false);
                             jPCuerpo.setVisible(true);
+                            jConfiguracion.setVisible(false);
+                            jListar2.setVisible(false);
 
                         }  else {
                             JOptionPane.showMessageDialog(rootPane, "Datos incorrectos");
@@ -1372,7 +1387,84 @@ public class Principal extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_contraActionPerformed
 
     private void jBIngresar4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBIngresar4ActionPerformed
-        // TODO add your handling code here:
+        String placaverificar = jTxtPlaca1.getText();
+        
+        if (placaverificar.equalsIgnoreCase(jTxtPlaca.getText())) {
+            Espacio1.setBackground(Color.green);
+        }else{
+            JOptionPane.showMessageDialog(null, "Error");
+        }
+        if (placaverificar.equalsIgnoreCase(jTxtPlaca.getText())) {
+            Espacio2.setBackground(Color.green);
+        }
+        if (placaverificar.equalsIgnoreCase(jTxtPlaca.getText())) {
+            Espacio3.setBackground(Color.green);
+        }
+        if (placaverificar.equalsIgnoreCase(jTxtPlaca.getText())) {
+            Espacio4.setBackground(Color.green);
+        }
+        if (placaverificar.equalsIgnoreCase(jTxtPlaca.getText())) {
+            Espacio5.setBackground(Color.green);
+        }
+        if (placaverificar.equalsIgnoreCase(jTxtPlaca.getText())) {
+            Espacio6.setBackground(Color.green);
+        }
+        if (placaverificar.equalsIgnoreCase(jTxtPlaca.getText())) {
+            Espacio7.setBackground(Color.green);
+        }
+        if (placaverificar.equalsIgnoreCase(jTxtPlaca.getText())) {
+            Espacio8.setBackground(Color.green);
+        }
+        if (placaverificar.equalsIgnoreCase(jTxtPlaca.getText())) {
+            Espacio9.setBackground(Color.green);
+        }
+        if (placaverificar.equalsIgnoreCase(jTxtPlaca.getText())) {
+            Espacio10.setBackground(Color.green);
+        }
+        if (placaverificar.equalsIgnoreCase(jTxtPlaca.getText())) {
+            Espacio11.setBackground(Color.green);
+        }
+        if (placaverificar.equalsIgnoreCase(jTxtPlaca.getText())) {
+            Espacio12.setBackground(Color.green);
+        }
+        if (placaverificar.equalsIgnoreCase(jTxtPlaca.getText())) {
+            Espacio13.setBackground(Color.green);
+        }
+        if (placaverificar.equalsIgnoreCase(jTxtPlaca.getText())) {
+            Espacio14.setBackground(Color.green);
+        }
+        if (placaverificar.equalsIgnoreCase(jTxtPlaca.getText())) {
+            Espacio15.setBackground(Color.green);
+        }
+        if (placaverificar.equalsIgnoreCase(jTxtPlaca.getText())) {
+            Espacio16.setBackground(Color.green);
+        }
+        if (placaverificar.equalsIgnoreCase(jTxtPlaca.getText())) {
+            Espacio17.setBackground(Color.green);
+        }
+        if (placaverificar.equalsIgnoreCase(jTxtPlaca.getText())) {
+            Espacio18.setBackground(Color.green);
+        }
+        if (placaverificar.equalsIgnoreCase(jTxtPlaca.getText())) {
+            EspacioMoto1.setBackground(Color.green);
+        }
+        if (placaverificar.equalsIgnoreCase(jTxtPlaca.getText())) {
+            EspacioMoto2.setBackground(Color.green);
+        }
+        if (placaverificar.equalsIgnoreCase(jTxtPlaca.getText())) {
+            EspacioMoto3.setBackground(Color.green);
+        }
+        if (placaverificar.equalsIgnoreCase(jTxtPlaca.getText())) {
+            EspacioMoto4.setBackground(Color.green);
+        }
+        if (placaverificar.equalsIgnoreCase(jTxtPlaca.getText())) {
+            EspacioMoto5.setBackground(Color.green);
+        }
+        if (placaverificar.equalsIgnoreCase(jTxtPlaca.getText())) {
+            EspacioMoto6.setBackground(Color.green);
+        }   
+        
+        
     }//GEN-LAST:event_jBIngresar4ActionPerformed
 
     private void jBIngresar5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBIngresar5ActionPerformed
@@ -1388,6 +1480,10 @@ public class Principal extends javax.swing.JFrame implements Runnable {
 
 
     }//GEN-LAST:event_jBIngresar5ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1479,11 +1575,17 @@ public class Principal extends javax.swing.JFrame implements Runnable {
     private javax.swing.JButton jBSalir;
     private javax.swing.JButton jBSalirIngreso;
     private javax.swing.JButton jBSalirRetiro;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JButton jConfig;
+    private javax.swing.JPanel jConfiguracion;
     private javax.swing.JButton jIniciarSesion;
     private javax.swing.JButton jIniciarSesion1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel34;
@@ -1500,11 +1602,14 @@ public class Principal extends javax.swing.JFrame implements Runnable {
     private javax.swing.JPanel jPCuerpo;
     private javax.swing.JPanel jPIngresoVehiculo;
     private javax.swing.JPanel jPMenu;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jReloj;
     private javax.swing.JButton jSalirLog;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JPanel jTabla;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTxtApellido1;
     private javax.swing.JTextField jTxtApellido2;
     private javax.swing.JTextField jTxtCedula;
