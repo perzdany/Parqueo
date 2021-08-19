@@ -12,6 +12,7 @@ import java.awt.Image;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import static java.lang.Integer.parseInt;
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 import java.util.Date;
@@ -21,6 +22,9 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 public class Principal extends javax.swing.JFrame implements Runnable {
+
+    int Total;
+    int Cobrohora = 2500;
 
     String hora, minutos, segundos;
     Thread hilo;
@@ -158,14 +162,16 @@ public class Principal extends javax.swing.JFrame implements Runnable {
         jPCuerpo = new javax.swing.JPanel();
         jSeparator1 = new javax.swing.JSeparator();
         JRegistrarse = new javax.swing.JPanel();
-        jLabel12 = new javax.swing.JLabel();
-        jTxtPlaca1 = new javax.swing.JTextField();
-        jBSalirRetiro = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jBIngresar2 = new javax.swing.JButton();
-        jBIngresar4 = new javax.swing.JButton();
         jBIngresar5 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
+        HorasE = new javax.swing.JTextField();
+        jLabel14 = new javax.swing.JLabel();
+        placaverificar1 = new javax.swing.JTextField();
+        jLabel12 = new javax.swing.JLabel();
+        jBIngresar4 = new javax.swing.JButton();
+        jBSalirRetiro = new javax.swing.JButton();
         jPIngresoVehiculo = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -188,7 +194,7 @@ public class Principal extends javax.swing.JFrame implements Runnable {
         jConfiguracion = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        Buscarfactura = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jLabel13 = new javax.swing.JLabel();
@@ -233,7 +239,6 @@ public class Principal extends javax.swing.JFrame implements Runnable {
         setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         setExtendedState(6);
         setName(""); // NOI18N
-        setPreferredSize(new java.awt.Dimension(0, 0));
         setSize(new java.awt.Dimension(0, 0));
 
         jPMenu.setVisible(false);
@@ -374,23 +379,6 @@ public class Principal extends javax.swing.JFrame implements Runnable {
         JRegistrarse.setPreferredSize(new java.awt.Dimension(300, 400));
         JRegistrarse.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel12.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel12.setText("Placa:");
-        JRegistrarse.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 160, -1, 28));
-        JRegistrarse.add(jTxtPlaca1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 160, 178, 28));
-
-        jBSalirRetiro.setBackground(new java.awt.Color(63, 150, 230));
-        jBSalirRetiro.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jBSalirRetiro.setText("Salir");
-        jBSalirRetiro.setToolTipText("");
-        jBSalirRetiro.setActionCommand("");
-        jBSalirRetiro.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBSalirRetiroActionPerformed(evt);
-            }
-        });
-        JRegistrarse.add(jBSalirRetiro, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 280, 100, 40));
-
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 22)); // NOI18N
         jLabel2.setText("Retiro de Vehículos");
         JRegistrarse.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(73, 9, -1, 60));
@@ -406,17 +394,6 @@ public class Principal extends javax.swing.JFrame implements Runnable {
         });
         JRegistrarse.add(jBIngresar2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 360, 120, 30));
 
-        jBIngresar4.setBackground(new java.awt.Color(63, 150, 230));
-        jBIngresar4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jBIngresar4.setText("Retirar");
-        jBIngresar4.setToolTipText("");
-        jBIngresar4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBIngresar4ActionPerformed(evt);
-            }
-        });
-        JRegistrarse.add(jBIngresar4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 280, 100, 40));
-
         jBIngresar5.setBackground(new java.awt.Color(63, 150, 230));
         jBIngresar5.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jBIngresar5.setText("Crear Factura");
@@ -428,15 +405,73 @@ public class Principal extends javax.swing.JFrame implements Runnable {
         });
         JRegistrarse.add(jBIngresar5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 360, 130, 30));
 
+        jLabel14.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel14.setText("Horas de uso:");
+
+        jLabel12.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel12.setText("Placa:");
+
+        jBIngresar4.setBackground(new java.awt.Color(63, 150, 230));
+        jBIngresar4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jBIngresar4.setText("Retirar");
+        jBIngresar4.setToolTipText("");
+        jBIngresar4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBIngresar4ActionPerformed(evt);
+            }
+        });
+
+        jBSalirRetiro.setBackground(new java.awt.Color(63, 150, 230));
+        jBSalirRetiro.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jBSalirRetiro.setText("Salir");
+        jBSalirRetiro.setToolTipText("");
+        jBSalirRetiro.setActionCommand("");
+        jBSalirRetiro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBSalirRetiroActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 356, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel12)
+                                .addGap(18, 18, 18)
+                                .addComponent(placaverificar1, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel14)
+                                .addGap(18, 18, 18)
+                                .addComponent(HorasE, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(25, 25, 25)
+                        .addComponent(jBIngresar4, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(51, 51, 51)
+                        .addComponent(jBSalirRetiro, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(93, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 425, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(142, 142, 142)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(HorasE, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(placaverificar1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(78, 78, 78)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jBIngresar4, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jBSalirRetiro, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(87, Short.MAX_VALUE))
         );
 
         JRegistrarse.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -10, -1, -1));
@@ -578,11 +613,16 @@ public class Principal extends javax.swing.JFrame implements Runnable {
         jLabel11.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel11.setText("Nombre de factura:");
         jConfiguracion.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 240, -1, -1));
-        jConfiguracion.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 260, 150, -1));
+        jConfiguracion.add(Buscarfactura, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 260, 150, -1));
 
         jButton1.setBackground(new java.awt.Color(63, 150, 230));
         jButton1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jButton1.setText("Cambiar precio");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
         jConfiguracion.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 160, 150, 30));
 
         jButton2.setBackground(new java.awt.Color(63, 150, 230));
@@ -966,7 +1006,7 @@ public class Principal extends javax.swing.JFrame implements Runnable {
         JRegistrarse.setVisible(false);
         jPIngresoVehiculo.setVisible(false);
         jConfiguracion.setVisible(true);
-        
+
     }//GEN-LAST:event_jConfigActionPerformed
 
     private void jListar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jListar1ActionPerformed
@@ -989,7 +1029,7 @@ public class Principal extends javax.swing.JFrame implements Runnable {
     private void jBRetirarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBRetirarActionPerformed
         JRegistrarse.setVisible(true);
         jPIngresoVehiculo.setVisible(false);
-        jTxtPlaca1.grabFocus();
+        placaverificar1.grabFocus();
     }//GEN-LAST:event_jBRetirarActionPerformed
 
     private void jBIngresar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBIngresar1ActionPerformed
@@ -1001,8 +1041,7 @@ public class Principal extends javax.swing.JFrame implements Runnable {
         }
 
         String combo = ComboBox.getSelectedItem().toString();
-        
-        
+
         if (combo.equals("Posición 1")) {
             Espacio1.setBackground(Color.red);
         }
@@ -1013,68 +1052,68 @@ public class Principal extends javax.swing.JFrame implements Runnable {
             Espacio3.setBackground(Color.red);
         }
         if (combo.equals("Posición 4")) {
-            Espacio4.setBackground(Color.red); 
-        }    
+            Espacio4.setBackground(Color.red);
+        }
         if (combo.equals("Posición 5")) {
             Espacio5.setBackground(Color.red);
-        }    
+        }
         if (combo.equals("Posición 6")) {
             Espacio6.setBackground(Color.red);
-        }    
+        }
         if (combo.equals("Posición 7")) {
             Espacio7.setBackground(Color.red);
-        }    
+        }
         if (combo.equals("Posición 8")) {
             Espacio8.setBackground(Color.red);
-        }    
+        }
         if (combo.equals("Posición 9")) {
             Espacio9.setBackground(Color.red);
-        }    
+        }
         if (combo.equals("Posición 10")) {
             Espacio10.setBackground(Color.red);
-        }    
+        }
         if (combo.equals("Posición 11")) {
             Espacio11.setBackground(Color.red);
-        }    
+        }
         if (combo.equals("Posición 12")) {
             Espacio12.setBackground(Color.red);
-        }    
+        }
         if (combo.equals("Posición 13")) {
             Espacio13.setBackground(Color.red);
-        }  
+        }
         if (combo.equals("Posición 14")) {
             Espacio14.setBackground(Color.red);
-        }  
+        }
         if (combo.equals("Posición 15")) {
             Espacio15.setBackground(Color.red);
-        }  
+        }
         if (combo.equals("Posición 16")) {
             Espacio16.setBackground(Color.red);
-        }  
+        }
         if (combo.equals("Posición 17")) {
             Espacio17.setBackground(Color.red);
-        }  
+        }
         if (combo.equals("Posición 18")) {
             Espacio18.setBackground(Color.red);
-        }  
+        }
         if (combo.equals("Posición M1")) {
             EspacioMoto1.setBackground(Color.red);
-        }  
+        }
         if (combo.equals("Posición M2")) {
             EspacioMoto2.setBackground(Color.red);
-        }  
+        }
         if (combo.equals("Posición M3")) {
             EspacioMoto3.setBackground(Color.red);
-        }  
+        }
         if (combo.equals("Posición M4")) {
             EspacioMoto4.setBackground(Color.red);
-        }  
+        }
         if (combo.equals("Posición M5")) {
             EspacioMoto5.setBackground(Color.red);
-        }  
+        }
         if (combo.equals("Posición M6")) {
             EspacioMoto6.setBackground(Color.red);
-        }  
+        }
 
         String Dato[] = new String[7];
         Dato[0] = jTxtNombre.getText();
@@ -1084,6 +1123,7 @@ public class Principal extends javax.swing.JFrame implements Runnable {
         Dato[4] = jTxtPlaca.getText();
         Dato[5] = boton.toString();
         Dato[6] = ComboBox.getSelectedItem().toString();
+
         modelo.addRow(Dato);
     }//GEN-LAST:event_jBIngresar1ActionPerformed
 
@@ -1263,9 +1303,6 @@ public class Principal extends javax.swing.JFrame implements Runnable {
 
                 if (opcionAdmin.isSelected()) {
 
-                    
-                  
-
                     mensaje = "Ingresando a Sistema de Administrador";
                     for (DatosdelRegistro d : Logica.usuariosLista) {
                         if (!Nombredijit.equals(d.getNombre())) {
@@ -1287,24 +1324,22 @@ public class Principal extends javax.swing.JFrame implements Runnable {
                             LogIn.setVisible(false);
                             jPCuerpo.setVisible(true);
 
-                        } else if(!txtUsuarioverificar.getText().isEmpty()){
-                            
-                            JOptionPane.showMessageDialog(rootPane, "Usuario en blanco");
-                    
-                        }else if(!contra.getText().isEmpty()){
-                            
-                            JOptionPane.showMessageDialog(rootPane, "Contraseña en blanco");
-                    
+                        } else if (!txtUsuarioverificar.getText().isEmpty()) {
+
+                            JOptionPane.showMessageDialog(rootPane, "Usuario en blanco /n "
+                                    + "Porfavor ingrese el usuario");
+
+                        } else if (!contra.getText().isEmpty()) {
+
+                            JOptionPane.showMessageDialog(rootPane, "Contraseña en blanco /n"
+                                    + "Porfavor ingrese la contraseña");
                         } else {
                             JOptionPane.showMessageDialog(rootPane, "Datos incorrectos");
                         }
 
                     }
-                   
-                } else if (opcionInvitado.isSelected()) {
-                    
 
-                   
+                } else if (opcionInvitado.isSelected()) {
 
                     mensaje = "Ingresando a Sistema de Invitado";
 
@@ -1330,7 +1365,17 @@ public class Principal extends javax.swing.JFrame implements Runnable {
                             jConfiguracion.setVisible(false);
                             jListar2.setVisible(false);
 
-                        }  else {
+                        } else if (!txtUsuarioverificar.getText().isEmpty()) {
+
+                            JOptionPane.showMessageDialog(rootPane, "Usuario en blanco /n "
+                                    + "Porfavor ingrese el usuario");
+
+                        } else if (!contra.getText().isEmpty()) {
+
+                            JOptionPane.showMessageDialog(rootPane, "Contraseña en blanco /n"
+                                    + "Porfavor ingrese la contraseña");
+
+                        } else {
                             JOptionPane.showMessageDialog(rootPane, "Datos incorrectos");
                         }
                     }
@@ -1387,84 +1432,103 @@ public class Principal extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_contraActionPerformed
 
     private void jBIngresar4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBIngresar4ActionPerformed
-        String placaverificar = jTxtPlaca1.getText();
-        
-        if (placaverificar.equalsIgnoreCase(jTxtPlaca.getText())) {
-            Espacio1.setBackground(Color.green);
-        }else{
-            JOptionPane.showMessageDialog(null, "Error");
+
+        if (!HorasE.getText().isEmpty()) {
+
+            if (!placaverificar1.getText().isEmpty()) {
+
+                String placaverificar = placaverificar1.getText() ;
+                int horas;
+
+                horas = Integer.parseInt(HorasE.getText());
+                Total = horas * Cobrohora;
+
+                
+
+                if (placaverificar.equalsIgnoreCase(jTxtPlaca.getText())) {
+                    Espacio1.setBackground(Color.green);
+                } else {
+                    JOptionPane.showMessageDialog(null, "Error");
+                }
+                if (placaverificar.equalsIgnoreCase(jTxtPlaca.getText())) {
+                    Espacio2.setBackground(Color.green);
+                }
+                if (placaverificar.equalsIgnoreCase(jTxtPlaca.getText())) {
+                    Espacio3.setBackground(Color.green);
+                }
+                if (placaverificar.equalsIgnoreCase(jTxtPlaca.getText())) {
+                    Espacio4.setBackground(Color.green);
+                }
+                if (placaverificar.equalsIgnoreCase(jTxtPlaca.getText())) {
+                    Espacio5.setBackground(Color.green);
+                }
+                if (placaverificar.equalsIgnoreCase(jTxtPlaca.getText())) {
+                    Espacio6.setBackground(Color.green);
+                }
+                if (placaverificar.equalsIgnoreCase(jTxtPlaca.getText())) {
+                    Espacio7.setBackground(Color.green);
+                }
+                if (placaverificar.equalsIgnoreCase(jTxtPlaca.getText())) {
+                    Espacio8.setBackground(Color.green);
+                }
+                if (placaverificar.equalsIgnoreCase(jTxtPlaca.getText())) {
+                    Espacio9.setBackground(Color.green);
+                }
+                if (placaverificar.equalsIgnoreCase(jTxtPlaca.getText())) {
+                    Espacio10.setBackground(Color.green);
+                }
+                if (placaverificar.equalsIgnoreCase(jTxtPlaca.getText())) {
+                    Espacio11.setBackground(Color.green);
+                }
+                if (placaverificar.equalsIgnoreCase(jTxtPlaca.getText())) {
+                    Espacio12.setBackground(Color.green);
+                }
+                if (placaverificar.equalsIgnoreCase(jTxtPlaca.getText())) {
+                    Espacio13.setBackground(Color.green);
+                }
+                if (placaverificar.equalsIgnoreCase(jTxtPlaca.getText())) {
+                    Espacio14.setBackground(Color.green);
+                }
+                if (placaverificar.equalsIgnoreCase(jTxtPlaca.getText())) {
+                    Espacio15.setBackground(Color.green);
+                }
+                if (placaverificar.equalsIgnoreCase(jTxtPlaca.getText())) {
+                    Espacio16.setBackground(Color.green);
+                }
+                if (placaverificar.equalsIgnoreCase(jTxtPlaca.getText())) {
+                    Espacio17.setBackground(Color.green);
+                }
+                if (placaverificar.equalsIgnoreCase(jTxtPlaca.getText())) {
+                    Espacio18.setBackground(Color.green);
+                }
+                if (placaverificar.equalsIgnoreCase(jTxtPlaca.getText())) {
+                    EspacioMoto1.setBackground(Color.green);
+                }
+                if (placaverificar.equalsIgnoreCase(jTxtPlaca.getText())) {
+                    EspacioMoto2.setBackground(Color.green);
+                }
+                if (placaverificar.equalsIgnoreCase(jTxtPlaca.getText())) {
+                    EspacioMoto3.setBackground(Color.green);
+                }
+                if (placaverificar.equalsIgnoreCase(jTxtPlaca.getText())) {
+                    EspacioMoto4.setBackground(Color.green);
+                }
+                if (placaverificar.equalsIgnoreCase(jTxtPlaca.getText())) {
+                    EspacioMoto5.setBackground(Color.green);
+                }
+                if (placaverificar.equalsIgnoreCase(jTxtPlaca.getText())) {
+                    EspacioMoto6.setBackground(Color.green);
+                }
+
+            } else {
+                JOptionPane.showMessageDialog(rootPane, "Debe indicar la placa de su vehiculo");
+            }
+
+        } else {
+            JOptionPane.showMessageDialog(rootPane, "Debe indicar cuantas hora utilizo el parqueo");
         }
-        if (placaverificar.equalsIgnoreCase(jTxtPlaca.getText())) {
-            Espacio2.setBackground(Color.green);
-        }
-        if (placaverificar.equalsIgnoreCase(jTxtPlaca.getText())) {
-            Espacio3.setBackground(Color.green);
-        }
-        if (placaverificar.equalsIgnoreCase(jTxtPlaca.getText())) {
-            Espacio4.setBackground(Color.green);
-        }
-        if (placaverificar.equalsIgnoreCase(jTxtPlaca.getText())) {
-            Espacio5.setBackground(Color.green);
-        }
-        if (placaverificar.equalsIgnoreCase(jTxtPlaca.getText())) {
-            Espacio6.setBackground(Color.green);
-        }
-        if (placaverificar.equalsIgnoreCase(jTxtPlaca.getText())) {
-            Espacio7.setBackground(Color.green);
-        }
-        if (placaverificar.equalsIgnoreCase(jTxtPlaca.getText())) {
-            Espacio8.setBackground(Color.green);
-        }
-        if (placaverificar.equalsIgnoreCase(jTxtPlaca.getText())) {
-            Espacio9.setBackground(Color.green);
-        }
-        if (placaverificar.equalsIgnoreCase(jTxtPlaca.getText())) {
-            Espacio10.setBackground(Color.green);
-        }
-        if (placaverificar.equalsIgnoreCase(jTxtPlaca.getText())) {
-            Espacio11.setBackground(Color.green);
-        }
-        if (placaverificar.equalsIgnoreCase(jTxtPlaca.getText())) {
-            Espacio12.setBackground(Color.green);
-        }
-        if (placaverificar.equalsIgnoreCase(jTxtPlaca.getText())) {
-            Espacio13.setBackground(Color.green);
-        }
-        if (placaverificar.equalsIgnoreCase(jTxtPlaca.getText())) {
-            Espacio14.setBackground(Color.green);
-        }
-        if (placaverificar.equalsIgnoreCase(jTxtPlaca.getText())) {
-            Espacio15.setBackground(Color.green);
-        }
-        if (placaverificar.equalsIgnoreCase(jTxtPlaca.getText())) {
-            Espacio16.setBackground(Color.green);
-        }
-        if (placaverificar.equalsIgnoreCase(jTxtPlaca.getText())) {
-            Espacio17.setBackground(Color.green);
-        }
-        if (placaverificar.equalsIgnoreCase(jTxtPlaca.getText())) {
-            Espacio18.setBackground(Color.green);
-        }
-        if (placaverificar.equalsIgnoreCase(jTxtPlaca.getText())) {
-            EspacioMoto1.setBackground(Color.green);
-        }
-        if (placaverificar.equalsIgnoreCase(jTxtPlaca.getText())) {
-            EspacioMoto2.setBackground(Color.green);
-        }
-        if (placaverificar.equalsIgnoreCase(jTxtPlaca.getText())) {
-            EspacioMoto3.setBackground(Color.green);
-        }
-        if (placaverificar.equalsIgnoreCase(jTxtPlaca.getText())) {
-            EspacioMoto4.setBackground(Color.green);
-        }
-        if (placaverificar.equalsIgnoreCase(jTxtPlaca.getText())) {
-            EspacioMoto5.setBackground(Color.green);
-        }
-        if (placaverificar.equalsIgnoreCase(jTxtPlaca.getText())) {
-            EspacioMoto6.setBackground(Color.green);
-        }   
-        
-        
+
+
     }//GEN-LAST:event_jBIngresar4ActionPerformed
 
     private void jBIngresar5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBIngresar5ActionPerformed
@@ -1482,8 +1546,18 @@ public class Principal extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_jBIngresar5ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
+        if (!Buscarfactura.getText().isEmpty()) {
+            Abrir(Buscarfactura.getText());
+
+        } else {
+            JOptionPane.showMessageDialog(null, "Debe ingresar que factura buscar /n"
+                    + "'Crack'");
+        }
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1530,6 +1604,7 @@ public class Principal extends javax.swing.JFrame implements Runnable {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel BackGround;
+    private javax.swing.JTextField Buscarfactura;
     private javax.swing.JComboBox<String> ComboBox;
     private javax.swing.JToggleButton Espacio1;
     private javax.swing.JToggleButton Espacio10;
@@ -1555,6 +1630,7 @@ public class Principal extends javax.swing.JFrame implements Runnable {
     private javax.swing.JToggleButton EspacioMoto4;
     private javax.swing.JToggleButton EspacioMoto5;
     private javax.swing.JToggleButton EspacioMoto6;
+    private javax.swing.JTextField HorasE;
     private javax.swing.JPanel JRegistrarse;
     private javax.swing.JLabel LabelFecha;
     private javax.swing.JLabel LabelHora;
@@ -1586,6 +1662,7 @@ public class Principal extends javax.swing.JFrame implements Runnable {
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel34;
@@ -1608,16 +1685,15 @@ public class Principal extends javax.swing.JFrame implements Runnable {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JPanel jTabla;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTxtApellido1;
     private javax.swing.JTextField jTxtApellido2;
     private javax.swing.JTextField jTxtCedula;
     private javax.swing.JTextField jTxtNombre;
     private javax.swing.JTextField jTxtPlaca;
-    private javax.swing.JTextField jTxtPlaca1;
     private javax.swing.JRadioButton opcionAdmin;
     private javax.swing.JRadioButton opcionInvitado;
+    private javax.swing.JTextField placaverificar1;
     private javax.swing.JTextField txtUsuarioverificar;
     // End of variables declaration//GEN-END:variables
 
