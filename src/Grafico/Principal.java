@@ -290,12 +290,7 @@ public class Principal extends javax.swing.JFrame implements Runnable {
         LogIn.add(contra, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 380, 190, -1));
 
         opcionInvitado.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        opcionInvitado.setText("Cliente");
-        opcionInvitado.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                opcionInvitadoActionPerformed(evt);
-            }
-        });
+        opcionInvitado.setText("Invitado");
         LogIn.add(opcionInvitado, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 310, -1, 30));
 
         opcionAdmin.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -1271,7 +1266,7 @@ public class Principal extends javax.swing.JFrame implements Runnable {
                         } else if (!d.getPerfil().equalsIgnoreCase("a")) {
 
                             JOptionPane.showMessageDialog(rootPane, "Usted esta intentando ingresar como Admin \n"
-                                    + "y esta registrado como Cliente");
+                                    + "y esta registrado como Invitado");
 
                         } else if (d.getPerfil().equalsIgnoreCase("a")) {
                             JOptionPane.showMessageDialog(this, mensaje + " \nBienvenido, " + d.getNombre());
@@ -1298,7 +1293,7 @@ public class Principal extends javax.swing.JFrame implements Runnable {
 
                    
 
-                    mensaje = "Ingresando a Sistema de Cliente";
+                    mensaje = "Ingresando a Sistema de Invitado";
 
                     for (DatosdelRegistro d : Logica.usuariosLista) {
                         if (!Nombredijit.equals(d.getNombre())) {
@@ -1310,7 +1305,7 @@ public class Principal extends javax.swing.JFrame implements Runnable {
 
                         } else if (!d.getPerfil().equalsIgnoreCase("i")) {
 
-                            JOptionPane.showMessageDialog(rootPane, "Usted esta intentando ingresar como Cliente \n"
+                            JOptionPane.showMessageDialog(rootPane, "Usted esta intentando ingresar como Invitado \n"
                                     + "y esta registrado como Administrador");
 
                         } else if (d.getPerfil().equalsIgnoreCase("i")) {
@@ -1393,10 +1388,6 @@ public class Principal extends javax.swing.JFrame implements Runnable {
 
 
     }//GEN-LAST:event_jBIngresar5ActionPerformed
-
-    private void opcionInvitadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opcionInvitadoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_opcionInvitadoActionPerformed
 
     /**
      * @param args the command line arguments

@@ -97,7 +97,7 @@ public class Registro extends javax.swing.JFrame {
         });
 
         opcionInvitadoR.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        opcionInvitadoR.setText("Cliente");
+        opcionInvitadoR.setText("Invitado");
         opcionInvitadoR.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 opcionInvitadoRActionPerformed(evt);
@@ -235,11 +235,11 @@ public class Registro extends javax.swing.JFrame {
                             dr.setPass(passw);
                             Logica.usuariosLista.add(dr);
 
-                            JOptionPane.showMessageDialog(rootPane, "Usuario de Cliente creado");
+                            JOptionPane.showMessageDialog(rootPane, "Usuario de Invitado creado");
                             this.dispose();
 
                         } else {
-                            JOptionPane.showMessageDialog(rootPane, "Debe de ingresar un tipo de perfil Admistrador/Cliente");
+                            JOptionPane.showMessageDialog(rootPane, "Debe de ingresar un tipo de perfil Admistrador/Invitado");
                         }
                     } else {
 
