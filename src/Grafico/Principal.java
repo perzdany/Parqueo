@@ -90,6 +90,36 @@ public class Principal extends javax.swing.JFrame implements Runnable {
 
     }
 
+    public void generarEntrada(String nombre) throws FileNotFoundException, DocumentException {
+
+        FileOutputStream archivo = new FileOutputStream(nombre + ".Pdf");
+        Document Documento = new Document();
+        PdfWriter.getInstance(Documento, archivo);
+        Documento.open();
+
+        Paragraph parrafo = new Paragraph("Ticket de entrada Parking Click");
+        parrafo.setAlignment(1);
+        Documento.add(parrafo);
+
+        Documento.add(new Paragraph("Nombre:" + jTxtNombre.getText()));
+        Documento.add(new Paragraph("Apellidos:" + jTxtApellido1.getText() + "" + jTxtApellido2.getText()));
+        Documento.add(new Paragraph("Placa del vehiculo:" + jTxtPlaca.getText()));
+
+        Documento.add(Chunk.NEWLINE);
+
+        Documento.add(new Paragraph("Esta es la factrura por entrar a los parqueos de parking click"));
+
+        Documento.add(Chunk.NEWLINE);
+
+        Documento.add(new Paragraph("Muchas gracias por utilizar parking Click"));
+        Documento.add(Chunk.NEWLINE);
+        Documento.add(new Paragraph("Fecha:" + LabelFecha.getText()));
+
+        Documento.close();
+        JOptionPane.showMessageDialog(null, "Factura creada correctamente ");
+
+    }
+
     public Principal() {
         this.setContentPane(fondo);
         initComponents();
@@ -1038,7 +1068,7 @@ public class Principal extends javax.swing.JFrame implements Runnable {
 
             if (!jTxtApellido1.getText().isEmpty()) {
 
-                if (!jTxtApellido1.getText().isEmpty()) {
+                if (!jTxtPlaca.getText().isEmpty()) {
 
                     String boton = "";
                     if (Vehiculo.isSelected()) {
@@ -1130,11 +1160,12 @@ public class Principal extends javax.swing.JFrame implements Runnable {
                     Dato[4] = jTxtPlaca.getText();
                     Dato[5] = boton.toString();
                     Dato[6] = ComboBox.getSelectedItem().toString();
+                    /* Dato[7]=*/
 
                     modelo.addRow(Dato);
 
                     try {
-                        generar(jTxtNombre.getText());
+                        generarEntrada(jTxtNombre.getText());
                     } catch (FileNotFoundException e) {
                         System.err.println(e.getMessage());
                     } catch (DocumentException e) {
@@ -1472,12 +1503,15 @@ public class Principal extends javax.swing.JFrame implements Runnable {
         if (!HorasE.getText().isEmpty()) {
 
             if (!placaverificar1.getText().isEmpty()) {
-
+                DatosdelRegistro drr = new DatosdelRegistro();
+                
                 String placaverificar = placaverificar1.getText();
                 int horas;
 
                 horas = Integer.parseInt(HorasE.getText());
                 Total = horas * Cobrohora;
+                
+                
 
                 if (placaverificar.equalsIgnoreCase(jTxtPlaca.getText())) {
                     Espacio1.setBackground(Color.green);

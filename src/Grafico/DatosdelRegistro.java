@@ -11,6 +11,7 @@ package Grafico;
  */
 public class DatosdelRegistro {
 
+   
     String Perfil;
     String nombre;
     String Pass;
@@ -41,7 +42,7 @@ public class DatosdelRegistro {
 
     @Override
     public String toString() {
-        return "DatosdelRegistro{" + "Perfil=" + Perfil + ", nombre=" + nombre + ", Pass=" + Pass + '}';
+        return "DatosdelRegistro{" + "Perfil=" + Perfil + ", nombre=" + nombre + ", Pass=" + Pass + ",total=" + total + '}';
     }
 
 }
