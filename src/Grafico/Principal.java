@@ -1033,98 +1033,134 @@ public class Principal extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_jBRetirarActionPerformed
 
     private void jBIngresar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBIngresar1ActionPerformed
-        String boton = "";
-        if (Vehiculo.isSelected()) {
-            boton = "Carro";
-        } else if (Moto.isSelected()) {
-            boton = "Moto";
-        }
 
-        String combo = ComboBox.getSelectedItem().toString();
+        if (!jTxtNombre.getText().isEmpty()) {
 
-        if (combo.equals("Posición 1")) {
-            Espacio1.setBackground(Color.red);
-        }
-        if (combo.equals("Posición 2")) {
-            Espacio2.setBackground(Color.red);
-        }
-        if (combo.equals("Posición 3")) {
-            Espacio3.setBackground(Color.red);
-        }
-        if (combo.equals("Posición 4")) {
-            Espacio4.setBackground(Color.red);
-        }
-        if (combo.equals("Posición 5")) {
-            Espacio5.setBackground(Color.red);
-        }
-        if (combo.equals("Posición 6")) {
-            Espacio6.setBackground(Color.red);
-        }
-        if (combo.equals("Posición 7")) {
-            Espacio7.setBackground(Color.red);
-        }
-        if (combo.equals("Posición 8")) {
-            Espacio8.setBackground(Color.red);
-        }
-        if (combo.equals("Posición 9")) {
-            Espacio9.setBackground(Color.red);
-        }
-        if (combo.equals("Posición 10")) {
-            Espacio10.setBackground(Color.red);
-        }
-        if (combo.equals("Posición 11")) {
-            Espacio11.setBackground(Color.red);
-        }
-        if (combo.equals("Posición 12")) {
-            Espacio12.setBackground(Color.red);
-        }
-        if (combo.equals("Posición 13")) {
-            Espacio13.setBackground(Color.red);
-        }
-        if (combo.equals("Posición 14")) {
-            Espacio14.setBackground(Color.red);
-        }
-        if (combo.equals("Posición 15")) {
-            Espacio15.setBackground(Color.red);
-        }
-        if (combo.equals("Posición 16")) {
-            Espacio16.setBackground(Color.red);
-        }
-        if (combo.equals("Posición 17")) {
-            Espacio17.setBackground(Color.red);
-        }
-        if (combo.equals("Posición 18")) {
-            Espacio18.setBackground(Color.red);
-        }
-        if (combo.equals("Posición M1")) {
-            EspacioMoto1.setBackground(Color.red);
-        }
-        if (combo.equals("Posición M2")) {
-            EspacioMoto2.setBackground(Color.red);
-        }
-        if (combo.equals("Posición M3")) {
-            EspacioMoto3.setBackground(Color.red);
-        }
-        if (combo.equals("Posición M4")) {
-            EspacioMoto4.setBackground(Color.red);
-        }
-        if (combo.equals("Posición M5")) {
-            EspacioMoto5.setBackground(Color.red);
-        }
-        if (combo.equals("Posición M6")) {
-            EspacioMoto6.setBackground(Color.red);
-        }
+            if (!jTxtApellido1.getText().isEmpty()) {
 
-        String Dato[] = new String[7];
-        Dato[0] = jTxtNombre.getText();
-        Dato[1] = jTxtApellido1.getText();
-        Dato[2] = jTxtApellido2.getText();
-        Dato[3] = jTxtCedula.getText();
-        Dato[4] = jTxtPlaca.getText();
-        Dato[5] = boton.toString();
-        Dato[6] = ComboBox.getSelectedItem().toString();
+                if (!jTxtApellido1.getText().isEmpty()) {
 
-        modelo.addRow(Dato);
+                    String boton = "";
+                    if (Vehiculo.isSelected()) {
+                        boton = "Carro";
+                    } else if (Moto.isSelected()) {
+                        boton = "Moto";
+                    }
+
+                    String combo = ComboBox.getSelectedItem().toString();
+
+                    if (combo.equals("Posición 1")) {
+                        Espacio1.setBackground(Color.red);
+                    }
+                    if (combo.equals("Posición 2")) {
+                        Espacio2.setBackground(Color.red);
+                    }
+                    if (combo.equals("Posición 3")) {
+                        Espacio3.setBackground(Color.red);
+                    }
+                    if (combo.equals("Posición 4")) {
+                        Espacio4.setBackground(Color.red);
+                    }
+                    if (combo.equals("Posición 5")) {
+                        Espacio5.setBackground(Color.red);
+                    }
+                    if (combo.equals("Posición 6")) {
+                        Espacio6.setBackground(Color.red);
+                    }
+                    if (combo.equals("Posición 7")) {
+                        Espacio7.setBackground(Color.red);
+                    }
+                    if (combo.equals("Posición 8")) {
+                        Espacio8.setBackground(Color.red);
+                    }
+                    if (combo.equals("Posición 9")) {
+                        Espacio9.setBackground(Color.red);
+                    }
+                    if (combo.equals("Posición 10")) {
+                        Espacio10.setBackground(Color.red);
+                    }
+                    if (combo.equals("Posición 11")) {
+                        Espacio11.setBackground(Color.red);
+                    }
+                    if (combo.equals("Posición 12")) {
+                        Espacio12.setBackground(Color.red);
+                    }
+                    if (combo.equals("Posición 13")) {
+                        Espacio13.setBackground(Color.red);
+                    }
+                    if (combo.equals("Posición 14")) {
+                        Espacio14.setBackground(Color.red);
+                    }
+                    if (combo.equals("Posición 15")) {
+                        Espacio15.setBackground(Color.red);
+                    }
+                    if (combo.equals("Posición 16")) {
+                        Espacio16.setBackground(Color.red);
+                    }
+                    if (combo.equals("Posición 17")) {
+                        Espacio17.setBackground(Color.red);
+                    }
+                    if (combo.equals("Posición 18")) {
+                        Espacio18.setBackground(Color.red);
+                    }
+                    if (combo.equals("Posición M1")) {
+                        EspacioMoto1.setBackground(Color.red);
+                    }
+                    if (combo.equals("Posición M2")) {
+                        EspacioMoto2.setBackground(Color.red);
+                    }
+                    if (combo.equals("Posición M3")) {
+                        EspacioMoto3.setBackground(Color.red);
+                    }
+                    if (combo.equals("Posición M4")) {
+                        EspacioMoto4.setBackground(Color.red);
+                    }
+                    if (combo.equals("Posición M5")) {
+                        EspacioMoto5.setBackground(Color.red);
+                    }
+                    if (combo.equals("Posición M6")) {
+                        EspacioMoto6.setBackground(Color.red);
+                    }
+
+                    String Dato[] = new String[7];
+                    Dato[0] = jTxtNombre.getText();
+                    Dato[1] = jTxtApellido1.getText();
+                    Dato[2] = jTxtApellido2.getText();
+                    Dato[3] = jTxtCedula.getText();
+                    Dato[4] = jTxtPlaca.getText();
+                    Dato[5] = boton.toString();
+                    Dato[6] = ComboBox.getSelectedItem().toString();
+
+                    modelo.addRow(Dato);
+
+                    try {
+                        generar(jTxtNombre.getText());
+                    } catch (FileNotFoundException e) {
+                        System.err.println(e.getMessage());
+                    } catch (DocumentException e) {
+                        System.err.println(e.getMessage());
+
+                    }
+
+                    if (!jTxtNombre.getText().isEmpty()) {
+                        Abrir(jTxtNombre.getText());
+
+                    } else {
+                        JOptionPane.showMessageDialog(null, "Campo de nombre vacio");
+                    }
+
+                } else {
+                    JOptionPane.showMessageDialog(rootPane, "Placa en blanco /n "
+                            + "Porfavor ingrese su placa");
+                }
+            } else {
+                JOptionPane.showMessageDialog(rootPane, "Apellido en blanco /n "
+                        + "Porfavor ingrese el Apellidp");
+            }
+        } else {
+            JOptionPane.showMessageDialog(rootPane, "Nombre en blanco /n "
+                    + "Porfavor ingrese el Nombre");
+        }
     }//GEN-LAST:event_jBIngresar1ActionPerformed
 
     public void limpiar() {
@@ -1437,13 +1473,11 @@ public class Principal extends javax.swing.JFrame implements Runnable {
 
             if (!placaverificar1.getText().isEmpty()) {
 
-                String placaverificar = placaverificar1.getText() ;
+                String placaverificar = placaverificar1.getText();
                 int horas;
 
                 horas = Integer.parseInt(HorasE.getText());
                 Total = horas * Cobrohora;
-
-                
 
                 if (placaverificar.equalsIgnoreCase(jTxtPlaca.getText())) {
                     Espacio1.setBackground(Color.green);
