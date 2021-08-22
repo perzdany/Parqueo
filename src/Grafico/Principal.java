@@ -269,6 +269,7 @@ public class Principal extends javax.swing.JFrame implements Runnable {
         setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         setExtendedState(6);
         setName(""); // NOI18N
+        setPreferredSize(new java.awt.Dimension(0, 0));
         setSize(new java.awt.Dimension(0, 0));
 
         jPMenu.setVisible(false);

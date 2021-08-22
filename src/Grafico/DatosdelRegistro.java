@@ -11,7 +11,7 @@ package Grafico;
  */
 public class DatosdelRegistro {
 
-   
+    String total;
     String Perfil;
     String nombre;
     String Pass;
