@@ -179,6 +179,7 @@ public class Principal extends javax.swing.JFrame implements Runnable {
     private void initComponents() {
 
         botonesgrupo1 = new javax.swing.ButtonGroup();
+        espacios = new javax.swing.ButtonGroup();
         jPMenu = new javax.swing.JPanel();
         jBRetirar = new javax.swing.JButton();
         jBIngresarV = new javax.swing.JButton();
@@ -481,7 +482,7 @@ public class Principal extends javax.swing.JFrame implements Runnable {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(36, 36, 36)
                         .addComponent(jLabel14)))
-                .addContainerGap(87, Short.MAX_VALUE))
+                .addContainerGap(48, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -496,10 +497,10 @@ public class Principal extends javax.swing.JFrame implements Runnable {
                 .addComponent(jBIngresar5, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jBIngresar2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(39, Short.MAX_VALUE))
+                .addContainerGap(16, Short.MAX_VALUE))
         );
 
-        JRegistrarse.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -10, -1, -1));
+        JRegistrarse.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -10, 330, 400));
 
         JRegistrarse.setVisible(false);
 
@@ -628,17 +629,16 @@ public class Principal extends javax.swing.JFrame implements Runnable {
 
         jPCuerpo.add(jPIngresoVehiculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 320, 400));
 
-        jConfiguracion.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jConfiguracion.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel10.setFont(new java.awt.Font("Tahoma", 0, 22)); // NOI18N
-        jLabel10.setText("Configuración de Costos");
-        jConfiguracion.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 50, -1, -1));
+        jLabel10.setText("Panel de Configuración");
+        jConfiguracion.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 30, -1, -1));
 
         jLabel11.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel11.setText("Nombre de factura:");
-        jConfiguracion.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 240, -1, -1));
-        jConfiguracion.add(Buscarfactura, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 260, 150, -1));
+        jConfiguracion.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 240, -1, -1));
+        jConfiguracion.add(Buscarfactura, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 260, 150, -1));
 
         jButton1.setBackground(new java.awt.Color(63, 150, 230));
         jButton1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -648,7 +648,7 @@ public class Principal extends javax.swing.JFrame implements Runnable {
                 jButton1ActionPerformed(evt);
             }
         });
-        jConfiguracion.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 160, 150, 30));
+        jConfiguracion.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 160, 150, 30));
 
         jButton2.setBackground(new java.awt.Color(63, 150, 230));
         jButton2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -658,14 +658,19 @@ public class Principal extends javax.swing.JFrame implements Runnable {
                 jButton2ActionPerformed(evt);
             }
         });
-        jConfiguracion.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 290, 150, 30));
+        jConfiguracion.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 290, 150, 30));
 
         jLabel13.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel13.setText("Costo por hora:");
-        jConfiguracion.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 110, -1, -1));
-        jConfiguracion.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 130, 150, -1));
+        jConfiguracion.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 110, -1, -1));
 
-        jPCuerpo.add(jConfiguracion, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 340, 410));
+        jTextField2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jTextField2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextField2.setText("1500");
+        jTextField2.setToolTipText("");
+        jConfiguracion.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 130, 150, -1));
+
+        jPCuerpo.add(jConfiguracion, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 320, 400));
 
         jMapa.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -692,6 +697,7 @@ public class Principal extends javax.swing.JFrame implements Runnable {
         jMapa.add(jReloj, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 300, 190, 80));
 
         Espacio1.setBackground(new java.awt.Color(51, 204, 0));
+        espacios.add(Espacio1);
         Espacio1.setText("1");
         Espacio1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -701,6 +707,7 @@ public class Principal extends javax.swing.JFrame implements Runnable {
         jMapa.add(Espacio1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 80, 40, 60));
 
         Espacio2.setBackground(new java.awt.Color(51, 204, 0));
+        espacios.add(Espacio2);
         Espacio2.setText("2");
         Espacio2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -710,6 +717,7 @@ public class Principal extends javax.swing.JFrame implements Runnable {
         jMapa.add(Espacio2, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 80, 40, 60));
 
         Espacio3.setBackground(new java.awt.Color(51, 204, 0));
+        espacios.add(Espacio3);
         Espacio3.setText("3");
         Espacio3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -719,6 +727,7 @@ public class Principal extends javax.swing.JFrame implements Runnable {
         jMapa.add(Espacio3, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 80, 40, 60));
 
         Espacio4.setBackground(new java.awt.Color(51, 204, 0));
+        espacios.add(Espacio4);
         Espacio4.setText("4");
         Espacio4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -728,6 +737,7 @@ public class Principal extends javax.swing.JFrame implements Runnable {
         jMapa.add(Espacio4, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 80, 40, 60));
 
         Espacio5.setBackground(new java.awt.Color(51, 204, 0));
+        espacios.add(Espacio5);
         Espacio5.setText("5");
         Espacio5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -737,6 +747,7 @@ public class Principal extends javax.swing.JFrame implements Runnable {
         jMapa.add(Espacio5, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 80, 40, 60));
 
         Espacio6.setBackground(new java.awt.Color(51, 204, 0));
+        espacios.add(Espacio6);
         Espacio6.setText("6");
         Espacio6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -746,6 +757,7 @@ public class Principal extends javax.swing.JFrame implements Runnable {
         jMapa.add(Espacio6, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 80, 40, 60));
 
         Espacio7.setBackground(new java.awt.Color(51, 204, 0));
+        espacios.add(Espacio7);
         Espacio7.setText("7");
         Espacio7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -755,6 +767,7 @@ public class Principal extends javax.swing.JFrame implements Runnable {
         jMapa.add(Espacio7, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 80, 40, 60));
 
         Espacio8.setBackground(new java.awt.Color(51, 204, 0));
+        espacios.add(Espacio8);
         Espacio8.setText("8");
         Espacio8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -764,6 +777,7 @@ public class Principal extends javax.swing.JFrame implements Runnable {
         jMapa.add(Espacio8, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 150, 40, 60));
 
         Espacio9.setBackground(new java.awt.Color(51, 204, 0));
+        espacios.add(Espacio9);
         Espacio9.setText("9");
         Espacio9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -773,6 +787,7 @@ public class Principal extends javax.swing.JFrame implements Runnable {
         jMapa.add(Espacio9, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 150, 40, 60));
 
         Espacio10.setBackground(new java.awt.Color(51, 204, 0));
+        espacios.add(Espacio10);
         Espacio10.setFont(new java.awt.Font("Tahoma", 0, 8)); // NOI18N
         Espacio10.setText("10");
         Espacio10.addActionListener(new java.awt.event.ActionListener() {
@@ -783,6 +798,7 @@ public class Principal extends javax.swing.JFrame implements Runnable {
         jMapa.add(Espacio10, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 150, 40, 60));
 
         Espacio11.setBackground(new java.awt.Color(51, 204, 0));
+        espacios.add(Espacio11);
         Espacio11.setFont(new java.awt.Font("Tahoma", 0, 8)); // NOI18N
         Espacio11.setText("11");
         Espacio11.addActionListener(new java.awt.event.ActionListener() {
@@ -793,6 +809,7 @@ public class Principal extends javax.swing.JFrame implements Runnable {
         jMapa.add(Espacio11, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 150, 40, 60));
 
         Espacio12.setBackground(new java.awt.Color(51, 204, 0));
+        espacios.add(Espacio12);
         Espacio12.setFont(new java.awt.Font("Tahoma", 0, 8)); // NOI18N
         Espacio12.setText("12");
         Espacio12.addActionListener(new java.awt.event.ActionListener() {
@@ -803,6 +820,7 @@ public class Principal extends javax.swing.JFrame implements Runnable {
         jMapa.add(Espacio12, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 150, 40, 60));
 
         Espacio13.setBackground(new java.awt.Color(51, 204, 0));
+        espacios.add(Espacio13);
         Espacio13.setFont(new java.awt.Font("Tahoma", 0, 8)); // NOI18N
         Espacio13.setText("13");
         Espacio13.addActionListener(new java.awt.event.ActionListener() {
@@ -813,6 +831,7 @@ public class Principal extends javax.swing.JFrame implements Runnable {
         jMapa.add(Espacio13, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 150, 40, 60));
 
         Espacio14.setBackground(new java.awt.Color(51, 204, 0));
+        espacios.add(Espacio14);
         Espacio14.setFont(new java.awt.Font("Tahoma", 0, 8)); // NOI18N
         Espacio14.setText("14");
         Espacio14.addActionListener(new java.awt.event.ActionListener() {
@@ -823,6 +842,7 @@ public class Principal extends javax.swing.JFrame implements Runnable {
         jMapa.add(Espacio14, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 150, 40, 60));
 
         Espacio15.setBackground(new java.awt.Color(51, 204, 0));
+        espacios.add(Espacio15);
         Espacio15.setFont(new java.awt.Font("Tahoma", 0, 8)); // NOI18N
         Espacio15.setText("15");
         Espacio15.addActionListener(new java.awt.event.ActionListener() {
@@ -833,6 +853,7 @@ public class Principal extends javax.swing.JFrame implements Runnable {
         jMapa.add(Espacio15, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 220, 40, 60));
 
         Espacio16.setBackground(new java.awt.Color(51, 204, 0));
+        espacios.add(Espacio16);
         Espacio16.setFont(new java.awt.Font("Tahoma", 0, 8)); // NOI18N
         Espacio16.setText("16");
         Espacio16.addActionListener(new java.awt.event.ActionListener() {
@@ -843,6 +864,7 @@ public class Principal extends javax.swing.JFrame implements Runnable {
         jMapa.add(Espacio16, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 220, 40, 60));
 
         Espacio17.setBackground(new java.awt.Color(51, 204, 0));
+        espacios.add(Espacio17);
         Espacio17.setFont(new java.awt.Font("Tahoma", 0, 8)); // NOI18N
         Espacio17.setText("17");
         Espacio17.addActionListener(new java.awt.event.ActionListener() {
@@ -853,6 +875,7 @@ public class Principal extends javax.swing.JFrame implements Runnable {
         jMapa.add(Espacio17, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 220, 40, 60));
 
         Espacio18.setBackground(new java.awt.Color(51, 204, 0));
+        espacios.add(Espacio18);
         Espacio18.setFont(new java.awt.Font("Tahoma", 0, 8)); // NOI18N
         Espacio18.setText("18");
         Espacio18.addActionListener(new java.awt.event.ActionListener() {
@@ -863,6 +886,7 @@ public class Principal extends javax.swing.JFrame implements Runnable {
         jMapa.add(Espacio18, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 220, 40, 60));
 
         EspacioMoto1.setBackground(new java.awt.Color(51, 204, 0));
+        espacios.add(EspacioMoto1);
         EspacioMoto1.setText("M1");
         EspacioMoto1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -872,6 +896,7 @@ public class Principal extends javax.swing.JFrame implements Runnable {
         jMapa.add(EspacioMoto1, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 220, 50, 30));
 
         EspacioMoto2.setBackground(new java.awt.Color(51, 204, 0));
+        espacios.add(EspacioMoto2);
         EspacioMoto2.setText("M2");
         EspacioMoto2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -881,6 +906,7 @@ public class Principal extends javax.swing.JFrame implements Runnable {
         jMapa.add(EspacioMoto2, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 220, 50, 30));
 
         EspacioMoto3.setBackground(new java.awt.Color(51, 204, 0));
+        espacios.add(EspacioMoto3);
         EspacioMoto3.setText("M3");
         EspacioMoto3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -890,6 +916,7 @@ public class Principal extends javax.swing.JFrame implements Runnable {
         jMapa.add(EspacioMoto3, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 220, 50, 30));
 
         EspacioMoto4.setBackground(new java.awt.Color(51, 204, 0));
+        espacios.add(EspacioMoto4);
         EspacioMoto4.setText("M4");
         EspacioMoto4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -899,6 +926,7 @@ public class Principal extends javax.swing.JFrame implements Runnable {
         jMapa.add(EspacioMoto4, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 250, 50, 30));
 
         EspacioMoto5.setBackground(new java.awt.Color(51, 204, 0));
+        espacios.add(EspacioMoto5);
         EspacioMoto5.setText("M5");
         EspacioMoto5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -908,6 +936,7 @@ public class Principal extends javax.swing.JFrame implements Runnable {
         jMapa.add(EspacioMoto5, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 250, 50, 30));
 
         EspacioMoto6.setBackground(new java.awt.Color(51, 204, 0));
+        espacios.add(EspacioMoto6);
         EspacioMoto6.setText("M6");
         EspacioMoto6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1048,7 +1077,89 @@ public class Principal extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_jConfigActionPerformed
 
     private void jListar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jListar1ActionPerformed
-
+        int FilaSelect = Tabla.getSelectedRow();
+        if (FilaSelect >= 0) {
+            jTxtNombre.setText(Tabla.getValueAt(FilaSelect, 0).toString());
+            jTxtApellido1.setText(Tabla.getValueAt(FilaSelect, 1).toString());
+            jTxtApellido2.setText(Tabla.getValueAt(FilaSelect, 2).toString());
+            jTxtCedula.setText(Tabla.getValueAt(FilaSelect, 3).toString());
+            jTxtPlaca.setText(Tabla.getValueAt(FilaSelect, 4).toString());
+            modelo.removeRow(FilaSelect);
+        } else {
+            JOptionPane.showMessageDialog(this, "Debe seleccionar una fila");
+        }
+        if (ComboBox.getSelectedItem().toString().equals("Posición 1")) {
+            Espacio1.setBackground(Color.green);
+        }
+        if (ComboBox.getSelectedItem().toString().equals("Posición 2")) {
+            Espacio2.setBackground(Color.green);
+        }
+        if (ComboBox.getSelectedItem().toString().equals("Posición 3")) {
+            Espacio3.setBackground(Color.green);
+        }
+        if (ComboBox.getSelectedItem().toString().equals("Posición 4")) {
+            Espacio4.setBackground(Color.green);
+        }
+        if (ComboBox.getSelectedItem().toString().equals("Posición 5")) {
+            Espacio5.setBackground(Color.green);
+        }
+        if (ComboBox.getSelectedItem().toString().equals("Posición 6")) {
+            Espacio6.setBackground(Color.green);
+        }
+        if (ComboBox.getSelectedItem().toString().equals("Posición 7")) {
+            Espacio7.setBackground(Color.green);
+        }
+        if (ComboBox.getSelectedItem().toString().equals("Posición 8")) {
+            Espacio8.setBackground(Color.green);
+        }
+        if (ComboBox.getSelectedItem().toString().equals("Posición 9")) {
+            Espacio9.setBackground(Color.green);
+        }
+        if (ComboBox.getSelectedItem().toString().equals("Posición 10")) {
+            Espacio10.setBackground(Color.green);
+        }
+        if (ComboBox.getSelectedItem().toString().equals("Posición 11")) {
+            Espacio11.setBackground(Color.green);
+        }
+        if (ComboBox.getSelectedItem().toString().equals("Posición 12")) {
+            Espacio12.setBackground(Color.green);
+        }
+        if (ComboBox.getSelectedItem().toString().equals("Posición 13")) {
+            Espacio13.setBackground(Color.green);
+        }
+        if (ComboBox.getSelectedItem().toString().equals("Posición 14")) {
+            Espacio14.setBackground(Color.green);
+        }
+        if (ComboBox.getSelectedItem().toString().equals("Posición 15")) {
+            Espacio15.setBackground(Color.green);
+        }
+        if (ComboBox.getSelectedItem().toString().equals("Posición 16")) {
+            Espacio16.setBackground(Color.green);
+        }
+        if (ComboBox.getSelectedItem().toString().equals("Posición 17")) {
+            Espacio17.setBackground(Color.green);
+        }
+        if (ComboBox.getSelectedItem().toString().equals("Posición 18")) {
+            Espacio18.setBackground(Color.green);
+        }
+        if (ComboBox.getSelectedItem().toString().equals("Posición M1")) {
+            EspacioMoto1.setBackground(Color.green);
+        }
+        if (ComboBox.getSelectedItem().toString().equals("Posición M2")) {
+            EspacioMoto2.setBackground(Color.green);
+        }
+        if (ComboBox.getSelectedItem().toString().equals("Posición M3")) {
+            EspacioMoto3.setBackground(Color.green);
+        }
+        if (ComboBox.getSelectedItem().toString().equals("Posición M4")) {
+            EspacioMoto4.setBackground(Color.green);
+        }
+        if (ComboBox.getSelectedItem().toString().equals("Posición M5")) {
+            EspacioMoto5.setBackground(Color.green);
+        }
+        if (ComboBox.getSelectedItem().toString().equals("Posición M6")) {
+            EspacioMoto6.setBackground(Color.green);
+        }
     }//GEN-LAST:event_jListar1ActionPerformed
 
     private void jBSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBSalirActionPerformed
@@ -1067,6 +1178,7 @@ public class Principal extends javax.swing.JFrame implements Runnable {
     private void jBRetirarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBRetirarActionPerformed
         JRegistrarse.setVisible(true);
         jPIngresoVehiculo.setVisible(false);
+        jConfiguracion.setVisible(false);
     }//GEN-LAST:event_jBRetirarActionPerformed
 
     private void jBIngresar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBIngresar1ActionPerformed
@@ -1201,6 +1313,7 @@ public class Principal extends javax.swing.JFrame implements Runnable {
             JOptionPane.showMessageDialog(rootPane, "Nombre en blanco. "
                     + "Por favor, ingrese el nombre");
         }
+    
     }//GEN-LAST:event_jBIngresar1ActionPerformed
 
     public void limpiar() {
@@ -1345,6 +1458,7 @@ public class Principal extends javax.swing.JFrame implements Runnable {
     private void jBIngresarVActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBIngresarVActionPerformed
         jPIngresoVehiculo.setVisible(true);
         JRegistrarse.setVisible(false);
+        jConfiguracion.setVisible(false);
         jTxtNombre.grabFocus();
     }//GEN-LAST:event_jBIngresarVActionPerformed
 
@@ -1492,6 +1606,30 @@ public class Principal extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_jListar2ActionPerformed
 
     private void btnBorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBorrarActionPerformed
+        Espacio1.setBackground(Color.green);
+        Espacio2.setBackground(Color.green);
+        Espacio3.setBackground(Color.green);
+        Espacio4.setBackground(Color.green);
+        Espacio5.setBackground(Color.green);
+        Espacio6.setBackground(Color.green);
+        Espacio7.setBackground(Color.green);
+        Espacio8.setBackground(Color.green);
+        Espacio9.setBackground(Color.green);
+        Espacio10.setBackground(Color.green);
+        Espacio11.setBackground(Color.green);
+        Espacio12.setBackground(Color.green);
+        Espacio13.setBackground(Color.green);
+        Espacio14.setBackground(Color.green);
+        Espacio15.setBackground(Color.green);
+        Espacio16.setBackground(Color.green);
+        Espacio17.setBackground(Color.green);
+        Espacio18.setBackground(Color.green);
+        EspacioMoto1.setBackground(Color.green);
+        EspacioMoto2.setBackground(Color.green);
+        EspacioMoto3.setBackground(Color.green);
+        EspacioMoto4.setBackground(Color.green);
+        EspacioMoto5.setBackground(Color.green);
+        EspacioMoto6.setBackground(Color.green);
         int fila = Tabla.getRowCount();
         for (int i = fila - 1; i >= 0; i--) {
             modelo.removeRow(i);
@@ -1512,7 +1650,7 @@ public class Principal extends javax.swing.JFrame implements Runnable {
         int Seleccion = Tabla.getSelectedRow();
         String Dato[] = new String[10];
         Dato[8] = LabelHora.getText();
-        Dato[9] = "₡1500";
+        Dato[9] = jTextField2.getText();
         modelo.setValueAt(Dato[8], Seleccion, 8);
         modelo.setValueAt(Dato[9], Seleccion, 9);
 
@@ -1610,13 +1748,12 @@ public class Principal extends javax.swing.JFrame implements Runnable {
             Abrir(Buscarfactura.getText());
 
         } else {
-            JOptionPane.showMessageDialog(null, "Debe ingresar que factura buscar /n"
-                    + "'Crack'");
+            JOptionPane.showMessageDialog(null, "Debe colocar el nombre de la factura");
         }
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+        jTextField2.setText(jTextField2.getText());
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
@@ -1710,6 +1847,7 @@ public class Principal extends javax.swing.JFrame implements Runnable {
     private javax.swing.ButtonGroup botonesgrupo1;
     private javax.swing.JButton btnBorrar;
     private javax.swing.JTextField contra;
+    private javax.swing.ButtonGroup espacios;
     private javax.swing.JButton jBIngresar1;
     private javax.swing.JButton jBIngresar2;
     private javax.swing.JButton jBIngresar3;
