@@ -60,20 +60,23 @@ public class Principal extends javax.swing.JFrame implements Runnable {
                     parrafo.setAlignment(1);
                     Documento.add(parrafo);
 
-                    Documento.add(new Paragraph("Nombre:" + jTxtNombre.getText()));
-                    Documento.add(new Paragraph("Apellidos:" + jTxtApellido1.getText() + "" + jTxtApellido2.getText()));
-                    Documento.add(new Paragraph("Placa del vehiculo:" + jTxtPlaca.getText()));
+                    Documento.add(new Paragraph("Nombre: " + jTxtNombre.getText()));
+                    Documento.add(new Paragraph("Apellidos: " + jTxtApellido1.getText() + " " + jTxtApellido2.getText()));
+                    Documento.add(new Paragraph("Placa del vehiculo: " + jTxtPlaca.getText()));
 
                     Documento.add(Chunk.NEWLINE);
 
-                    Documento.add(new Paragraph("Esta es la factrura por usar los servicios de parking click"));
+                    Documento.add(new Paragraph("Esta es la factura por usar los servicios de Parking click"));
 
                     Documento.add(Chunk.NEWLINE);
-
-                    Documento.add(new Paragraph("Muchas gracias por utilizar parking Click"));
+                    int Seleccion = Tabla.getSelectedRow();
+                    Documento.add(new Paragraph("Muchas gracias por utilizar nuestros servicios"));
                     Documento.add(Chunk.NEWLINE);
-                    Documento.add(new Paragraph("Fecha:" + LabelFecha.getText()));
-
+                    Documento.add(new Paragraph("Fecha: " + LabelFecha.getText()));
+                    Documento.add(new Paragraph("Hora de entrada: " + modelo.getValueAt(Seleccion, 7)));
+                    Documento.add(new Paragraph("Hora de salida: " + modelo.getValueAt(Seleccion, 8)));
+                    Documento.add(new Paragraph("Monto total a pagar: ₡" + modelo.getValueAt(Seleccion, 9)));
+                    
                     Documento.close();
                     JOptionPane.showMessageDialog(null, "Factura creada correctamente ");
 
@@ -103,19 +106,20 @@ public class Principal extends javax.swing.JFrame implements Runnable {
         parrafo.setAlignment(1);
         Documento.add(parrafo);
 
-        Documento.add(new Paragraph("Nombre:" + jTxtNombre.getText()));
-        Documento.add(new Paragraph("Apellidos:" + jTxtApellido1.getText() + "" + jTxtApellido2.getText()));
-        Documento.add(new Paragraph("Placa del vehiculo:" + jTxtPlaca.getText()));
+        Documento.add(new Paragraph("Nombre: " + jTxtNombre.getText()));
+        Documento.add(new Paragraph("Apellidos: " + jTxtApellido1.getText() + " " + jTxtApellido2.getText()));
+        Documento.add(new Paragraph("Placa del vehiculo: " + jTxtPlaca.getText()));
 
         Documento.add(Chunk.NEWLINE);
 
-        Documento.add(new Paragraph("Esta es la factrura por entrar a los parqueos de parking click"));
+        Documento.add(new Paragraph("Esta es la factura de entrada a los parqueos de Parking Click"));
 
         Documento.add(Chunk.NEWLINE);
 
-        Documento.add(new Paragraph("Muchas gracias por utilizar parking Click"));
+        Documento.add(new Paragraph("Muchas gracias por utilizar nuestros servicios"));
         Documento.add(Chunk.NEWLINE);
-        Documento.add(new Paragraph("Fecha:" + LabelFecha.getText()));
+        Documento.add(new Paragraph("Fecha: " + LabelFecha.getText()));
+        Documento.add(new Paragraph("Hora de entrada: " + LabelHora.getText()));
 
         Documento.close();
         JOptionPane.showMessageDialog(null, "Factura creada correctamente ");
@@ -195,15 +199,12 @@ public class Principal extends javax.swing.JFrame implements Runnable {
         jSeparator1 = new javax.swing.JSeparator();
         JRegistrarse = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        jBIngresar2 = new javax.swing.JButton();
-        jBIngresar5 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
-        HorasE = new javax.swing.JTextField();
         jLabel14 = new javax.swing.JLabel();
-        placaverificar1 = new javax.swing.JTextField();
-        jLabel12 = new javax.swing.JLabel();
         jBIngresar4 = new javax.swing.JButton();
         jBSalirRetiro = new javax.swing.JButton();
+        jBIngresar5 = new javax.swing.JButton();
+        jBIngresar2 = new javax.swing.JButton();
         jPIngresoVehiculo = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -417,33 +418,8 @@ public class Principal extends javax.swing.JFrame implements Runnable {
         jLabel2.setText("Retiro de Vehículos");
         JRegistrarse.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(73, 9, -1, 60));
 
-        jBIngresar2.setBackground(new java.awt.Color(63, 150, 230));
-        jBIngresar2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jBIngresar2.setText("Abrir Factura");
-        jBIngresar2.setToolTipText("");
-        jBIngresar2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBIngresar2ActionPerformed(evt);
-            }
-        });
-        JRegistrarse.add(jBIngresar2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 360, 120, 30));
-
-        jBIngresar5.setBackground(new java.awt.Color(63, 150, 230));
-        jBIngresar5.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jBIngresar5.setText("Crear Factura");
-        jBIngresar5.setToolTipText("");
-        jBIngresar5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBIngresar5ActionPerformed(evt);
-            }
-        });
-        JRegistrarse.add(jBIngresar5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 360, 130, 30));
-
         jLabel14.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel14.setText("Horas de uso:");
-
-        jLabel12.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel12.setText("Placa:");
+        jLabel14.setText("Seleccione en la tabla el vehículo a retirar");
 
         jBIngresar4.setBackground(new java.awt.Color(63, 150, 230));
         jBIngresar4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -466,6 +442,26 @@ public class Principal extends javax.swing.JFrame implements Runnable {
             }
         });
 
+        jBIngresar5.setBackground(new java.awt.Color(63, 150, 230));
+        jBIngresar5.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jBIngresar5.setText("Crear Factura");
+        jBIngresar5.setToolTipText("");
+        jBIngresar5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBIngresar5ActionPerformed(evt);
+            }
+        });
+
+        jBIngresar2.setBackground(new java.awt.Color(63, 150, 230));
+        jBIngresar2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jBIngresar2.setText("Abrir Factura");
+        jBIngresar2.setToolTipText("");
+        jBIngresar2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBIngresar2ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -473,39 +469,34 @@ public class Principal extends javax.swing.JFrame implements Runnable {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel12)
-                                .addGap(18, 18, 18)
-                                .addComponent(placaverificar1, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel14)
-                                .addGap(18, 18, 18)
-                                .addComponent(HorasE, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jBIngresar5, javax.swing.GroupLayout.DEFAULT_SIZE, 130, Short.MAX_VALUE)
+                            .addComponent(jBIngresar2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(25, 25, 25)
+                        .addGap(55, 55, 55)
                         .addComponent(jBIngresar4, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(51, 51, 51)
-                        .addComponent(jBSalirRetiro, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(93, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jBSalirRetiro, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(36, 36, 36)
+                        .addComponent(jLabel14)))
+                .addContainerGap(87, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(142, 142, 142)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(HorasE, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(placaverificar1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(78, 78, 78)
+                .addGap(135, 135, 135)
+                .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(42, 42, 42)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jBIngresar4, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jBSalirRetiro, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(87, Short.MAX_VALUE))
+                .addGap(73, 73, 73)
+                .addComponent(jBIngresar5, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jBIngresar2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(39, Short.MAX_VALUE))
         );
 
         JRegistrarse.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -10, -1, -1));
@@ -1076,7 +1067,6 @@ public class Principal extends javax.swing.JFrame implements Runnable {
     private void jBRetirarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBRetirarActionPerformed
         JRegistrarse.setVisible(true);
         jPIngresoVehiculo.setVisible(false);
-        placaverificar1.grabFocus();
     }//GEN-LAST:event_jBRetirarActionPerformed
 
     private void jBIngresar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBIngresar1ActionPerformed
@@ -1169,7 +1159,7 @@ public class Principal extends javax.swing.JFrame implements Runnable {
                         EspacioMoto6.setBackground(Color.red);
                     }
 
-                    String Dato[] = new String[7];
+                    String Dato[] = new String[10];
                     Dato[0] = jTxtNombre.getText();
                     Dato[1] = jTxtApellido1.getText();
                     Dato[2] = jTxtApellido2.getText();
@@ -1177,7 +1167,9 @@ public class Principal extends javax.swing.JFrame implements Runnable {
                     Dato[4] = jTxtPlaca.getText();
                     Dato[5] = boton.toString();
                     Dato[6] = ComboBox.getSelectedItem().toString();
-                    /* Dato[7]=*/
+                    Dato[7] = LabelHora.getText();
+                    Dato[8] = "";
+                    Dato[9] = "";
 
                     modelo.addRow(Dato);
 
@@ -1194,20 +1186,20 @@ public class Principal extends javax.swing.JFrame implements Runnable {
                         Abrir(jTxtNombre.getText());
 
                     } else {
-                        JOptionPane.showMessageDialog(null, "Campo de nombre vacio");
+                        JOptionPane.showMessageDialog(null, "Campo de nombre vacío");
                     }
 
                 } else {
-                    JOptionPane.showMessageDialog(rootPane, "Placa en blanco /n "
-                            + "Porfavor ingrese su placa");
+                    JOptionPane.showMessageDialog(rootPane, "Placa en blanco. "
+                            + "Por favor, ingrese la placa");
                 }
             } else {
-                JOptionPane.showMessageDialog(rootPane, "Apellido en blanco /n "
-                        + "Porfavor ingrese el Apellidp");
+                JOptionPane.showMessageDialog(rootPane, "Apellido en blanco. "
+                        + "Por favor, ingrese el apellido");
             }
         } else {
-            JOptionPane.showMessageDialog(rootPane, "Nombre en blanco /n "
-                    + "Porfavor ingrese el Nombre");
+            JOptionPane.showMessageDialog(rootPane, "Nombre en blanco. "
+                    + "Por favor, ingrese el nombre");
         }
     }//GEN-LAST:event_jBIngresar1ActionPerformed
 
@@ -1390,10 +1382,10 @@ public class Principal extends javax.swing.JFrame implements Runnable {
                     mensaje = "Ingresando a Sistema de Administrador";
                     for (DatosdelRegistro d : Logica.usuariosLista) {
                         if (!Nombredijit.equals(d.getNombre())) {
-                            JOptionPane.showMessageDialog(rootPane, "Nombre incorrecto, mi pana");
+                            JOptionPane.showMessageDialog(rootPane, "Nombre incorrecto");
                             break;
                         } else if (!passdijit.equals(d.getPass())) {
-                            JOptionPane.showMessageDialog(rootPane, "Password incorrecto incorrecto, mi pana");
+                            JOptionPane.showMessageDialog(rootPane, "Password incorrecto incorrecto");
                             break;
 
                         } else if (!d.getPerfil().equalsIgnoreCase("a")) {
@@ -1517,102 +1509,85 @@ public class Principal extends javax.swing.JFrame implements Runnable {
 
     private void jBIngresar4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBIngresar4ActionPerformed
 
-        if (!HorasE.getText().isEmpty()) {
+        int Seleccion = Tabla.getSelectedRow();
+        String Dato[] = new String[10];
+        Dato[8] = LabelHora.getText();
+        Dato[9] = "₡1500";
+        modelo.setValueAt(Dato[8], Seleccion, 8);
+        modelo.setValueAt(Dato[9], Seleccion, 9);
 
-            if (!placaverificar1.getText().isEmpty()) {
-                DatosdelRegistro drr = new DatosdelRegistro();
-                
-                String placaverificar = placaverificar1.getText();
-                int horas;
-
-                horas = Integer.parseInt(HorasE.getText());
-                Total = horas * Cobrohora;
-                
-                
-
-                if (placaverificar.equalsIgnoreCase(jTxtPlaca.getText())) {
-                    Espacio1.setBackground(Color.green);
-                } else {
-                    JOptionPane.showMessageDialog(null, "Error");
-                }
-                if (placaverificar.equalsIgnoreCase(jTxtPlaca.getText())) {
-                    Espacio2.setBackground(Color.green);
-                }
-                if (placaverificar.equalsIgnoreCase(jTxtPlaca.getText())) {
-                    Espacio3.setBackground(Color.green);
-                }
-                if (placaverificar.equalsIgnoreCase(jTxtPlaca.getText())) {
-                    Espacio4.setBackground(Color.green);
-                }
-                if (placaverificar.equalsIgnoreCase(jTxtPlaca.getText())) {
-                    Espacio5.setBackground(Color.green);
-                }
-                if (placaverificar.equalsIgnoreCase(jTxtPlaca.getText())) {
-                    Espacio6.setBackground(Color.green);
-                }
-                if (placaverificar.equalsIgnoreCase(jTxtPlaca.getText())) {
-                    Espacio7.setBackground(Color.green);
-                }
-                if (placaverificar.equalsIgnoreCase(jTxtPlaca.getText())) {
-                    Espacio8.setBackground(Color.green);
-                }
-                if (placaverificar.equalsIgnoreCase(jTxtPlaca.getText())) {
-                    Espacio9.setBackground(Color.green);
-                }
-                if (placaverificar.equalsIgnoreCase(jTxtPlaca.getText())) {
-                    Espacio10.setBackground(Color.green);
-                }
-                if (placaverificar.equalsIgnoreCase(jTxtPlaca.getText())) {
-                    Espacio11.setBackground(Color.green);
-                }
-                if (placaverificar.equalsIgnoreCase(jTxtPlaca.getText())) {
-                    Espacio12.setBackground(Color.green);
-                }
-                if (placaverificar.equalsIgnoreCase(jTxtPlaca.getText())) {
-                    Espacio13.setBackground(Color.green);
-                }
-                if (placaverificar.equalsIgnoreCase(jTxtPlaca.getText())) {
-                    Espacio14.setBackground(Color.green);
-                }
-                if (placaverificar.equalsIgnoreCase(jTxtPlaca.getText())) {
-                    Espacio15.setBackground(Color.green);
-                }
-                if (placaverificar.equalsIgnoreCase(jTxtPlaca.getText())) {
-                    Espacio16.setBackground(Color.green);
-                }
-                if (placaverificar.equalsIgnoreCase(jTxtPlaca.getText())) {
-                    Espacio17.setBackground(Color.green);
-                }
-                if (placaverificar.equalsIgnoreCase(jTxtPlaca.getText())) {
-                    Espacio18.setBackground(Color.green);
-                }
-                if (placaverificar.equalsIgnoreCase(jTxtPlaca.getText())) {
-                    EspacioMoto1.setBackground(Color.green);
-                }
-                if (placaverificar.equalsIgnoreCase(jTxtPlaca.getText())) {
-                    EspacioMoto2.setBackground(Color.green);
-                }
-                if (placaverificar.equalsIgnoreCase(jTxtPlaca.getText())) {
-                    EspacioMoto3.setBackground(Color.green);
-                }
-                if (placaverificar.equalsIgnoreCase(jTxtPlaca.getText())) {
-                    EspacioMoto4.setBackground(Color.green);
-                }
-                if (placaverificar.equalsIgnoreCase(jTxtPlaca.getText())) {
-                    EspacioMoto5.setBackground(Color.green);
-                }
-                if (placaverificar.equalsIgnoreCase(jTxtPlaca.getText())) {
-                    EspacioMoto6.setBackground(Color.green);
-                }
-
-            } else {
-                JOptionPane.showMessageDialog(rootPane, "Debe indicar la placa de su vehiculo");
-            }
-
-        } else {
-            JOptionPane.showMessageDialog(rootPane, "Debe indicar cuantas hora utilizo el parqueo");
+        if (modelo.getValueAt(Seleccion, 6).toString().equals("Posición 1")) {
+            Espacio1.setBackground(Color.green);
         }
-
+        if (modelo.getValueAt(Seleccion, 6).toString().equals("Posición 2")) {
+            Espacio2.setBackground(Color.green);
+        }
+        if (modelo.getValueAt(Seleccion, 6).toString().equals("Posición 3")) {
+            Espacio3.setBackground(Color.green);
+        }
+        if (modelo.getValueAt(Seleccion, 6).toString().equals("Posición 4")) {
+            Espacio4.setBackground(Color.green);
+        }
+        if (modelo.getValueAt(Seleccion, 6).toString().equals("Posición 5")) {
+            Espacio5.setBackground(Color.green);
+        }
+        if (modelo.getValueAt(Seleccion, 6).toString().equals("Posición 6")) {
+            Espacio6.setBackground(Color.green);
+        }
+        if (modelo.getValueAt(Seleccion, 6).toString().equals("Posición 7")) {
+            Espacio7.setBackground(Color.green);
+        }
+        if (modelo.getValueAt(Seleccion, 6).toString().equals("Posición 8")) {
+            Espacio8.setBackground(Color.green);
+        }
+        if (modelo.getValueAt(Seleccion, 6).toString().equals("Posición 9")) {
+            Espacio9.setBackground(Color.green);
+        }
+        if (modelo.getValueAt(Seleccion, 6).toString().equals("Posición 10")) {
+            Espacio10.setBackground(Color.green);
+        }
+        if (modelo.getValueAt(Seleccion, 6).toString().equals("Posición 11")) {
+            Espacio11.setBackground(Color.green);
+        }
+        if (modelo.getValueAt(Seleccion, 6).toString().equals("Posición 12")) {
+            Espacio12.setBackground(Color.green);
+        }
+        if (modelo.getValueAt(Seleccion, 6).toString().equals("Posición 13")) {
+            Espacio13.setBackground(Color.green);
+        }
+        if (modelo.getValueAt(Seleccion, 6).toString().equals("Posición 14")) {
+            Espacio14.setBackground(Color.green);
+        }
+        if (modelo.getValueAt(Seleccion, 6).toString().equals("Posición 15")) {
+            Espacio15.setBackground(Color.green);
+        }
+        if (modelo.getValueAt(Seleccion, 6).toString().equals("Posición 16")) {
+            Espacio16.setBackground(Color.green);
+        }
+        if (modelo.getValueAt(Seleccion, 6).toString().equals("Posición 17")) {
+            Espacio17.setBackground(Color.green);
+        }
+        if (modelo.getValueAt(Seleccion, 6).toString().equals("Posición 18")) {
+            Espacio18.setBackground(Color.green);
+        }
+        if (modelo.getValueAt(Seleccion, 6).toString().equals("Posición M1")) {
+            EspacioMoto1.setBackground(Color.green);
+        }
+        if (modelo.getValueAt(Seleccion, 6).toString().equals("Posición M2")) {
+            EspacioMoto2.setBackground(Color.green);
+        }
+        if (modelo.getValueAt(Seleccion, 6).toString().equals("Posición M3")) {
+            EspacioMoto3.setBackground(Color.green);
+        }
+        if (modelo.getValueAt(Seleccion, 6).toString().equals("Posición M4")) {
+            EspacioMoto4.setBackground(Color.green);
+        }
+        if (modelo.getValueAt(Seleccion, 6).toString().equals("Posición M5")) {
+            EspacioMoto5.setBackground(Color.green);
+        }
+        if (modelo.getValueAt(Seleccion, 6).toString().equals("Posición M6")) {
+            EspacioMoto6.setBackground(Color.green);
+        }
 
     }//GEN-LAST:event_jBIngresar4ActionPerformed
 
@@ -1645,10 +1620,10 @@ public class Principal extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-          try {
+        try {
             obj = new clsExportarExcel();
             obj.exportarExcel(Tabla);
-            
+
         } catch (Exception ex) {
             Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -1725,7 +1700,6 @@ public class Principal extends javax.swing.JFrame implements Runnable {
     private javax.swing.JToggleButton EspacioMoto4;
     private javax.swing.JToggleButton EspacioMoto5;
     private javax.swing.JToggleButton EspacioMoto6;
-    private javax.swing.JTextField HorasE;
     private javax.swing.JPanel JRegistrarse;
     private javax.swing.JLabel LabelFecha;
     private javax.swing.JLabel LabelHora;
@@ -1756,7 +1730,6 @@ public class Principal extends javax.swing.JFrame implements Runnable {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel2;
@@ -1789,7 +1762,6 @@ public class Principal extends javax.swing.JFrame implements Runnable {
     private javax.swing.JTextField jTxtPlaca;
     private javax.swing.JRadioButton opcionAdmin;
     private javax.swing.JRadioButton opcionInvitado;
-    private javax.swing.JTextField placaverificar1;
     private javax.swing.JTextField txtUsuarioverificar;
     // End of variables declaration//GEN-END:variables
 
