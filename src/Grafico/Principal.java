@@ -192,13 +192,13 @@ public class Principal extends javax.swing.JFrame implements Runnable {
         BackGround = new javax.swing.JLabel();
         LogIn = new javax.swing.JPanel();
         txtUsuarioverificar = new javax.swing.JTextField();
-        contra = new javax.swing.JTextField();
         opcionInvitado = new javax.swing.JRadioButton();
         opcionAdmin = new javax.swing.JRadioButton();
         jLimpiar = new javax.swing.JButton();
         jIniciarSesion = new javax.swing.JButton();
         jSalirLog = new javax.swing.JButton();
         jIniciarSesion1 = new javax.swing.JButton();
+        contra = new javax.swing.JPasswordField();
         jLabel8 = new javax.swing.JLabel();
         jPCuerpo = new javax.swing.JPanel();
         jSeparator1 = new javax.swing.JSeparator();
@@ -338,13 +338,6 @@ public class Principal extends javax.swing.JFrame implements Runnable {
         });
         LogIn.add(txtUsuarioverificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 350, 190, -1));
 
-        contra.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                contraActionPerformed(evt);
-            }
-        });
-        LogIn.add(contra, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 380, 190, -1));
-
         opcionInvitado.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         opcionInvitado.setText("Invitado");
         LogIn.add(opcionInvitado, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 310, -1, 30));
@@ -400,6 +393,13 @@ public class Principal extends javax.swing.JFrame implements Runnable {
             }
         });
         LogIn.add(jIniciarSesion1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 10, 110, 30));
+
+        contra.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                contraActionPerformed(evt);
+            }
+        });
+        LogIn.add(contra, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 380, 190, -1));
 
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Log.png"))); // NOI18N
         jLabel8.setAlignmentY(0.0F);
@@ -1558,6 +1558,7 @@ public class Principal extends javax.swing.JFrame implements Runnable {
                             jPCuerpo.setVisible(true);
                             jConfiguracion.setVisible(false);
                             jListar2.setVisible(false);
+                            jConfig.setVisible(false);
 
                         } else if (!txtUsuarioverificar.getText().isEmpty()) {
 
@@ -1644,10 +1645,6 @@ public class Principal extends javax.swing.JFrame implements Runnable {
     private void jBIngresar1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBIngresar1MouseEntered
         // TODO add your handling code here:
     }//GEN-LAST:event_jBIngresar1MouseEntered
-
-    private void contraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_contraActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_contraActionPerformed
 
     private void jBIngresar4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBIngresar4ActionPerformed
 
@@ -1770,6 +1767,10 @@ public class Principal extends javax.swing.JFrame implements Runnable {
         }
     }//GEN-LAST:event_jButton3ActionPerformed
 
+    private void contraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_contraActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_contraActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1850,7 +1851,7 @@ public class Principal extends javax.swing.JFrame implements Runnable {
     private javax.swing.JRadioButton Vehiculo;
     private javax.swing.ButtonGroup botonesgrupo1;
     private javax.swing.JButton btnBorrar;
-    private javax.swing.JTextField contra;
+    private javax.swing.JPasswordField contra;
     private javax.swing.ButtonGroup espacios;
     private javax.swing.JButton jBIngresar1;
     private javax.swing.JButton jBIngresar2;
