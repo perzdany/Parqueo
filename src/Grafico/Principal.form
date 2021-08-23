@@ -797,7 +797,7 @@
                     <StringItem index="12" value="Posici&#xf3;n 13"/>
                     <StringItem index="13" value="Posici&#xf3;n 14"/>
                     <StringItem index="14" value="Posici&#xf3;n 15"/>
-                    <StringItem index="15" value="Posici&#xf3;n 16           "/>
+                    <StringItem index="15" value="Posici&#xf3;n 16 "/>
                     <StringItem index="16" value="Posici&#xf3;n 17"/>
                     <StringItem index="17" value="Posici&#xf3;n 18"/>
                     <StringItem index="18" value="Posici&#xf3;n M1"/>
@@ -806,7 +806,7 @@
                     <StringItem index="21" value="Posici&#xf3;n M4"/>
                     <StringItem index="22" value="Posici&#xf3;n M5"/>
                     <StringItem index="23" value="Posici&#xf3;n M6"/>
-                    <StringItem index="24" value="            "/>
+                    <StringItem index="24" value=" "/>
                   </StringArray>
                 </Property>
                 <Property name="toolTipText" type="java.lang.String" value=""/>

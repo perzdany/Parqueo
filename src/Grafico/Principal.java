@@ -56,9 +56,11 @@ public class Principal extends javax.swing.JFrame implements Runnable {
                     PdfWriter.getInstance(Documento, archivo);
                     Documento.open();
 
-                    Paragraph parrafo = new Paragraph("Factura de Salida");
+                    Paragraph parrafo = new Paragraph("Ticket de salida Parking Click");
                     parrafo.setAlignment(1);
                     Documento.add(parrafo);
+                    Documento.add(Chunk.NEWLINE);
+                    Documento.add(Chunk.NEWLINE);
 
                     Documento.add(new Paragraph("Nombre: " + jTxtNombre.getText()));
                     Documento.add(new Paragraph("Apellidos: " + jTxtApellido1.getText() + " " + jTxtApellido2.getText()));
@@ -66,16 +68,16 @@ public class Principal extends javax.swing.JFrame implements Runnable {
 
                     Documento.add(Chunk.NEWLINE);
 
-                    Documento.add(new Paragraph("Esta es la factura por usar los servicios de Parking click"));
+                    Documento.add(new Paragraph("Esta es la factura de salida a los parqueos de Parking Click"));
 
                     Documento.add(Chunk.NEWLINE);
                     int Seleccion = Tabla.getSelectedRow();
                     Documento.add(new Paragraph("Muchas gracias por utilizar nuestros servicios"));
                     Documento.add(Chunk.NEWLINE);
                     Documento.add(new Paragraph("Fecha: " + LabelFecha.getText()));
-                    Documento.add(new Paragraph("Hora de entrada: " + modelo.getValueAt(Seleccion, 7)));
-                    Documento.add(new Paragraph("Hora de salida: " + modelo.getValueAt(Seleccion, 8)));
-                    Documento.add(new Paragraph("Monto total a pagar: ₡" + modelo.getValueAt(Seleccion, 9)));
+                    Documento.add(new Paragraph("Hora de entrada: " + modelo.getValueAt(Seleccion, 8)));
+                    Documento.add(new Paragraph("Hora de salida: " + modelo.getValueAt(Seleccion, 9)));
+                    Documento.add(new Paragraph("Monto total a pagar: ₡" + modelo.getValueAt(Seleccion, 10)));
                     
                     Documento.close();
                     JOptionPane.showMessageDialog(null, "Factura creada correctamente ");
@@ -105,7 +107,8 @@ public class Principal extends javax.swing.JFrame implements Runnable {
         Paragraph parrafo = new Paragraph("Ticket de entrada Parking Click");
         parrafo.setAlignment(1);
         Documento.add(parrafo);
-
+        Documento.add(Chunk.NEWLINE);
+        Documento.add(Chunk.NEWLINE);
         Documento.add(new Paragraph("Nombre: " + jTxtNombre.getText()));
         Documento.add(new Paragraph("Apellidos: " + jTxtApellido1.getText() + " " + jTxtApellido2.getText()));
         Documento.add(new Paragraph("Placa del vehiculo: " + jTxtPlaca.getText()));
@@ -141,7 +144,8 @@ public class Principal extends javax.swing.JFrame implements Runnable {
         modelo.addColumn("Apellido 2");
         modelo.addColumn("Cédula");
         modelo.addColumn("Placa");
-        modelo.addColumn("Tipo transporte");
+        modelo.addColumn("Fecha");
+        modelo.addColumn("Tipo");
         modelo.addColumn("Posición");
         modelo.addColumn("Hora Entrada");
         modelo.addColumn("Hora Salida");
@@ -601,7 +605,7 @@ public class Principal extends javax.swing.JFrame implements Runnable {
         jPIngresoVehiculo.add(jBIngresar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 340, 90, 40));
 
         ComboBox.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        ComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Posición 1", "Posición 2", "Posición 3", "Posición 4", "Posición 5", "Posición 6", "Posición 7", "Posición 8", "Posición 9", "Posición 10", "Posición 11", "Posición 12", "Posición 13", "Posición 14", "Posición 15", "Posición 16           ", "Posición 17", "Posición 18", "Posición M1", "Posición M2", "Posición M3", "Posición M4", "Posición M5", "Posición M6", "            " }));
+        ComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Posición 1", "Posición 2", "Posición 3", "Posición 4", "Posición 5", "Posición 6", "Posición 7", "Posición 8", "Posición 9", "Posición 10", "Posición 11", "Posición 12", "Posición 13", "Posición 14", "Posición 15", "Posición 16 ", "Posición 17", "Posición 18", "Posición M1", "Posición M2", "Posición M3", "Posición M4", "Posición M5", "Posición M6", " " }));
         ComboBox.setToolTipText("");
         ComboBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1271,17 +1275,18 @@ public class Principal extends javax.swing.JFrame implements Runnable {
                         EspacioMoto6.setBackground(Color.red);
                     }
 
-                    String Dato[] = new String[10];
+                    String Dato[] = new String[11];
                     Dato[0] = jTxtNombre.getText();
                     Dato[1] = jTxtApellido1.getText();
                     Dato[2] = jTxtApellido2.getText();
                     Dato[3] = jTxtCedula.getText();
                     Dato[4] = jTxtPlaca.getText();
-                    Dato[5] = boton.toString();
-                    Dato[6] = ComboBox.getSelectedItem().toString();
-                    Dato[7] = LabelHora.getText();
-                    Dato[8] = "";
+                    Dato[5] = LabelFecha.getText();
+                    Dato[6] = boton.toString();
+                    Dato[7] = ComboBox.getSelectedItem().toString();
+                    Dato[8] = LabelHora.getText();
                     Dato[9] = "";
+                    Dato[10] = "";
 
                     modelo.addRow(Dato);
 
@@ -1349,7 +1354,6 @@ public class Principal extends javax.swing.JFrame implements Runnable {
     private void jBIngresar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBIngresar2ActionPerformed
         if (!jTxtNombre.getText().isEmpty()) {
             Abrir(jTxtNombre.getText());
-
         } else {
             JOptionPane.showMessageDialog(null, "Campo de nombre vacio");
         }
@@ -1648,82 +1652,82 @@ public class Principal extends javax.swing.JFrame implements Runnable {
     private void jBIngresar4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBIngresar4ActionPerformed
 
         int Seleccion = Tabla.getSelectedRow();
-        String Dato[] = new String[10];
-        Dato[8] = LabelHora.getText();
-        Dato[9] = jTextField2.getText();
-        modelo.setValueAt(Dato[8], Seleccion, 8);
+        String Dato[] = new String[11];
+        Dato[9] = LabelHora.getText();
+        Dato[10] = jTextField2.getText();
         modelo.setValueAt(Dato[9], Seleccion, 9);
+        modelo.setValueAt(Dato[10], Seleccion, 10);
 
-        if (modelo.getValueAt(Seleccion, 6).toString().equals("Posición 1")) {
+        if (modelo.getValueAt(Seleccion, 7).toString().equals("Posición 1")) {
             Espacio1.setBackground(Color.green);
         }
-        if (modelo.getValueAt(Seleccion, 6).toString().equals("Posición 2")) {
+        if (modelo.getValueAt(Seleccion, 7).toString().equals("Posición 2")) {
             Espacio2.setBackground(Color.green);
         }
-        if (modelo.getValueAt(Seleccion, 6).toString().equals("Posición 3")) {
+        if (modelo.getValueAt(Seleccion, 7).toString().equals("Posición 3")) {
             Espacio3.setBackground(Color.green);
         }
-        if (modelo.getValueAt(Seleccion, 6).toString().equals("Posición 4")) {
+        if (modelo.getValueAt(Seleccion, 7).toString().equals("Posición 4")) {
             Espacio4.setBackground(Color.green);
         }
-        if (modelo.getValueAt(Seleccion, 6).toString().equals("Posición 5")) {
+        if (modelo.getValueAt(Seleccion, 7).toString().equals("Posición 5")) {
             Espacio5.setBackground(Color.green);
         }
-        if (modelo.getValueAt(Seleccion, 6).toString().equals("Posición 6")) {
+        if (modelo.getValueAt(Seleccion, 7).toString().equals("Posición 6")) {
             Espacio6.setBackground(Color.green);
         }
-        if (modelo.getValueAt(Seleccion, 6).toString().equals("Posición 7")) {
+        if (modelo.getValueAt(Seleccion, 7).toString().equals("Posición 7")) {
             Espacio7.setBackground(Color.green);
         }
-        if (modelo.getValueAt(Seleccion, 6).toString().equals("Posición 8")) {
+        if (modelo.getValueAt(Seleccion, 7).toString().equals("Posición 8")) {
             Espacio8.setBackground(Color.green);
         }
-        if (modelo.getValueAt(Seleccion, 6).toString().equals("Posición 9")) {
+        if (modelo.getValueAt(Seleccion, 7).toString().equals("Posición 9")) {
             Espacio9.setBackground(Color.green);
         }
-        if (modelo.getValueAt(Seleccion, 6).toString().equals("Posición 10")) {
+        if (modelo.getValueAt(Seleccion, 7).toString().equals("Posición 10")) {
             Espacio10.setBackground(Color.green);
         }
-        if (modelo.getValueAt(Seleccion, 6).toString().equals("Posición 11")) {
+        if (modelo.getValueAt(Seleccion, 7).toString().equals("Posición 11")) {
             Espacio11.setBackground(Color.green);
         }
-        if (modelo.getValueAt(Seleccion, 6).toString().equals("Posición 12")) {
+        if (modelo.getValueAt(Seleccion, 7).toString().equals("Posición 12")) {
             Espacio12.setBackground(Color.green);
         }
-        if (modelo.getValueAt(Seleccion, 6).toString().equals("Posición 13")) {
+        if (modelo.getValueAt(Seleccion, 7).toString().equals("Posición 13")) {
             Espacio13.setBackground(Color.green);
         }
-        if (modelo.getValueAt(Seleccion, 6).toString().equals("Posición 14")) {
+        if (modelo.getValueAt(Seleccion, 7).toString().equals("Posición 14")) {
             Espacio14.setBackground(Color.green);
         }
-        if (modelo.getValueAt(Seleccion, 6).toString().equals("Posición 15")) {
+        if (modelo.getValueAt(Seleccion, 7).toString().equals("Posición 15")) {
             Espacio15.setBackground(Color.green);
         }
-        if (modelo.getValueAt(Seleccion, 6).toString().equals("Posición 16")) {
+        if (modelo.getValueAt(Seleccion, 7).toString().equals("Posición 16")) {
             Espacio16.setBackground(Color.green);
         }
-        if (modelo.getValueAt(Seleccion, 6).toString().equals("Posición 17")) {
+        if (modelo.getValueAt(Seleccion, 7).toString().equals("Posición 17")) {
             Espacio17.setBackground(Color.green);
         }
-        if (modelo.getValueAt(Seleccion, 6).toString().equals("Posición 18")) {
+        if (modelo.getValueAt(Seleccion, 7).toString().equals("Posición 18")) {
             Espacio18.setBackground(Color.green);
         }
-        if (modelo.getValueAt(Seleccion, 6).toString().equals("Posición M1")) {
+        if (modelo.getValueAt(Seleccion, 7).toString().equals("Posición M1")) {
             EspacioMoto1.setBackground(Color.green);
         }
-        if (modelo.getValueAt(Seleccion, 6).toString().equals("Posición M2")) {
+        if (modelo.getValueAt(Seleccion, 7).toString().equals("Posición M2")) {
             EspacioMoto2.setBackground(Color.green);
         }
-        if (modelo.getValueAt(Seleccion, 6).toString().equals("Posición M3")) {
+        if (modelo.getValueAt(Seleccion, 7).toString().equals("Posición M3")) {
             EspacioMoto3.setBackground(Color.green);
         }
-        if (modelo.getValueAt(Seleccion, 6).toString().equals("Posición M4")) {
+        if (modelo.getValueAt(Seleccion, 7).toString().equals("Posición M4")) {
             EspacioMoto4.setBackground(Color.green);
         }
-        if (modelo.getValueAt(Seleccion, 6).toString().equals("Posición M5")) {
+        if (modelo.getValueAt(Seleccion, 7).toString().equals("Posición M5")) {
             EspacioMoto5.setBackground(Color.green);
         }
-        if (modelo.getValueAt(Seleccion, 6).toString().equals("Posición M6")) {
+        if (modelo.getValueAt(Seleccion, 7).toString().equals("Posición M6")) {
             EspacioMoto6.setBackground(Color.green);
         }
 
