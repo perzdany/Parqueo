@@ -700,7 +700,7 @@ public class Principal extends javax.swing.JFrame implements Runnable {
 
         jMapa.add(jReloj, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 300, 190, 80));
 
-        Espacio1.setBackground(new java.awt.Color(51, 204, 0));
+        Espacio1.setBackground(java.awt.Color.green);
         espacios.add(Espacio1);
         Espacio1.setText("1");
         Espacio1.addActionListener(new java.awt.event.ActionListener() {
@@ -710,7 +710,7 @@ public class Principal extends javax.swing.JFrame implements Runnable {
         });
         jMapa.add(Espacio1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 80, 40, 60));
 
-        Espacio2.setBackground(new java.awt.Color(51, 204, 0));
+        Espacio2.setBackground(java.awt.Color.green);
         espacios.add(Espacio2);
         Espacio2.setText("2");
         Espacio2.addActionListener(new java.awt.event.ActionListener() {
@@ -720,7 +720,7 @@ public class Principal extends javax.swing.JFrame implements Runnable {
         });
         jMapa.add(Espacio2, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 80, 40, 60));
 
-        Espacio3.setBackground(new java.awt.Color(51, 204, 0));
+        Espacio3.setBackground(java.awt.Color.green);
         espacios.add(Espacio3);
         Espacio3.setText("3");
         Espacio3.addActionListener(new java.awt.event.ActionListener() {
@@ -730,7 +730,7 @@ public class Principal extends javax.swing.JFrame implements Runnable {
         });
         jMapa.add(Espacio3, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 80, 40, 60));
 
-        Espacio4.setBackground(new java.awt.Color(51, 204, 0));
+        Espacio4.setBackground(java.awt.Color.green);
         espacios.add(Espacio4);
         Espacio4.setText("4");
         Espacio4.addActionListener(new java.awt.event.ActionListener() {
@@ -740,7 +740,7 @@ public class Principal extends javax.swing.JFrame implements Runnable {
         });
         jMapa.add(Espacio4, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 80, 40, 60));
 
-        Espacio5.setBackground(new java.awt.Color(51, 204, 0));
+        Espacio5.setBackground(java.awt.Color.green);
         espacios.add(Espacio5);
         Espacio5.setText("5");
         Espacio5.addActionListener(new java.awt.event.ActionListener() {
@@ -750,7 +750,7 @@ public class Principal extends javax.swing.JFrame implements Runnable {
         });
         jMapa.add(Espacio5, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 80, 40, 60));
 
-        Espacio6.setBackground(new java.awt.Color(51, 204, 0));
+        Espacio6.setBackground(java.awt.Color.green);
         espacios.add(Espacio6);
         Espacio6.setText("6");
         Espacio6.addActionListener(new java.awt.event.ActionListener() {
@@ -760,7 +760,7 @@ public class Principal extends javax.swing.JFrame implements Runnable {
         });
         jMapa.add(Espacio6, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 80, 40, 60));
 
-        Espacio7.setBackground(new java.awt.Color(51, 204, 0));
+        Espacio7.setBackground(java.awt.Color.green);
         espacios.add(Espacio7);
         Espacio7.setText("7");
         Espacio7.addActionListener(new java.awt.event.ActionListener() {
@@ -770,7 +770,7 @@ public class Principal extends javax.swing.JFrame implements Runnable {
         });
         jMapa.add(Espacio7, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 80, 40, 60));
 
-        Espacio8.setBackground(new java.awt.Color(51, 204, 0));
+        Espacio8.setBackground(java.awt.Color.green);
         espacios.add(Espacio8);
         Espacio8.setText("8");
         Espacio8.addActionListener(new java.awt.event.ActionListener() {
@@ -780,7 +780,7 @@ public class Principal extends javax.swing.JFrame implements Runnable {
         });
         jMapa.add(Espacio8, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 150, 40, 60));
 
-        Espacio9.setBackground(new java.awt.Color(51, 204, 0));
+        Espacio9.setBackground(java.awt.Color.green);
         espacios.add(Espacio9);
         Espacio9.setText("9");
         Espacio9.addActionListener(new java.awt.event.ActionListener() {
@@ -790,7 +790,7 @@ public class Principal extends javax.swing.JFrame implements Runnable {
         });
         jMapa.add(Espacio9, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 150, 40, 60));
 
-        Espacio10.setBackground(new java.awt.Color(51, 204, 0));
+        Espacio10.setBackground(java.awt.Color.green);
         espacios.add(Espacio10);
         Espacio10.setFont(new java.awt.Font("Tahoma", 0, 8)); // NOI18N
         Espacio10.setText("10");
@@ -801,7 +801,7 @@ public class Principal extends javax.swing.JFrame implements Runnable {
         });
         jMapa.add(Espacio10, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 150, 40, 60));
 
-        Espacio11.setBackground(new java.awt.Color(51, 204, 0));
+        Espacio11.setBackground(java.awt.Color.green);
         espacios.add(Espacio11);
         Espacio11.setFont(new java.awt.Font("Tahoma", 0, 8)); // NOI18N
         Espacio11.setText("11");
@@ -812,7 +812,7 @@ public class Principal extends javax.swing.JFrame implements Runnable {
         });
         jMapa.add(Espacio11, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 150, 40, 60));
 
-        Espacio12.setBackground(new java.awt.Color(51, 204, 0));
+        Espacio12.setBackground(java.awt.Color.green);
         espacios.add(Espacio12);
         Espacio12.setFont(new java.awt.Font("Tahoma", 0, 8)); // NOI18N
         Espacio12.setText("12");
@@ -823,7 +823,7 @@ public class Principal extends javax.swing.JFrame implements Runnable {
         });
         jMapa.add(Espacio12, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 150, 40, 60));
 
-        Espacio13.setBackground(new java.awt.Color(51, 204, 0));
+        Espacio13.setBackground(java.awt.Color.green);
         espacios.add(Espacio13);
         Espacio13.setFont(new java.awt.Font("Tahoma", 0, 8)); // NOI18N
         Espacio13.setText("13");
@@ -834,7 +834,7 @@ public class Principal extends javax.swing.JFrame implements Runnable {
         });
         jMapa.add(Espacio13, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 150, 40, 60));
 
-        Espacio14.setBackground(new java.awt.Color(51, 204, 0));
+        Espacio14.setBackground(java.awt.Color.green);
         espacios.add(Espacio14);
         Espacio14.setFont(new java.awt.Font("Tahoma", 0, 8)); // NOI18N
         Espacio14.setText("14");
@@ -845,7 +845,7 @@ public class Principal extends javax.swing.JFrame implements Runnable {
         });
         jMapa.add(Espacio14, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 150, 40, 60));
 
-        Espacio15.setBackground(new java.awt.Color(51, 204, 0));
+        Espacio15.setBackground(java.awt.Color.green);
         espacios.add(Espacio15);
         Espacio15.setFont(new java.awt.Font("Tahoma", 0, 8)); // NOI18N
         Espacio15.setText("15");
@@ -856,7 +856,7 @@ public class Principal extends javax.swing.JFrame implements Runnable {
         });
         jMapa.add(Espacio15, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 220, 40, 60));
 
-        Espacio16.setBackground(new java.awt.Color(51, 204, 0));
+        Espacio16.setBackground(java.awt.Color.green);
         espacios.add(Espacio16);
         Espacio16.setFont(new java.awt.Font("Tahoma", 0, 8)); // NOI18N
         Espacio16.setText("16");
@@ -867,7 +867,7 @@ public class Principal extends javax.swing.JFrame implements Runnable {
         });
         jMapa.add(Espacio16, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 220, 40, 60));
 
-        Espacio17.setBackground(new java.awt.Color(51, 204, 0));
+        Espacio17.setBackground(java.awt.Color.green);
         espacios.add(Espacio17);
         Espacio17.setFont(new java.awt.Font("Tahoma", 0, 8)); // NOI18N
         Espacio17.setText("17");
@@ -878,7 +878,7 @@ public class Principal extends javax.swing.JFrame implements Runnable {
         });
         jMapa.add(Espacio17, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 220, 40, 60));
 
-        Espacio18.setBackground(new java.awt.Color(51, 204, 0));
+        Espacio18.setBackground(java.awt.Color.green);
         espacios.add(Espacio18);
         Espacio18.setFont(new java.awt.Font("Tahoma", 0, 8)); // NOI18N
         Espacio18.setText("18");
@@ -889,7 +889,7 @@ public class Principal extends javax.swing.JFrame implements Runnable {
         });
         jMapa.add(Espacio18, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 220, 40, 60));
 
-        EspacioMoto1.setBackground(new java.awt.Color(51, 204, 0));
+        EspacioMoto1.setBackground(java.awt.Color.green);
         espacios.add(EspacioMoto1);
         EspacioMoto1.setText("M1");
         EspacioMoto1.addActionListener(new java.awt.event.ActionListener() {
@@ -899,7 +899,7 @@ public class Principal extends javax.swing.JFrame implements Runnable {
         });
         jMapa.add(EspacioMoto1, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 220, 50, 30));
 
-        EspacioMoto2.setBackground(new java.awt.Color(51, 204, 0));
+        EspacioMoto2.setBackground(java.awt.Color.green);
         espacios.add(EspacioMoto2);
         EspacioMoto2.setText("M2");
         EspacioMoto2.addActionListener(new java.awt.event.ActionListener() {
@@ -909,7 +909,7 @@ public class Principal extends javax.swing.JFrame implements Runnable {
         });
         jMapa.add(EspacioMoto2, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 220, 50, 30));
 
-        EspacioMoto3.setBackground(new java.awt.Color(51, 204, 0));
+        EspacioMoto3.setBackground(java.awt.Color.green);
         espacios.add(EspacioMoto3);
         EspacioMoto3.setText("M3");
         EspacioMoto3.addActionListener(new java.awt.event.ActionListener() {
@@ -919,7 +919,7 @@ public class Principal extends javax.swing.JFrame implements Runnable {
         });
         jMapa.add(EspacioMoto3, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 220, 50, 30));
 
-        EspacioMoto4.setBackground(new java.awt.Color(51, 204, 0));
+        EspacioMoto4.setBackground(java.awt.Color.green);
         espacios.add(EspacioMoto4);
         EspacioMoto4.setText("M4");
         EspacioMoto4.addActionListener(new java.awt.event.ActionListener() {
@@ -929,7 +929,7 @@ public class Principal extends javax.swing.JFrame implements Runnable {
         });
         jMapa.add(EspacioMoto4, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 250, 50, 30));
 
-        EspacioMoto5.setBackground(new java.awt.Color(51, 204, 0));
+        EspacioMoto5.setBackground(java.awt.Color.green);
         espacios.add(EspacioMoto5);
         EspacioMoto5.setText("M5");
         EspacioMoto5.addActionListener(new java.awt.event.ActionListener() {
@@ -939,7 +939,7 @@ public class Principal extends javax.swing.JFrame implements Runnable {
         });
         jMapa.add(EspacioMoto5, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 250, 50, 30));
 
-        EspacioMoto6.setBackground(new java.awt.Color(51, 204, 0));
+        EspacioMoto6.setBackground(java.awt.Color.green);
         espacios.add(EspacioMoto6);
         EspacioMoto6.setText("M6");
         EspacioMoto6.addActionListener(new java.awt.event.ActionListener() {
@@ -981,7 +981,7 @@ public class Principal extends javax.swing.JFrame implements Runnable {
 
         jListar1.setBackground(new java.awt.Color(63, 150, 230));
         jListar1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jListar1.setText("Editar Tabla");
+        jListar1.setText("Editar Fila");
         jListar1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jListar1ActionPerformed(evt);
@@ -1082,6 +1082,104 @@ public class Principal extends javax.swing.JFrame implements Runnable {
 
     private void jListar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jListar1ActionPerformed
         int FilaSelect = Tabla.getSelectedRow();
+                 
+        if (modelo.getValueAt(FilaSelect, 7).toString().equals("Posición 1")) {
+            Espacio1.setBackground(Color.green);
+            ComboBox.addItem("Posición 1");
+        }
+        if (modelo.getValueAt(FilaSelect, 7).toString().equals("Posición 2")) {
+            Espacio2.setBackground(Color.green);
+            ComboBox.addItem("Posición 2");
+        }
+        if (modelo.getValueAt(FilaSelect, 7).toString().equals("Posición 3")) {
+            Espacio3.setBackground(Color.green);
+            ComboBox.addItem("Posición 3");
+        }
+        if (modelo.getValueAt(FilaSelect, 7).toString().equals("Posición 4")) {
+            Espacio4.setBackground(Color.green);
+            ComboBox.addItem("Posición 4");
+        }
+        if (modelo.getValueAt(FilaSelect, 7).toString().equals("Posición 5")) {
+            Espacio5.setBackground(Color.green);
+            ComboBox.addItem("Posición 5");
+        }
+        if (modelo.getValueAt(FilaSelect, 7).toString().equals("Posición 6")) {
+            Espacio6.setBackground(Color.green);
+            ComboBox.addItem("Posición 6");
+        }
+        if (modelo.getValueAt(FilaSelect, 7).toString().equals("Posición 7")) {
+            Espacio7.setBackground(Color.green);
+            ComboBox.addItem("Posición 7");
+        }
+        if (modelo.getValueAt(FilaSelect, 7).toString().equals("Posición 8")) {
+            Espacio8.setBackground(Color.green);
+            ComboBox.addItem("Posición 8");
+        }
+        if (modelo.getValueAt(FilaSelect, 7).toString().equals("Posición 9")) {
+            Espacio9.setBackground(Color.green);
+            ComboBox.addItem("Posición 9");
+        }
+        if (modelo.getValueAt(FilaSelect, 7).toString().equals("Posición 10")) {
+            Espacio10.setBackground(Color.green);
+            ComboBox.addItem("Posición 10");
+        }
+        if (modelo.getValueAt(FilaSelect, 7).toString().equals("Posición 11")) {
+            Espacio11.setBackground(Color.green);
+            ComboBox.addItem("Posición 11");
+        }
+        if (modelo.getValueAt(FilaSelect, 7).toString().equals("Posición 12")) {
+            Espacio12.setBackground(Color.green);
+            ComboBox.addItem("Posición 12");
+        }
+        if (modelo.getValueAt(FilaSelect, 7).toString().equals("Posición 13")) {
+            Espacio13.setBackground(Color.green);
+            ComboBox.addItem("Posición 13");
+        }
+        if (modelo.getValueAt(FilaSelect, 7).toString().equals("Posición 14")) {
+            Espacio14.setBackground(Color.green);
+            ComboBox.addItem("Posición 14");
+        }
+        if (modelo.getValueAt(FilaSelect, 7).toString().equals("Posición 15")) {
+            Espacio15.setBackground(Color.green);
+            ComboBox.addItem("Posición 15");
+        }
+        if (modelo.getValueAt(FilaSelect, 7).toString().equals("Posición 16")) {
+            Espacio16.setBackground(Color.green);
+            ComboBox.addItem("Posición 16");
+        }
+        if (modelo.getValueAt(FilaSelect, 7).toString().equals("Posición 17")) {
+            Espacio17.setBackground(Color.green);
+            ComboBox.addItem("Posición 17");
+        }
+        if (modelo.getValueAt(FilaSelect, 7).toString().equals("Posición 18")) {
+            Espacio18.setBackground(Color.green);
+            ComboBox.addItem("Posición 18");
+        }
+        if (modelo.getValueAt(FilaSelect, 7).toString().equals("Posición M1")) {
+            EspacioMoto1.setBackground(Color.green);
+            ComboBox.addItem("Posición M1");
+        }
+        if (modelo.getValueAt(FilaSelect, 7).toString().equals("Posición M2")) {
+            EspacioMoto2.setBackground(Color.green);
+            ComboBox.addItem("Posición M2");
+        }
+        if (modelo.getValueAt(FilaSelect, 7).toString().equals("Posición M3")) {
+            EspacioMoto3.setBackground(Color.green);
+            ComboBox.addItem("Posición M3");
+        }
+        if (modelo.getValueAt(FilaSelect, 7).toString().equals("Posición M4")) {
+            EspacioMoto4.setBackground(Color.green);
+            ComboBox.addItem("Posición M4");
+        }
+        if (modelo.getValueAt(FilaSelect, 7).toString().equals("Posición M5")) {
+            EspacioMoto5.setBackground(Color.green);
+            ComboBox.addItem("Posición M5");
+        }
+        if (modelo.getValueAt(FilaSelect, 7).toString().equals("Posición M6")) {
+            EspacioMoto6.setBackground(Color.green);
+            ComboBox.addItem("Posición M6");
+        }
+
         if (FilaSelect >= 0) {
             jTxtNombre.setText(Tabla.getValueAt(FilaSelect, 0).toString());
             jTxtApellido1.setText(Tabla.getValueAt(FilaSelect, 1).toString());
@@ -1091,78 +1189,6 @@ public class Principal extends javax.swing.JFrame implements Runnable {
             modelo.removeRow(FilaSelect);
         } else {
             JOptionPane.showMessageDialog(this, "Debe seleccionar una fila");
-        }
-        if (ComboBox.getSelectedItem().toString().equals("Posición 1")) {
-            Espacio1.setBackground(Color.green);
-        }
-        if (ComboBox.getSelectedItem().toString().equals("Posición 2")) {
-            Espacio2.setBackground(Color.green);
-        }
-        if (ComboBox.getSelectedItem().toString().equals("Posición 3")) {
-            Espacio3.setBackground(Color.green);
-        }
-        if (ComboBox.getSelectedItem().toString().equals("Posición 4")) {
-            Espacio4.setBackground(Color.green);
-        }
-        if (ComboBox.getSelectedItem().toString().equals("Posición 5")) {
-            Espacio5.setBackground(Color.green);
-        }
-        if (ComboBox.getSelectedItem().toString().equals("Posición 6")) {
-            Espacio6.setBackground(Color.green);
-        }
-        if (ComboBox.getSelectedItem().toString().equals("Posición 7")) {
-            Espacio7.setBackground(Color.green);
-        }
-        if (ComboBox.getSelectedItem().toString().equals("Posición 8")) {
-            Espacio8.setBackground(Color.green);
-        }
-        if (ComboBox.getSelectedItem().toString().equals("Posición 9")) {
-            Espacio9.setBackground(Color.green);
-        }
-        if (ComboBox.getSelectedItem().toString().equals("Posición 10")) {
-            Espacio10.setBackground(Color.green);
-        }
-        if (ComboBox.getSelectedItem().toString().equals("Posición 11")) {
-            Espacio11.setBackground(Color.green);
-        }
-        if (ComboBox.getSelectedItem().toString().equals("Posición 12")) {
-            Espacio12.setBackground(Color.green);
-        }
-        if (ComboBox.getSelectedItem().toString().equals("Posición 13")) {
-            Espacio13.setBackground(Color.green);
-        }
-        if (ComboBox.getSelectedItem().toString().equals("Posición 14")) {
-            Espacio14.setBackground(Color.green);
-        }
-        if (ComboBox.getSelectedItem().toString().equals("Posición 15")) {
-            Espacio15.setBackground(Color.green);
-        }
-        if (ComboBox.getSelectedItem().toString().equals("Posición 16")) {
-            Espacio16.setBackground(Color.green);
-        }
-        if (ComboBox.getSelectedItem().toString().equals("Posición 17")) {
-            Espacio17.setBackground(Color.green);
-        }
-        if (ComboBox.getSelectedItem().toString().equals("Posición 18")) {
-            Espacio18.setBackground(Color.green);
-        }
-        if (ComboBox.getSelectedItem().toString().equals("Posición M1")) {
-            EspacioMoto1.setBackground(Color.green);
-        }
-        if (ComboBox.getSelectedItem().toString().equals("Posición M2")) {
-            EspacioMoto2.setBackground(Color.green);
-        }
-        if (ComboBox.getSelectedItem().toString().equals("Posición M3")) {
-            EspacioMoto3.setBackground(Color.green);
-        }
-        if (ComboBox.getSelectedItem().toString().equals("Posición M4")) {
-            EspacioMoto4.setBackground(Color.green);
-        }
-        if (ComboBox.getSelectedItem().toString().equals("Posición M5")) {
-            EspacioMoto5.setBackground(Color.green);
-        }
-        if (ComboBox.getSelectedItem().toString().equals("Posición M6")) {
-            EspacioMoto6.setBackground(Color.green);
         }
     }//GEN-LAST:event_jListar1ActionPerformed
 
@@ -1199,82 +1225,7 @@ public class Principal extends javax.swing.JFrame implements Runnable {
                     } else if (Moto.isSelected()) {
                         boton = "Moto";
                     }
-
-                    String combo = ComboBox.getSelectedItem().toString();
-
-                    if (combo.equals("Posición 1")) {
-                        Espacio1.setBackground(Color.red);
-                    }
-                    if (combo.equals("Posición 2")) {
-                        Espacio2.setBackground(Color.red);
-                    }
-                    if (combo.equals("Posición 3")) {
-                        Espacio3.setBackground(Color.red);
-                    }
-                    if (combo.equals("Posición 4")) {
-                        Espacio4.setBackground(Color.red);
-                    }
-                    if (combo.equals("Posición 5")) {
-                        Espacio5.setBackground(Color.red);
-                    }
-                    if (combo.equals("Posición 6")) {
-                        Espacio6.setBackground(Color.red);
-                    }
-                    if (combo.equals("Posición 7")) {
-                        Espacio7.setBackground(Color.red);
-                    }
-                    if (combo.equals("Posición 8")) {
-                        Espacio8.setBackground(Color.red);
-                    }
-                    if (combo.equals("Posición 9")) {
-                        Espacio9.setBackground(Color.red);
-                    }
-                    if (combo.equals("Posición 10")) {
-                        Espacio10.setBackground(Color.red);
-                    }
-                    if (combo.equals("Posición 11")) {
-                        Espacio11.setBackground(Color.red);
-                    }
-                    if (combo.equals("Posición 12")) {
-                        Espacio12.setBackground(Color.red);
-                    }
-                    if (combo.equals("Posición 13")) {
-                        Espacio13.setBackground(Color.red);
-                    }
-                    if (combo.equals("Posición 14")) {
-                        Espacio14.setBackground(Color.red);
-                    }
-                    if (combo.equals("Posición 15")) {
-                        Espacio15.setBackground(Color.red);
-                    }
-                    if (combo.equals("Posición 16")) {
-                        Espacio16.setBackground(Color.red);
-                    }
-                    if (combo.equals("Posición 17")) {
-                        Espacio17.setBackground(Color.red);
-                    }
-                    if (combo.equals("Posición 18")) {
-                        Espacio18.setBackground(Color.red);
-                    }
-                    if (combo.equals("Posición M1")) {
-                        EspacioMoto1.setBackground(Color.red);
-                    }
-                    if (combo.equals("Posición M2")) {
-                        EspacioMoto2.setBackground(Color.red);
-                    }
-                    if (combo.equals("Posición M3")) {
-                        EspacioMoto3.setBackground(Color.red);
-                    }
-                    if (combo.equals("Posición M4")) {
-                        EspacioMoto4.setBackground(Color.red);
-                    }
-                    if (combo.equals("Posición M5")) {
-                        EspacioMoto5.setBackground(Color.red);
-                    }
-                    if (combo.equals("Posición M6")) {
-                        EspacioMoto6.setBackground(Color.red);
-                    }
-
+                    
                     String Dato[] = new String[11];
                     Dato[0] = jTxtNombre.getText();
                     Dato[1] = jTxtApellido1.getText();
@@ -1287,8 +1238,107 @@ public class Principal extends javax.swing.JFrame implements Runnable {
                     Dato[8] = LabelHora.getText();
                     Dato[9] = "";
                     Dato[10] = "";
-
                     modelo.addRow(Dato);
+                    
+                    String combo = ComboBox.getSelectedItem().toString();
+                    
+                    if (combo.equals("Posición 1")) {
+                        Espacio1.setBackground(Color.red); 
+                        ComboBox.removeItem("Posición 1");
+                    }
+                    if (combo.equals("Posición 2")) {
+                        Espacio2.setBackground(Color.red);
+                        ComboBox.removeItem("Posición 2");
+                    }
+                    if (combo.equals("Posición 3")) {
+                        Espacio3.setBackground(Color.red);
+                        ComboBox.removeItem("Posición 3");
+                    }
+                    if (combo.equals("Posición 4")) {
+                        Espacio4.setBackground(Color.red);
+                        ComboBox.removeItem("Posición 4");
+                    }
+                    if (combo.equals("Posición 5")) {
+                        Espacio5.setBackground(Color.red);
+                        ComboBox.removeItem("Posición 5");
+                    }
+                    if (combo.equals("Posición 6")) {
+                        Espacio6.setBackground(Color.red);
+                        ComboBox.removeItem("Posición 6");
+                    }
+                    if (combo.equals("Posición 7")) {
+                        Espacio7.setBackground(Color.red);
+                        ComboBox.removeItem("Posición 7");
+                    }
+                    if (combo.equals("Posición 8")) {
+                        Espacio8.setBackground(Color.red);
+                        ComboBox.removeItem("Posición 8");
+                    }
+                    if (combo.equals("Posición 9")) {
+                        Espacio9.setBackground(Color.red);
+                        ComboBox.removeItem("Posición 9");
+                    }
+                    if (combo.equals("Posición 10")) {
+                        Espacio10.setBackground(Color.red);
+                        ComboBox.removeItem("Posición 10");
+                    }
+                    if (combo.equals("Posición 11")) {
+                        Espacio11.setBackground(Color.red);
+                        ComboBox.removeItem("Posición 11");
+                    }
+                    if (combo.equals("Posición 12")) {
+                        Espacio12.setBackground(Color.red);
+                        ComboBox.removeItem("Posición 12");
+                    }
+                    if (combo.equals("Posición 13")) {
+                        Espacio13.setBackground(Color.red);
+                        ComboBox.removeItem("Posición 13");
+                    }
+                    if (combo.equals("Posición 14")) {
+                        Espacio14.setBackground(Color.red);
+                        ComboBox.removeItem("Posición 14");
+                    }
+                    if (combo.equals("Posición 15")) {
+                        Espacio15.setBackground(Color.red);
+                        ComboBox.removeItem("Posición 15");
+                    }
+                    if (combo.equals("Posición 16")) {
+                        Espacio16.setBackground(Color.red);
+                        ComboBox.removeItem("Posición 16");
+                    }
+                    if (combo.equals("Posición 17")) {
+                        Espacio17.setBackground(Color.red);
+                        ComboBox.removeItem("Posición 17");
+                    }
+                    if (combo.equals("Posición 18")) {
+                        Espacio18.setBackground(Color.red);
+                        ComboBox.removeItem("Posición 18");
+                    }
+                    if (combo.equals("Posición M1")) {
+                        EspacioMoto1.setBackground(Color.red);
+                        ComboBox.removeItem("Posición M1");
+                    }
+                    if (combo.equals("Posición M2")) {
+                        EspacioMoto2.setBackground(Color.red);
+                        ComboBox.removeItem("Posición M2");
+                    }
+                    if (combo.equals("Posición M3")) {
+                        EspacioMoto3.setBackground(Color.red);
+                        ComboBox.removeItem("Posición M3");
+                    }
+                    if (combo.equals("Posición M4")) {
+                        EspacioMoto4.setBackground(Color.red);
+                        ComboBox.removeItem("Posición M4");
+                    }
+                    if (combo.equals("Posición M5")) {
+                        EspacioMoto5.setBackground(Color.red);
+                        ComboBox.removeItem("Posición M5");
+                    }
+                    if (combo.equals("Posición M6")) {
+                        EspacioMoto6.setBackground(Color.red);
+                        ComboBox.removeItem("Posición M6");
+                    }
+                    
 
                     try {
                         generarEntrada(jTxtNombre.getText());
@@ -1657,75 +1707,99 @@ public class Principal extends javax.swing.JFrame implements Runnable {
 
         if (modelo.getValueAt(Seleccion, 7).toString().equals("Posición 1")) {
             Espacio1.setBackground(Color.green);
+            ComboBox.addItem("Posición 1");
         }
         if (modelo.getValueAt(Seleccion, 7).toString().equals("Posición 2")) {
             Espacio2.setBackground(Color.green);
+            ComboBox.addItem("Posición 2");
         }
         if (modelo.getValueAt(Seleccion, 7).toString().equals("Posición 3")) {
             Espacio3.setBackground(Color.green);
+            ComboBox.addItem("Posición 3");
         }
         if (modelo.getValueAt(Seleccion, 7).toString().equals("Posición 4")) {
             Espacio4.setBackground(Color.green);
+            ComboBox.addItem("Posición 4");
         }
         if (modelo.getValueAt(Seleccion, 7).toString().equals("Posición 5")) {
             Espacio5.setBackground(Color.green);
+            ComboBox.addItem("Posición 5");
         }
         if (modelo.getValueAt(Seleccion, 7).toString().equals("Posición 6")) {
             Espacio6.setBackground(Color.green);
+            ComboBox.addItem("Posición 6");
         }
         if (modelo.getValueAt(Seleccion, 7).toString().equals("Posición 7")) {
             Espacio7.setBackground(Color.green);
+            ComboBox.addItem("Posición 7");
         }
         if (modelo.getValueAt(Seleccion, 7).toString().equals("Posición 8")) {
             Espacio8.setBackground(Color.green);
+            ComboBox.addItem("Posición 8");
         }
         if (modelo.getValueAt(Seleccion, 7).toString().equals("Posición 9")) {
             Espacio9.setBackground(Color.green);
+            ComboBox.addItem("Posición 9");
         }
         if (modelo.getValueAt(Seleccion, 7).toString().equals("Posición 10")) {
             Espacio10.setBackground(Color.green);
+            ComboBox.addItem("Posición 10");
         }
         if (modelo.getValueAt(Seleccion, 7).toString().equals("Posición 11")) {
             Espacio11.setBackground(Color.green);
+            ComboBox.addItem("Posición 11");
         }
         if (modelo.getValueAt(Seleccion, 7).toString().equals("Posición 12")) {
             Espacio12.setBackground(Color.green);
+            ComboBox.addItem("Posición 12");
         }
         if (modelo.getValueAt(Seleccion, 7).toString().equals("Posición 13")) {
             Espacio13.setBackground(Color.green);
+            ComboBox.addItem("Posición 13");
         }
         if (modelo.getValueAt(Seleccion, 7).toString().equals("Posición 14")) {
             Espacio14.setBackground(Color.green);
+            ComboBox.addItem("Posición 14");
         }
         if (modelo.getValueAt(Seleccion, 7).toString().equals("Posición 15")) {
             Espacio15.setBackground(Color.green);
+            ComboBox.addItem("Posición 15");
         }
         if (modelo.getValueAt(Seleccion, 7).toString().equals("Posición 16")) {
             Espacio16.setBackground(Color.green);
+            ComboBox.addItem("Posición 16");
         }
         if (modelo.getValueAt(Seleccion, 7).toString().equals("Posición 17")) {
             Espacio17.setBackground(Color.green);
+            ComboBox.addItem("Posición 17");
         }
         if (modelo.getValueAt(Seleccion, 7).toString().equals("Posición 18")) {
             Espacio18.setBackground(Color.green);
+            ComboBox.addItem("Posición 18");
         }
         if (modelo.getValueAt(Seleccion, 7).toString().equals("Posición M1")) {
             EspacioMoto1.setBackground(Color.green);
+            ComboBox.addItem("Posición M1");
         }
         if (modelo.getValueAt(Seleccion, 7).toString().equals("Posición M2")) {
             EspacioMoto2.setBackground(Color.green);
+            ComboBox.addItem("Posición M2");
         }
         if (modelo.getValueAt(Seleccion, 7).toString().equals("Posición M3")) {
             EspacioMoto3.setBackground(Color.green);
+            ComboBox.addItem("Posición M3");
         }
         if (modelo.getValueAt(Seleccion, 7).toString().equals("Posición M4")) {
             EspacioMoto4.setBackground(Color.green);
+            ComboBox.addItem("Posición M4");
         }
         if (modelo.getValueAt(Seleccion, 7).toString().equals("Posición M5")) {
             EspacioMoto5.setBackground(Color.green);
+            ComboBox.addItem("Posición M5");
         }
         if (modelo.getValueAt(Seleccion, 7).toString().equals("Posición M6")) {
             EspacioMoto6.setBackground(Color.green);
+            ComboBox.addItem("Posición M6");
         }
 
     }//GEN-LAST:event_jBIngresar4ActionPerformed
